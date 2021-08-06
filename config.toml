@@ -1,0 +1,4 @@
+baseURL = 'http://www.vuonhoaly.com/'
+languageCode = 'vi-vn'
+title = 'Vườn Hoa Ly'
+theme = 'hoaly'
