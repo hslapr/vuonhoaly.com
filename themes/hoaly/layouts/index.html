@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title lang="vi">Vườn Hoa Ly</title>
-    </head>
+    {{ partial "head.html" . }}
+    
     <body>
-        <h1>Index</h1>
+        {{ partial "header.html" . }}
+        <main>
+            <h1 lang="en">Index</h1>
+            <ul>
+                <li><a lang="it" href="posts/verbi-italiani/">Verbi Italiani</a></li>
+            </ul>
+        </main>
+        {{ partial "footer.html" . }}
     </body>
 </html>
