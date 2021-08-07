@@ -1,0 +1,15 @@
+body {
+  background-color: white;
+  color: black;
+  width: 600px;
+  margin: auto; }
+  body header {
+    padding: 10px 0px 0px 0px; }
+    body header nav a {
+      text-decoration-line: none; }
+  body main {
+    padding: 0px 5px 0px 5px; }
+    body main table, body main th, body main td {
+      border: 1px solid black; }
+  body footer {
+    text-align: center; }

@@ -3,6 +3,7 @@ title = 'Vườn Hoa Ly'
 copyright = '2021 Vuonhoaly.com. All rights reserved.'
 theme = 'hoaly'
 defaultContentLanguage = 'zh-hans'
+relativeURLs = "True"
 
 [languages]
 [languages.zh-hans]
