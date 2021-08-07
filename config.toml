@@ -1,9 +1,8 @@
-baseURL = 'http://www.vuonhoaly.com/'
 title = 'Vườn Hoa Ly'
 copyright = '2021 Vuonhoaly.com. All rights reserved.'
 theme = 'hoaly'
 defaultContentLanguage = 'zh-hans'
-relativeURLs = "True"
+relativeURLs = true
 
 [languages]
 [languages.zh-hans]
