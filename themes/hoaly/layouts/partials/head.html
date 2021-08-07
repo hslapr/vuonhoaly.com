@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
     <title lang="vi">{{ .Title }} - Vườn Hoa Ly</title>
-    {{ $style := resources.Get "sass/main.scss" | toCSS }}
+    {{ $style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>
