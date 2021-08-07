@@ -4,6 +4,9 @@ copyright = '2021 Vuonhoaly.com. All rights reserved.'
 theme = 'hoaly'
 defaultContentLanguage = 'zh-hans'
 
+[taxonomies]
+category = 'categories'
+tag = 'tags'
 
 [languages]
 [languages.zh-hans]
