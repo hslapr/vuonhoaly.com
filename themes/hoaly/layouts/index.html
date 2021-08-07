@@ -7,17 +7,37 @@
   </div>
 </header>
 <main>
-  <ul>
-    {{ $titleLanguage := "" }}
-    {{ range .Site.RegularPages }}
-    {{ with .Param "TitleLanguage" }}
-    {{ $titleLanguage = . }}
-    {{ else }}
-    {{ $titleLanguage = "zh-Hans" }}
-    {{ end }}
-    <li><a lang="{{ $titleLanguage }}" href="{{ .RelPermalink }}">{{ .Title
-        }}</a></li>
-    {{ end }}
-  </ul>
+  <article>
+    <h1 lang="en">About</h1>
+    <p lang="vi">Chỉ là một blog mới mà thôi!</p>
+  </article>
+  <nav>
+    <h1 lang="en">Posts</h1>
+    <ul>
+      {{ $titleLanguage := "" }}
+      {{ range .Site.RegularPages }}
+      {{ with .Param "TitleLanguage" }}
+      {{ $titleLanguage = . }}
+      {{ else }}
+      {{ $titleLanguage = "zh-Hans" }}
+      {{ end }}
+      <li><a lang="{{ $titleLanguage }}" href="{{ .RelPermalink }}">{{ .Title
+          }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+  <article>
+    <h1 lang="en">Contact</h1>
+    <p>
+      <a href="https://github.com/lyhng-rika" target="_blank"><i
+          class="fab fa-github fa-lg"></i></a>
+      <a href="https://t.me/lyhng" target="_blank"><i
+          class="fab fa-telegram fa-lg"></i></a>
+      <a href="https://twitter.com/z4uk1fvWSwpNYZ2" target="_blank"><i
+          class="fab fa-twitter fa-lg"></i></a>
+      <a href=" mailto:lyhng.rika@gmail.com" target="_blank"><i
+            class="fas fa-envelope-open fa-lg"></i></a>
+    </p>
+  </article>
 </main>
 {{ end }}
