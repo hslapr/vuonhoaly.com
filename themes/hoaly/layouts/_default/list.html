@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main>
+  <h1 lang="en">{{ .Title }}</h1>
+  <ul>
+    {{ $titleLanguage := "" }}
+    {{ range .Pages }}
+    {{ with .Param "TitleLanguage" }}
+    {{ $titleLanguage = . }}
+    {{ else }}
+    {{ $titleLanguage = "zh-Hans" }}
+    {{ end }}
+    <li><a lang="{{ $titleLanguage }}" href="{{ .Permalink }}">{{ .Title
+        }}</a></li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}

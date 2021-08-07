@@ -2,12 +2,12 @@
 <html>
     {{- partial "head.html" . -}}
     <body>
+        {{ if ne .Kind "home" }}
         {{- partial "header.html" . -}}
-        <main>
-        <div id="content">
+        {{ end }}
+        
         {{- block "main" . }}{{- end }}
-        </div>
-        </main>
+
         {{- partial "footer.html" . -}}
     </body>
 </html>

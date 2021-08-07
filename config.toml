@@ -1,4 +1,10 @@
 baseURL = 'http://www.vuonhoaly.com/'
-languageCode = 'vi-vn'
 title = 'Vườn Hoa Ly'
+copyright = '2021 Vuonhoaly.com. All rights reserved.'
 theme = 'hoaly'
+defaultContentLanguage = 'zh-hans'
+
+[languages]
+[languages.zh-hans]
+languageCode = 'zh-hans'
+weight = 10
