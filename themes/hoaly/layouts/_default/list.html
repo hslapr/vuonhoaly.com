@@ -9,7 +9,7 @@
     {{ else }}
     {{ $titleLanguage = "zh-Hans" }}
     {{ end }}
-    <li><a lang="{{ $titleLanguage }}" href="{{ .Permalink }}">{{ .Title
+    <li><a lang="{{ $titleLanguage }}" href="{{ .RelPermalink }}">{{ .Title
         }}</a></li>
     {{ end }}
   </ul>

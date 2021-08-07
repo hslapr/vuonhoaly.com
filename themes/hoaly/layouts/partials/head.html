@@ -2,5 +2,5 @@
     <meta charset="UTF-8">
     <title lang="vi">{{ .Title }} - Vườn Hoa Ly</title>
     {{ $style := resources.Get "sass/main.scss" | toCSS }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head>
