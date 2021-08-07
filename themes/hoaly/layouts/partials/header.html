@@ -1,6 +1,14 @@
 <header>
     <nav>
         <a href={{ .Site.Home.RelPermalink }} lang="en">Home</a>
+        {{ range .Site.Sections }}
+        &nbsp;
+        <a href={{ .RelPermalink }} lang="en">{{ .Title }}</a>
+        {{ end }}
+        {{ range .Site.Taxonomies }}
+        &nbsp;
+        <a href={{ .RelPermalink }} lang="en">{{ .Title }}</a>
+        {{ end }}
     </nav>
     <hr>
 </header>
