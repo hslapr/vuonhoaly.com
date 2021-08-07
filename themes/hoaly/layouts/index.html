@@ -1,6 +1,10 @@
 {{ define "main" }}
 <header>
-  <h1 lang="vi">Vườn Hoa Ly</h1>
+  <div>
+    {{- $image := resources.Get "images/banner.png" -}}
+    {{ $image = $image.Resize "600x" }}
+    <img width="600px" alt="banner" src={{ $image.RelPermalink }}>
+  </div>
 </header>
 <main>
   <ul>
