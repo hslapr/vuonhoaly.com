@@ -13,23 +13,43 @@ draft: true
     <dl>
       <dt>ミッションクリティカルなシステム</dt>
       <dd lang="zh-Hans">非常重要，一旦故障影响甚大，会导致其他工作无法进行的系统</dd>
+    </dl>
+    <dl>
       <dt>デュプレックスシステム</dt>
       <dd>現用系と待機系で構成，障害発生時切替</dd>
-      <dd>
-        <dl>
-          <dt>ホットスタンバイ</dt>
-          <dd lang="zh-Hans"><span lang="en">Hot Standby</span>
-            同时启动并执行相同任务，故障时迅速切换
-          </dd>
-          <dt>コールドスタンバイ</dt>
-          <dd lang="zh-Hans"><span lang="en">Cold Standby</span>
-            执行不同任务，现用系故障时中止原来的任务并切换</dd>
-        </dl>
+      <dt>ホットスタンバイ</dt>
+      <dd lang="zh-Hans"><span lang="en">Hot Standby</span>
+        同时启动并执行相同任务，故障时迅速切换
       </dd>
+      <dt>コールドスタンバイ</dt>
+      <dd lang="zh-Hans"><span lang="en">Cold Standby</span>
+        执行不同任务，现用系故障时中止原来的任务并切换</dd>
+    </dl>
+    <dl>
       <dt>バッチ処理</dt>
       <dd>データを貯めてから一括処理</dd>
       <dt>オンラインリアルタイム処理</dt>
       <dd>データの発生と同時に処理</dd>
     </dl>
+    <dl>
+      <dt>デュアルシステム</dt>
+      <dd>一つの処理を2系統で行い，照合する。障害発生時片方縮退運転。</dd>
+    </dl>
+    <dl>
+      <dt>クラスタシステム</dt>
+      <dd>複数のサーバを一台のように見せかける技術</dd>
+      <dt><abbr title="High Availability">HA</abbr>クラスタ</dt>
+      <dd>高可用性・高信頼化。負荷分散型クラスタ，フェールオーバー型クラスタ。</dd>
+      <dt>&rdca; 負荷分散型クラスタ</dt>
+      <dd>同じ機能の複数のサーバに処理を振り分け</dd>
+      <dt>&rdca; フェールオーバー型クラスタ</dt>
+      <dd>同じ機能の複数のサーバを現用系と予備系に分ける</dd>
+      <dt><abbr title="High Performance Computing">HPC</abbr>クラスタ</dt>
+      <dd>高性能</dd>
+    </dl>
+    <dl>
+      <dt>グリッドコンピューティング</dt>
+    </dl>
+
   </section>
 </article>

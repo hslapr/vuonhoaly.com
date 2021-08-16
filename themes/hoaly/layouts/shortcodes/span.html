@@ -1,0 +1,5 @@
+{{ $lang := .Get 0 }}
+{{ if eq $lang "zh" }}
+{{ $lang = "zh-Hans" }}
+{{ end }}
+<span lang="{{ $lang }}">{{- .Inner -}}</span>

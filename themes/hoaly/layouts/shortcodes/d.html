@@ -1,0 +1,4 @@
+<dl>
+  <dt>{{ .Get 0 }}</dt>
+  <dd {{ with .Get "lang" }}lang="{{ . }}"{{ end }}>{{- .Inner -}}</dd>
+</dl>
