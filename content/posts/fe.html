@@ -50,6 +50,53 @@ draft: true
     <dl>
       <dt>グリッドコンピューティング</dt>
     </dl>
-
+    <dl>
+      <dt>クライアントサーバシステム</dt>
+      <dt>3層クライアントサーバシステム</dt>
+      <dd>論理的にプレゼンテーション層・ファンクション層・データベース層に分離する。</dd>
+      <dt>ストアドプロシージャ</dt>
+      <dd>利用頻度の高い命令群（SQL）をサーバ上に用意。ネットワーク負荷を軽減。</dd>
+    </dl>
+    <dl>
+      <dt>サーバ仮想化</dt>
+      <dt>ホスト型</dt>
+      <dd>ホストOS＋仮想化ソフトウェア＋ゲストOS</dd>
+      <dt>ハイパバイザ型</dt>
+      <dd>ハードウェア＋ハイパバイザ＋複数のゲストOS。自由度高い、移行性低い。</dd>
+      <dt>コンテナ型</dt>
+      <dd>OS＋コンテナエンジン＋コンテナ。自由度低い、移行性高い。</dd>
+    </dl>
+    <dl>
+      <dt>スケールアップ</dt>
+      <dd>個々のサーバそのものを増強</dd>
+      <dt>スケールアウト</dt>
+      <dd>サーバの台数を増やす</dd>
+    </dl>
+    <dl>
+      <dt><ruby>シン<rp>（</rp><rt lang="en">thin</rt><rp>（</rp></ruby>クライアントシステム</dt>
+      <dd>クライアントに必要最低限の機能しか持たせないシステム</dd>
+      <dt><abbr lang="en" title="Virtual Desktop Infrastructure">VDI</abbr></dt>
+      <dd>クライアント端末のデスクトップ環境を仮想化されたサーバ上に集約。画面転送。</dd>
+    </dl>
+    <dl>
+      <dt><abbr lang="en" title="Network Attached Storage">NAS</abbr></dt>
+      <dd>LAN に接続する磁気ディスク。OS間でファイル単位に共有。</dd>
+    </dl>
+    <dl>
+      <dt><abbr lang="en" title="Redundant Arrays of Inexpensive Disks">RAID</abbr></dt>
+      <dd>複数の磁気ディスクを組み合わせて1台の仮想的な磁気ディスクとして扱う</dd>
+      <dt>ストライピング</dt>
+      <dd>複数の磁気ディスクに分散</dd>
+      <dt>パリティ</dt>
+      <dd>データを修復するための情報</dd>
+      <dt><abbr lang="en">RAID0</abbr></dt>
+      <dd>データをストライピング</dd>
+      <dt><abbr lang="en">RAID1</abbr></dt>
+      <dd>2台に同じデータを書き込む（ミラーリング）</dd>
+      <dt><abbr lang="en">RAID3</abbr></dt>
+      <dd>データをストライピング，パリティは1台に固定。</dd>
+      <dt><abbr lang="en">RAID5</abbr></dt>
+      <dd>データ・パリティともストライピング</dd>
+    </dl>
   </section>
 </article>
