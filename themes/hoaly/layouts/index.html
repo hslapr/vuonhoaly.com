@@ -9,7 +9,9 @@
 <main>
   <article>
     <h1 lang="en">About</h1>
-    <p lang="vi">Chỉ là một blog mới mà thôi!</p>
+    <p lang="zh-Hans">汇集各种杂货的个人网站，暂时还没有什么有营养的内容，以后也不知道会不会有。</p>
+    <p lang="zh-Hans">本网站每一行 <abbr lang="en">HTML</abbr> 都是手写的。出于“大道至简”的原则，会尽可能限制 <abbr lang="en">CSS</abbr> 的使用。</p>
+    <p lang="zh-Hans">标题的意思是“百合花园”，但目前并没有百合内容（（</p>
   </article>
   <nav>
     <h1 lang="en">Posts</h1>
@@ -21,22 +23,17 @@
       {{ else }}
       {{ $titleLanguage = "zh-Hans" }}
       {{ end }}
-      <li><a lang="{{ $titleLanguage }}" href="{{ .RelPermalink }}">{{ .Title
-          }}</a></li>
+      <li><a lang="{{ $titleLanguage }}" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
   </nav>
   <article>
     <h1 lang="en">Contact</h1>
     <p>
-      <a href="https://github.com/lyhng-rika" target="_blank"><i
-          class="fab fa-github fa-lg"></i></a>
-      <a href="https://t.me/lyhng" target="_blank"><i
-          class="fab fa-telegram fa-lg"></i></a>
-      <a href="https://twitter.com/z4uk1fvWSwpNYZ2" target="_blank"><i
-          class="fab fa-twitter fa-lg"></i></a>
-      <a href=" mailto:lyhng.rika@gmail.com" target="_blank"><i
-            class="fas fa-envelope-open fa-lg"></i></a>
+      <a href="https://github.com/lyhng-rika" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+      <a href="https://t.me/lyhng" target="_blank"><i class="fab fa-telegram fa-lg"></i></a>
+      <a href="https://twitter.com/z4uk1fvWSwpNYZ2" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href=" mailto:lyhng.rika@gmail.com" target="_blank"><i class="fas fa-envelope-open fa-lg"></i></a>
     </p>
   </article>
 </main>

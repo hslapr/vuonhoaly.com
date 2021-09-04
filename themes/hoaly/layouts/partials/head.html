@@ -1,6 +1,11 @@
 <head>
     <meta charset="UTF-8">
+    {{ if ne .Kind "home" }}
     <title lang="vi">{{ .Title }} - Vườn Hoa Ly</title>
+    {{ else }}
+    <title lang="vi">Vườn Hoa Ly</title>
+    {{ end }}
+
     {{ $style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     <link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css">
