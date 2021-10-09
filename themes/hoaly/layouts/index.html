@@ -16,14 +16,8 @@
   <nav>
     <h1 lang="en">Posts</h1>
     <ul>
-      {{ $titleLanguage := "" }}
       {{ range .Site.RegularPages }}
-      {{ with .Param "TitleLanguage" }}
-      {{ $titleLanguage = . }}
-      {{ else }}
-      {{ $titleLanguage = "zh-Hans" }}
-      {{ end }}
-      <li><a lang="{{ $titleLanguage }}" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li><a href="{{ .RelPermalink }}">{{ .Param "linkText" | safeHTML }}</a></li>
       {{ end }}
     </ul>
   </nav>

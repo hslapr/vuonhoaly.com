@@ -1,9 +1,9 @@
 ---
 title: アルゴリズムとデータ構造
+linkText: <span lang=ja>アルゴリズムとデータ構造</span> <span lang=en>Algorithm and Data Structures</span>
 date: 2021-10-09T19:37:26+09:00
 draft: false
 isCJKLanguage: true
-titleLanguage: ja
 ---
 
 <article lang="ja">
@@ -11,6 +11,9 @@ titleLanguage: ja
   <section>
     <h2>グラフ（<span lang="en">Graph</span>）</h2>
     <p><dfn><abbr title="directed acyclic graph">DAG</abbr></dfn>：有向閉路を含まない有向グラフ。</p>
+    <p>連結な無向グラフ G の全ての頂点を含む部分グラフで，木であるものを G の<dfn>スパニング木</dfn>（<span lang="en">spanning tree</span>）または<dfn>全域木</dfn>という。</p>
+    <p><dfn>行列木定理</dfn>：G のスパニング木の個数は G のラプラシアン L(G) の任意の対角要素に関する<a href="https://ja.wikipedia.org/wiki/%E5%B0%8F%E8%A1%8C%E5%88%97%E5%BC%8F" target="_blank" title="余因子">余因子</a>の値に等しい。</p>
+    <p><dfn>ラプラシアン</dfn> L(G) = D &minus; A<br>D は各頂点の次数からなる対角行列，A は G の隣接行列。</p>
   </section>
   <section>
     <h2>木（<span lang="en">Tree</span>）</h2>
@@ -61,8 +64,7 @@ titleLanguage: ja
     <p>閉路のない無向グラフを<dfn>森</dfn>（<span lang="en">forest</span>）と呼び，連結な森を<dfn>木</dfn>（<span lang="en">tree</span>）と呼ぶ。</p>
     <p>根を持つ木を<dfn>根付き木</dfn>（<span lang="en">rooted tree</span>）といい，子の間に順番を考える場合は<dfn>順序木</dfn>（<span lang="en">ordered tree</span>）と呼ぶ。</p>
     <p>各頂点が高々2個の子しか持たない根付き木を<dfn>2分木</dfn>（binary tree）という。</p>
-    <p>連結な無向グラフ G の全ての頂点を含む部分グラフで，木であるものを G の<dfn>スパニング木</dfn>（<span lang="en">spanning tree</span>）または<dfn>全域木</dfn>という。</p>
-    <p><dfn>行列木定理</dfn>：G のスパニング木の個数は G のラプラシアン L(G) の任意の対角要素に関する余因子の値に等しい。</p>
+    
     
   </section>
   <section>

@@ -2,15 +2,8 @@
 <main>
   <h1 lang="en">{{ .Title }}</h1>
   <ul>
-    {{ $titleLanguage := "" }}
     {{ range .Pages }}
-    {{ with .Param "TitleLanguage" }}
-    {{ $titleLanguage = . }}
-    {{ else }}
-    {{ $titleLanguage = "zh-Hans" }}
-    {{ end }}
-    <li><a lang="{{ $titleLanguage }}" href="{{ .RelPermalink }}">{{ .Title
-        }}</a></li>
+    <li><a href="{{ .RelPermalink }}">{{ .Param "linkText" | safeHTML }}</a></li>
     {{ end }}
   </ul>
 </main>
