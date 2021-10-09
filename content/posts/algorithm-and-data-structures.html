@@ -58,14 +58,20 @@ isCJKLanguage: true
           <td>葉</td>
           <td>leaf</td>
         </tr>
+        <tr>
+          <td>部分木</td>
+          <td>subtree</td>
+        </tr>
       </tbody>
     </table>
     <p>根から頂点 v への単純路の長さを v の<dfn>深さ</dfn>（<span lang="en">depth</span>）といい，v から v の子孫への最長の単純路の長さを v の<dfn>高さ</dfn>（<span lang="en">height</span>）という。</p>
     <p>閉路のない無向グラフを<dfn>森</dfn>（<span lang="en">forest</span>）と呼び，連結な森を<dfn>木</dfn>（<span lang="en">tree</span>）と呼ぶ。</p>
     <p>根を持つ木を<dfn>根付き木</dfn>（<span lang="en">rooted tree</span>）といい，子の間に順番を考える場合は<dfn>順序木</dfn>（<span lang="en">ordered tree</span>）と呼ぶ。</p>
     <p>各頂点が高々2個の子しか持たない根付き木を<dfn>2分木</dfn>（binary tree）という。</p>
-    
-    
+    <p>上から順に頂点が詰まっていて，最下段の頂点は左詰めになっている2分木を<dfn>完全2分木</dfn>と呼ぶ。</p>
+    <p>完全2分木は配列で表現可能。i の親は &lfloor;(i&minus;1)/2&rfloor; ，左の子は 2i+1 。</p>
+    <p>頂点を1度ずつ訪れることを<dfn>走査</dfn>という。</p>
+    <p>2分木における頂点の走査：先行順（<span lang=en>preorder</span>）（根&rightarrow;左&rightarrow;右），中間順（<span lang=en>inorder</span>）（左&rightarrow;根&rightarrow;右），後行順（<span lang=en>postorder</span>）（左&rightarrow;右&rightarrow;根）。</p>
   </section>
   <section>
     <h2>リスト（<span lang="en">List</span>）</h2>
