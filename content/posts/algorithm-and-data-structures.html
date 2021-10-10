@@ -67,14 +67,44 @@ isCJKLanguage: true
     <p>根から頂点 v への単純路の長さを v の<dfn>深さ</dfn>（<span lang="en">depth</span>）といい，v から v の子孫への最長の単純路の長さを v の<dfn>高さ</dfn>（<span lang="en">height</span>）という。</p>
     <p>閉路のない無向グラフを<dfn>森</dfn>（<span lang="en">forest</span>）と呼び，連結な森を<dfn>木</dfn>（<span lang="en">tree</span>）と呼ぶ。</p>
     <p>根を持つ木を<dfn>根付き木</dfn>（<span lang="en">rooted tree</span>）といい，子の間に順番を考える場合は<dfn>順序木</dfn>（<span lang="en">ordered tree</span>）と呼ぶ。</p>
-    <p>各頂点が高々2個の子しか持たない根付き木を<dfn>2分木</dfn>（binary tree）という。</p>
-    <p>上から順に頂点が詰まっていて，最下段の頂点は左詰めになっている2分木を<dfn>完全2分木</dfn>と呼ぶ。</p>
-    <p>完全2分木は配列で表現可能。i の親は &lfloor;(i&minus;1)/2&rfloor; ，左の子は 2i+1 。</p>
-    <p>頂点を1度ずつ訪れることを<dfn>走査</dfn>という。</p>
-    <p>2分木における頂点の走査：先行順（<span lang=en>preorder</span>）（根&rightarrow;左&rightarrow;右），中間順（<span lang=en>inorder</span>）（左&rightarrow;根&rightarrow;右），後行順（<span lang=en>postorder</span>）（左&rightarrow;右&rightarrow;根）。</p>
+    <p>各頂点が高々2個の子しか持たない根付き木を <dfn>2 分木</dfn>（binary tree）という。</p>
+    <p>上から順に頂点が詰まっていて，最下段の頂点は左詰めになっている2 分木を<dfn>完全 2 分木</dfn>と呼ぶ。</p>
+    <p>完全 2 分木は配列で表現可能。i の親は &lfloor;(i&minus;1)/2&rfloor; ，左の子は 2i+1 。</p>
+    <p>頂点を 1 度ずつ訪れることを<dfn>走査</dfn>という。</p>
+    <p>2 分木における頂点の走査：先行順（<span lang=en>preorder</span>）（根&rightarrow;左&rightarrow;右），中間順（<span lang=en>inorder</span>）（左&rightarrow;根&rightarrow;右），後行順（<span lang=en>postorder</span>）（左&rightarrow;右&rightarrow;根）。</p>
   </section>
   <section>
-    <h2>リスト（<span lang="en">List</span>）</h2>
-    <p>個々のデータ＝データ部＋ポインタ部</p>
+    <h2>リスト（<span lang="en">List, linked list</span>）</h2>
+    <p>セル（<span lang=en>cell</span>）＝データ部＋ポインタ部</p>
+    <p>リストの基本操作：データの挿入・削除・参照・存在判定</p>
+    <p>リストの利点：挿入・削除が容易，保持できるデータの最大数が可変。</p>
+
+    <p>先頭でのみ要素の挿入・削除・参照を行えるリストを<dfn>スタック</dfn>（<span lang=en>Stack</span>）という。</p>
+    <p>スタックは<strong>後入れ先出し</strong>（<abbr lang="en" title="last-in first-out">LIFO</abbr>）方式のデータ構造。</p>
+    <p>スタックの基本操作：（先頭に）要素を追加する操作はプッシュ（<span lang="en">push</span>），（先頭）要素を取り出す操作はポップ（<span lang=en>pop</span>）と呼ばれる。</p>
+    <p>要素の挿入を一方の端で，削除を他方の端で行うリストを<dfn>キュー</dfn>（<span lang=en>queue</span>）という。</p>
+    <p>キューは<strong>先入れ先出し</strong>（<abbr lang=en title="first-in first-out">FIFO</abbr>）方式のデータ構造。</p>
+    <p>キューの基本操作は挿入・取り出し・参照・削除など。</p>
+  </section>
+  <section>
+    <h2>ヒープ（<span lang="en">Heap</span>）</h2>
+    <p>順序集合から最小の要素を繰り返して取り出すためのデータ構造は<dfn>ヒープ</dfn>（<span lang="en">heap</span>），または<dfn>優先順位付きキュー</dfn>と呼ばれる。</p>
+    <p>各頂点に順序集合の要素を 1 対 1 に対応させた 2 分木で，親子関係にある頂点間で以下の条件（<strong>ヒープ条件</strong>）が成立：①親の要素は子の要素より小さい。②根に対応する要素が最小。</p>
+    <p>ヒープの基本操作：要素の挿入，最小要素（根の要素）の削除，最小要素の参照。</p>
+    <p>ヒープを常に完全 2 分木とすることで挿入・最小値削除を O(log n) で実現可能（頂点数 n の完全 2 分木の高さは &lfloor;log n&rfloor; ）。</p>
+    <p>完全 2 分木ヒープへの要素の挿入：</p>
+    <ol>
+      <li>完全 2 分木であることを保つ位置に追加したい要素を追加 O(log n)</li>
+      <li>追加した頂点を注目する頂点に設定</li>
+      <li>注目している頂点とその親がヒープ条件を満たさなければ，それらの要素を入れ替えて，注目頂点を親に設定し繰り返す</li>
+      <li>ヒープ条件を満たしていれば終了</li>
+    </ol>
+    <p>完全 2 分木ヒープの最小要素の削除：</p>
+    <ol>
+      <li>最も深く最も右にある葉を削除し，その要素を根の要素に書き換える O(log n)</li>
+      <li>根を注目する頂点に設定</li>
+      <li>注目している頂点と左右の子がヒープ条件を満たさなければ，ヒープ条件を満たさない子のうちの<strong>小さい方</strong>と注目頂点の要素を入れ替えて，注目頂点を入れ替えた方の子に設定し繰り返す</li>
+      <li>ヒープ条件を満たしていれば終了</li>
+    </ol>
   </section>
 </article>
