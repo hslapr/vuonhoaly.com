@@ -107,4 +107,73 @@ isCJKLanguage: true
       <li>ヒープ条件を満たしていれば終了</li>
     </ol>
   </section>
+  <section>
+    <h2>整列 / ソーティング（<span lang=en>Sorting</span>）</h2>
+    <p>バブルソート（<span lang=en>bubble sort</span>）</p>
+{{< highlight cpp >}}
+void bubblesort(int data[], int n)
+{
+  int i, j, t, sw = 1;
+  for (i = 1; sw && i < n; i++)
+  {
+    sw = 0;
+    for (j = n - 1; j >= i; j--)
+    {
+      if (data[j - 1] > data[j])
+      {
+        t = data[j - 1];
+        data[j - 1] = data[j];
+        data[j] = t;
+        sw = 1;
+      }
+    }
+  }
+  return;
+}
+{{< /highlight >}}
+<p>挿入ソート（<span lang=en>insert sort</span>）</p>
+{{< highlight cpp >}}
+void insertsort(int data[], int n)
+{
+  int i, j, k, t;
+  for (i = 1; i < n; i++)
+  {
+    for (j = i - 1; j >= 0; j--)
+    {
+      if (data[j + 1] < data[j])
+      {
+        t = data[j + 1];
+        data[j + 1] = data[j];
+        data[j] = t;
+      }
+      else
+      {
+        break;
+      }
+    }
+  }
+  return;
+}
+{{< /highlight >}}
+<p>クイックソート（<span lang=en>quick sort</span>）</p>
+{{< highlight cpp >}}
+void quicksort(int data[], int first, int last) {
+  int i, j, x, t;
+  x = data[(first + last) / 2];
+  for (i = first, j = last; 1; i++, j--) {
+    while (data[i] < x) i++;
+    while (x < data[j]) j--;
+    if (i >= j) break;
+    t = data[i];
+    data[i] = data[j];
+    data[j] = t;
+  }
+  if (first < i - 1)
+    quicksort(data, first, i - 1);
+  if (j + 1 < last)
+    quicksort(data, j + 1, last);
+}
+{{< /highlight >}}
+
+  </section>
 </article>
