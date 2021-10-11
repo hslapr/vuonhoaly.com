@@ -4,12 +4,54 @@ linkText: <span lang=ja>アルゴリズムとデータ構造</span> <span lang=e
 date: 2021-10-09T19:37:26+09:00
 draft: false
 isCJKLanguage: true
+mathJax: true
 ---
 
 <article lang="ja">
   <h1 lang="ja">アルゴリズムとデータ構造</h1>
   <section>
+    <h2>アルゴリズムの計算量</h2>
+    <p>実行できる基本演算とそのコストを定めた計算機構を<dfn>計算モデル</dfn>という。</p>
+    <p>ランダムアクセス機械（<abbr lang="en" title="random access machine">RAM</abbr>）</p>
+    <ul>
+      <li>プログラム：命令の列</li>
+      <li>命令セット</li>
+      <li>プログラムカウンタ（<abbr>PC</abbr>）</li>
+      <li>レジスタ（メモリ単位）：一つの整数もしくは実数を格納</li>
+    </ul>
+    <p>アルゴリズムは計算モデル上で評価する。</p>
+    <p>RAM を用いたアルゴリズムの評価：実行される命令数がアルゴリズムの計算時間，使用されるレジスタ数がアルゴリズムで使用される記憶領域。</p>
+    <p>RAM における評価基準：</p>
+    <ul>
+      <li>一様コスト基準（<span lang="en">uniform cost criterion</span>）：どの命令も単位時間で実行できると仮定</li>
+      <li>対数コスト基準（<span lang="en">logarithmic cost criterion</span>）：データを処理する命令では対象のデータの長さ（ビット数）に比例する時間がかかると仮定</li>
+    </ul>
+    <p>アルゴリズムを計算モデルで実行した場合の計算時間（実行した命令数）を<dfn>時間計算量</dfn>（<span lang="en">time complexity</span>），使用した記憶領域の最大量（使用した最大レジスタ数）を<dfn>領域計算量</dfn>（<span lang="en">space complexity</span>）と呼ぶ。</p>
+    <p>入力サイズ（<span lang="en">input size</span>） n を変数として計算時間（メモリ量）を表す関数 f(n) を計算量と呼ぶ。</p>
+    <p>入力サイズ n を大きくしていった時の計算量 f(n) のふるまいを<dfn>漸進的計算量</dfn>（<span lang="en">asymptotic complexity</span>）という。</p>
+    <p>十分大きな n に対して f(n) が g(n) の定数倍で上から抑えられるとき，計算量は<dfn>オーダ</dfn>（order） g(n) であるといい，O(g(n)) と表記する。</p>
+    <p>平均計算量（<span lang="en">average-case complexity</span>），最悪計算量（<span lang="en">worst-case complexity</span>），最良計算量（<span lang="en">best-case complexity</span>）</p>
+    <p>O(n<sup>k</sup>) は<dfn>多項式計算量</dfn>（<span lang="en">polynomial complexity</span>）という。多項式時間計算量を持つアルゴリズムは<dfn>多項式時間アルゴリズム</dfn>（<span lang="en">polynomial-time algorithm</span>）と呼ばれる。</p>
+    <p><dfn>&Omega;表記</dfn> f(n)=&Omega;(g(n)) 十分大きな n に対して f(n) が g(n) の定数倍で下から抑えられる</p>
+    <p><dfn>&Theta;表記</dfn> f(n)=O(g(n)) かつ f(n)=&Omega;(g(n)) のとき，f(n)=&Theta;(g(n))</p>
+  </section>
+  <section>
     <h2>グラフ（<span lang="en">Graph</span>）</h2>
+    <table>
+      <caption>用語</caption>
+      <thead>
+        <tr><th>日本語</th><th>英語</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>頂点</td><td lang="en">vertex / vertices</td></tr>
+        <tr><td>辺</td><td lang="en">edge</td></tr>
+        <tr><td>多重辺</td><td lang="en">parallel edge</td></tr>
+        <tr><td>有向グラフ</td><td lang="en">directed graph</td></tr>
+        <tr><td>無向グラフ</td><td lang="en">undirected graph</td></tr>
+        <tr><td>部分グラフ</td><td lang="en">subgraph</td></tr>
+      </tbody>
+    </table>
+    <p>頂点 u と頂点 v を結ぶ辺は e=(u,v) 。u と v は辺 e の<dfn>端点</dfn>（<span lang=en>end vertex</span>）といい，e は u と v に<dfn>接続</dfn>（<span lang=en>incident</span>）しているという。u と v は<dfn>隣接</dfn>（<span lang="en">adjacent</span>）しているという。頂点 u に接続している辺の本数は u の<dfn>次数</dfn>（<span lang="en">degree</span>）という。e が有向グラフの辺のとき，u は辺 e の<dfn>始点</dfn>（<span lang=en>initial vertex</span>），v は辺 e の<dfn>終点</dfn>（<span lang="en">terminal vertex</span>）という。頂点 u を始点とする辺の本数を u の<dfn>出次数</dfn>（<span lang="en">outdegree</span>）といい，頂点 u を終点とする辺の本数を u の<dfn>入次数</dfn>（<span lang="en">indegree</span>）という。</p>
     <p><dfn><abbr title="directed acyclic graph">DAG</abbr></dfn>：有向閉路を含まない有向グラフ。</p>
     <p>連結な無向グラフ G の全ての頂点を含む部分グラフで，木であるものを G の<dfn>スパニング木</dfn>（<span lang="en">spanning tree</span>）または<dfn>全域木</dfn>という。</p>
     <p><dfn>行列木定理</dfn>：G のスパニング木の個数は G のラプラシアン L(G) の任意の対角要素に関する<a href="https://ja.wikipedia.org/wiki/%E5%B0%8F%E8%A1%8C%E5%88%97%E5%BC%8F" target="_blank" title="余因子">余因子</a>の値に等しい。</p>
@@ -91,7 +133,7 @@ isCJKLanguage: true
     <p>順序集合から最小の要素を繰り返して取り出すためのデータ構造は<dfn>ヒープ</dfn>（<span lang="en">heap</span>），または<dfn>優先順位付きキュー</dfn>と呼ばれる。</p>
     <p>各頂点に順序集合の要素を 1 対 1 に対応させた 2 分木で，親子関係にある頂点間で以下の条件（<strong>ヒープ条件</strong>）が成立：①親の要素は子の要素より小さい。②根に対応する要素が最小。</p>
     <p>ヒープの基本操作：要素の挿入，最小要素（根の要素）の削除，最小要素の参照。</p>
-    <p>ヒープを常に完全 2 分木とすることで挿入・最小値削除を O(log n) で実現可能（頂点数 n の完全 2 分木の高さは &lfloor;log n&rfloor; ）。</p>
+    <p>ヒープを常に完全 2 分木とすることで挿入・最小値削除を \(O(\log n)\) で実現可能（頂点数 n の完全 2 分木の高さは \(\lfloor\log n\rfloor\) ）。</p>
     <p>完全 2 分木ヒープへの要素の挿入：</p>
     <ol>
       <li>完全 2 分木であることを保つ位置に追加したい要素を追加 O(log n)</li>
