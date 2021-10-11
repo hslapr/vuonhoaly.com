@@ -17,7 +17,7 @@
     <h1 lang="en">Posts</h1>
     <ul>
       {{ range .Site.RegularPages }}
-      <li><a href="{{ .RelPermalink }}">{{ .Param "linkText" | safeHTML }}</a></li>
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | safeHTML }}</a></li>
       {{ end }}
     </ul>
   </nav>
@@ -26,8 +26,8 @@
     <p>
       <a href="https://github.com/lyhng-rika" target="_blank"><i class="fab fa-github fa-lg"></i></a>
       <a href="https://t.me/lyhng" target="_blank"><i class="fab fa-telegram fa-lg"></i></a>
-      <a href="https://twitter.com/z4uk1fvWSwpNYZ2" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
-      <a href=" mailto:lyhng.rika@gmail.com" target="_blank"><i class="fas fa-envelope-open fa-lg"></i></a>
+      <a href="https://twitter.com/lyhng_rika" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="mailto:rika@vuonhoaly.com" target="_blank"><i class="fas fa-envelope-open fa-lg"></i></a>
     </p>
   </article>
 </main>

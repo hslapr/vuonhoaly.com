@@ -29,6 +29,12 @@ body {
     th {
       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    figure {
+      margin: 0px;
+      figcaption {
+        text-align: center;
+      }
+    }
   }
   footer {
     text-align: center;

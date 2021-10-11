@@ -1,0 +1,36 @@
+---
+title: "情報理論"
+date: 2021-10-11T17:07:32+09:00
+draft: false
+linkTitle: <span lang="ja">情報理論</span>
+isCJKLanguage: true
+mathJax: true
+resources:
+- alt: communication system
+  src: images/claude-shannon-communication-system.jpg
+---
+
+<article lang="ja">
+<h1>情報理論</h1>
+<table>
+  <caption>用語</caption>
+  <thead>
+    <tr><th>日本語</th><th>英語</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>符号化</td><td lang="en">encoding</td></tr>
+    <tr><td>符号</td><td lang="en">code</td></tr>
+    <tr><td>符号語</td><td lang="en">codeword</td></tr>
+    <tr><td>復号</td><td lang="en">decoding</td></tr>
+    <tr><td>ビット列</td><td lang="en">bit sequence</td></tr>
+    <tr><td>誤り</td><td lang="en">error</td></tr>
+    <tr><td>情報源</td><td lang="en">information source</td></tr>
+  </tbody>
+</table>
+{{- $img := .Resources.GetMatch "images/claude-shannon-communication-system.jpg" | resize "600px" -}}
+<figure>
+  {{< img "images/claude-shannon-communication-system.png" resize "600x" >}}
+  <figcaption>通信システムのモデル</figcaption>
+</figure>
+<p>誤りの発生を検出するためには，<dfn>パリティ</dfn>（<span lang="en">parity</span>）と呼ばれる誤り検出のための記号を付加することが有効。パリティとは，伝達すべきビット列に対して何らかの計算を行って得られる記号列。</p>
+</article>

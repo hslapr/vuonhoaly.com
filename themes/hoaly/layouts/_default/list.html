@@ -3,7 +3,7 @@
   <h1 lang="en">{{ .Title }}</h1>
   <ul>
     {{ range .Pages }}
-    <li><a href="{{ .RelPermalink }}">{{ .Param "linkText" | safeHTML }}</a></li>
+    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | safeHTML }}</a></li>
     {{ end }}
   </ul>
 </main>
