@@ -25,6 +25,14 @@ resources:
     <tr><td>ビット列</td><td lang="en">bit sequence</td></tr>
     <tr><td>誤り</td><td lang="en">error</td></tr>
     <tr><td>情報源</td><td lang="en">information source</td></tr>
+    <tr><td>通報</td><td lang="en">message</td></tr>
+    <tr><td>送信機</td><td lang="en">transmitter</td></tr>
+    <tr><td>符号化器</td><td lang="en">encoder</td></tr>
+    <tr><td>雑音源</td><td lang="en">noise source</td></tr>
+    <tr><td>受信機</td><td lang="en">receiver</td></tr>
+    <tr><td>復号器</td><td lang="en">decoder</td></tr>
+    <tr><td>宛先</td><td lang="en">destination</td></tr>
+    <tr><td>伝送路</td><td lang="en">channel</td></tr>
   </tbody>
 </table>
 <figure>
@@ -32,4 +40,22 @@ resources:
   <figcaption>通信システムのモデル</figcaption>
 </figure>
 <p>誤りの発生を検出するためには，<dfn>パリティ</dfn>（<span lang="en">parity</span>）と呼ばれる誤り検出のための記号を付加することが有効。パリティとは，伝達すべきビット列に対して何らかの計算を行って得られる記号列。</p>
+<p>確率 P(A)&gt;0 の事象 A の情報量は &minus;log<sub>2</sub> P(A) [bit]</p>
+<p>確率変数 X の（一次）<dfn>エントロピー</dfn>（<span lang="en">entropy</span>）
+  $$H_1(X)=\sum_{v\in D(X)} -P_X(v)\log_2 P_X(v)\ \text{[bit]}$$
+</p>
+<p>\(-\log_2 p_i\) を値 \(v_i\) の<dfn>自己情報量</dfn>と呼ぶ。エントロピーは自己情報量の平均値（期待値）。</p>
+<p>確率変数 (X, Y) の<dfn>同時エントロピー</dfn>は
+  $$H(X,Y)=-\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}} P_{XY}(x,y)\log_2 P_{XY}(x,y)\ \text{[bit]}$$
+</p>
+<p>X が値 x を取る条件の下での Y の<dfn>条件付きエントロピー</dfn>
+  $$H(Y\mid X=x)=-\sum_{y\in\mathcal{Y}}P_{Y\mid X}(y\mid x)\log_2P_{Y\mid X}(y\mid x)\ \text{[bit]}$$
+</p>
+<p><dfn>X の条件の下での Y の条件付きエントロピー</dfn>
+  $$H(Y\mid X)=\sum_{x\in\mathcal{X}}P_X(x)H(Y\mid X=x)$$
+</p>
+<p><dfn>エントロピーのチェイン則</dfn>（<span lang="en">chain rule of entropy</span>）
+  H(X, Y) = H(X) + H(Y|X) = H(Y) + H(X|Y)</p>
+<p>記号列のそれぞれの記号をビット列で表現する規則を<dfn>符号</dfn>と呼び，各記号に割り当てられたビット列をその記号の<dfn>符号語</dfn>と呼ぶ。各記号をその符号語に置き換えることで，記号列をビット列に変換する操作を<dfn>符号化</dfn>と呼ぶ。各記号に割り当てられた符号語の長さを<dfn>符号語長</dfn>という。すべての符号語の長さが等しい符号は<dfn>固定長符号</dfn>と呼ばれ，符号語の長さが記号によって異なる符号は<dfn>可変長符号</dfn>と呼ばれる。</p>
+<p>記号を順次出力する源を<dfn>情報源</dfn>と呼ぶ。出現し得る記号の集合 &Xscr; を<dfn>情報源アルファベット</dfn>と呼ぶ
 </article>
