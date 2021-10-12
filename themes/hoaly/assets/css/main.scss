@@ -1,3 +1,6 @@
+@use "sass:string";
+
+$languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de';
 $ja-unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
 
 @function font-family($lang, $style) {
@@ -7,7 +10,7 @@ $ja-unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
     } @else {
       @return 'simhei', 'Helvetica', sans-serif;
     }
-  } @else if $lang == 'ja' {
+  } @else if str-slice($lang,1,2) == 'ja' {
     @if $style == 'serif' {
       @return '游明朝', 'Times New Roman', Times, serif;
     } @else {
@@ -59,23 +62,15 @@ $ja-unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
 }
 
 @mixin serif-font {
-  @include font('zh-Hans', 'serif');
-  @include font('ja-jp', 'serif');
-  @include font('ja', 'serif');
-  @include font('it', 'serif');
-  @include font('en', 'serif');
-  @include font('vi', 'serif');
-  @include font('de', 'serif');
+  @each $language in $languages {
+    @include font($language, 'serif');
+  }
 }
 
 @mixin sans-serif-font {
-  @include font('zh-Hans', 'sans-serif');
-  @include font('ja-jp', 'sans-serif');
-  @include font('ja', 'sans-serif');
-  @include font('it', 'sans-serif');
-  @include font('en', 'sans-serif');
-  @include font('vi', 'sans-serif');
-  @include font('de', 'sans-serif');
+  @each $language in $languages {
+    @include font($language, 'sans-serif');
+  }
 }
 
 body {
