@@ -1,13 +1,23 @@
 $serif-font-family: '游明朝','Times New Roman', Times, serif;
 $sans-serif-font-family: '游ゴシック','メイリオ','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$ja-unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
 
 @mixin serif-font {
   @font-face {
     font-family: '游明朝', serif;
     src: local('游明朝'), url(/fonts/YUMIN.TTF) format('truetype'), url(/fonts/YUMINDB.TTF) format('truetype'), url(/fonts/YUMINL.TTF) format('truetype');
-    unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
+    unicode-range: $ja-unicode-range;
   }
   font-family:$serif-font-family;
+}
+
+@mixin sans-serif-font {
+  @font-face {
+    font-family: '游ゴシック', sans-serif;
+    src:local('游ゴシック'), url(/fonts/YUGOTHB.TTC) format('truetype'), url(/fonts/YUGOTHL.TTC) format('truetype'), url(/fonts/YUGOTHM.TTC) format('truetype'), url(/fonts/YUGOTHR.TTC) format('truetype');
+    unicode-range: $ja-unicode-range;
+  }
+  font-family: $sans-serif-font-family;
 }
 
 body {
@@ -18,7 +28,7 @@ body {
   width: 600px;
   margin: auto;
   header {
-    font-family: $sans-serif-font-family;
+    @include sans-serif-font;
     padding: 10px 0px 0px 0px;
     nav {
       a {
@@ -37,7 +47,7 @@ body {
       vertical-align: auto;
     }
     th {
-      font-family: $sans-serif-font-family;
+      @include sans-serif-font;
     }
     figure {
       margin: 20px 0px 20px 0px;
@@ -50,11 +60,11 @@ body {
     text-align: center;
   }
   h1,h2,h3,h4,h5,h6 {
-    font-family: $sans-serif-font-family;
+    @include sans-serif-font;
   }
   p {
     dfn {
-      font-family: $sans-serif-font-family;
+      @include sans-serif-font;
       font-weight: bold;
       font-style: normal;
     }
