@@ -1,14 +1,24 @@
 $serif-font-family: '游明朝','Times New Roman', Times, serif;
 $sans-serif-font-family: '游ゴシック','メイリオ','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-body {
-  font-size: 120%;
+
+@mixin serif-font {
+  @font-face {
+    font-family: '游明朝', serif;
+    src: local('游明朝'), url(/fonts/YUMIN.TTF) format('truetype'), url(/fonts/YUMINDB.TTF) format('truetype'), url(/fonts/YUMINL.TTF) format('truetype');
+    unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
+  }
   font-family:$serif-font-family;
+}
+
+body {
+  @include serif-font;
+  font-size: 120%;
   background-color: white;
   color: black;
   width: 600px;
   margin: auto;
   header {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $sans-serif-font-family;
     padding: 10px 0px 0px 0px;
     nav {
       a {
@@ -27,7 +37,7 @@ body {
       vertical-align: auto;
     }
     th {
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: $sans-serif-font-family;
     }
     figure {
       margin: 20px 0px 20px 0px;
@@ -40,11 +50,11 @@ body {
     text-align: center;
   }
   h1,h2,h3,h4,h5,h6 {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $sans-serif-font-family;
   }
   p {
     dfn {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: $sans-serif-font-family;
       font-weight: bold;
       font-style: normal;
     }
