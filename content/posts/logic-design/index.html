@@ -14,4 +14,36 @@ mathJax: true
   = <var>d</var><sub><var>n</var>&minus;1</sub>&middot;<var>p</var><sup><var>n</var>&minus;1</sup> + <var>d</var><sub><var>n</var>&minus;2</sub>&middot;<var>p</var><sup><var>n</var>&minus;2</sup> + &hellip; + <var>d</var><sub>1</sub>&middot;<var>p</var><sup>1</sup> + <var>d</var><sub>0</sub> + <var>d</var><sub>&minus;1</sub>&middot;<var>p</var><sup>&minus;1</sup> + <var>d</var><sub>&minus;2</sub>&middot;<var>p</var><sup>&minus;2</sup> + &hellip; + <var>d</var><sub>&minus;<var>m</var></sub>&middot;<var>p</var><sup>&minus;<var>m</var></sup>
   （括弧と添字 <var>p</var> は基数 <var>p</var> = 10 のとき省略）</p>
 <p><var>q</var> 進数を <var>p</var> 進数に変換： <var>q</var> 進数を 10 進数に変換し，その 10 進数を <var>p</var> 進数で表す。</p>
+<p>10 進数 &rArr; <var>p</var> 進数：整数部と小数部を分けて変換する。</p>
+<p>整数の場合の例：(58)<sub>10</sub> を 3 進数に変換<br>
+  58 &divide; 3 = 19 &hellip; 1 &xrArr;
+  19 &divide; 3 = 6 &hellip; 1 &xrArr;
+  6 &divide; 3 = 2 &hellip; 0<br>
+  ゆえに， (58)<sub>10</sub> = (2011)<sub>3</sub></p>
+<p>小数の場合の例：(0.8)<sub>10</sub> を 3進数に変換<br>
+  0.8 &times; 3 = 2.4 &xrArr; 0.4 &times; 3 = 1.2 &xrArr; 0.2 &times; 3 = 0.6 &xrArr; 0.6 &times; 3 = 1.8 &xrArr; 0.8 &times; 3 = 2.4 &hellip;
+  ゆえに，(0.8)<sub>10</sub> = (0.2<span style="position:relative;margin-left:-8px;top:-4px;">&dot;</span>101<span style="position:relative;margin-left:-8px;top:-4px;">&dot;</span>)<sub>3</sub> （点は循環小数を表す）
+</p>
+<p>2 進数の 3 桁分および 4 桁分はそれぞれ 8 進数および 16 進数の 1 桁分に相当する。</p>
+<table>
+  <caption>情報の単位</caption>
+  <tbody>
+    <tr><td>ビット</td><td lang="en">bit</td><td>2 進数 1 桁分</td></tr>
+    <tr><td>バイト</td><td lang="en">byte</td><td>8 ビット</td></tr>
+    <tr><td>ワード / 語</td><td lang="en">word</td><td>コンピュータにおける処理の単位</td></tr>
+    <tr><td colspan="2"><abbr lang="en" title="most significant bit">MSB</abbr></td><td>1 ワードの最上位ビット</td></tr>
+    <tr><td colspan="2"><abbr lang="en" title="least significant bit">LSB</abbr></td><td>1 ワードの最下位ビット</td></tr>
+  </tbody>
+</table>
+<p>2 進数を定められたビット数を用いて表す方式の中で，小数点の位置をあらかじめ決めておくものを<dfn>固定小数点表示</dfn>といい，この方式で表された数を<dfn>固定小数点数</dfn>（<span lang="en">fixed point number</span>）という。</p>
+<p>2 進数 <var>N</var> の <dfn>1 の補数</dfn>（<span lang="en">1's complement</span>） <var>N</var><sup>C1</sup> は <var>N</var> の各桁を反転した数で， <dfn>2 の補数</dfn>（<span lang="en">2's complement</span>）<var>N</var><sup>C2</sup> は <var>N</var><sup>C1</sup> の <abbr>LSB</abbr> に 1 を加算した数。</p>
+<p>固定小数点表示において負の数を表す方法：</p>
+<dl>
+  <dt><dfn>符号絶対値表現</dfn>（<span lang="en">sign-magnitude representation）</span></dt>
+  <dd><abbr lang="en">MSB</abbr> を符号ビットとして用い，1 ならば負，0 ならば非負の数を表す。</dd>
+  <dt><dfn>バイアス（ゲタ履き）方式表現</dfn>（<span lang="en">biased number representation</span>）</dt>
+  <dd>一律に同じ値（バイアス）を加える。</dd>
+  <dt><dfn>2 の補数表現</dfn>（<span lang="en">2's complement representation</span>）</dt>
+  <dd>負の数はその絶対値の 2 の補数で表す。 <abbr>MSB</abbr> は符号絶対値表現と同じく符号ビット。</dd>
+</dl>
 </article>

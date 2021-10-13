@@ -3,7 +3,7 @@
 
 $languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de';
 $cjk-unicode-range: U+2E80-9FFF, U+FF00-FFFF;//, U+F900–FAFF, U+FE30–FE4F;
-$sans-serif-tags: h1, h2, h3, h4, h5, h6, strong, dfn, header nav;
+$sans-serif-tags: h1, h2, h3, h4, h5, h6, strong, dfn, header nav, table caption;
 
 
 $font-family: (
@@ -30,6 +30,12 @@ $font-family: (
   } @else {
     @return map-get($lang-map, 'other');
   }
+}
+
+@font-face {
+  font-family: 'Digit';
+  src: local('Times New Roman');
+  unicode-range: U+0030-0039;
 }
 
 @font-face {
@@ -66,7 +72,7 @@ $font-family: (
   //   font-family: font-family($lang, $style)
   // }
   &:lang(#{$lang}){
-    font-family: font-family($lang, $style)
+    font-family: font-family($lang, $style);
   }
 }
 
@@ -97,7 +103,8 @@ $font-family: (
 
 body {
   font-size: 16px;
-  background-color: white;
+  font-variant-numeric: lining-nums;
+  // background-color: white;
   color: black;
   width: 600px;
   margin: auto;
@@ -158,4 +165,12 @@ var {
 
 #{$sans-serif-tags} {
   @include sans-serif-font;
+}
+
+sub {
+  font-variant-position: sub;
+}
+
+sup {
+  font-variant-position: super;
 }
