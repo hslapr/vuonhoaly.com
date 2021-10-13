@@ -2,7 +2,7 @@
 @use "sass:map";
 
 $languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de';
-$ja-unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
+$ja-unicode-range: U+0080-FFFF;//U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
 
 $font-family: (
   'serif': (
@@ -50,7 +50,7 @@ $font-family: (
 @font-face {
   font-family: '简中宋体';
   src: local('SimSun'), local('LiSongPro'), local('Source Han Serif'), local('Noto Serif CJK'), url(/fonts/SIMSUN.TTC) format('truetype'), url(/fonts/SIMSUNB.TTF) format('truetype');
-  unicode-range: U+0080-9FFF;
+  unicode-range: U+0080-FFFF;
 }
 
 @font-face {
