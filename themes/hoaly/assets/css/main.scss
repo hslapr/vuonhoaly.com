@@ -60,7 +60,10 @@ $font-family: (
 }
 
 @mixin font($lang, $style) {
-  &[lang=#{$lang}], & [lang=#{$lang}], [lang=#{$lang}] &:not([lang]) {
+  // &[lang=#{$lang}], & [lang=#{$lang}], [lang=#{$lang}] &:not([lang]) {
+  //   font-family: font-family($lang, $style)
+  // }
+  &:lang(#{$lang}), & :lang(#{$lang}){
     font-family: font-family($lang, $style)
   }
 }
