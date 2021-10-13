@@ -1,30 +1,34 @@
 @use "sass:string";
+@use "sass:map";
 
 $languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de';
 $ja-unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
 
+$font-family: (
+  'serif': (
+    'zh-Hans': ('简中宋体', Georgia, 'Times New Roman', Times, serif),
+    'ja': ('游明朝', Georgia, 'Times New Roman', Times, serif),
+    'vi': ('Times New Roman', Times, serif),
+    'other': (Georgia, 'Times New Roman', Times, serif),
+  ),
+  'sans-serif': (
+    'zh-Hans': ('简中黑体', 'Helvetica', sans-serif),
+    'ja': ('游ゴシック', 'Helvetica', sans-serif),
+    'other': ('Helvetica', Helvetica, sans-serif),
+  )
+);
+
 @function font-family($lang, $style) {
-  @if $lang == 'zh-Hans' {
-    @if $style == 'serif' {
-      @return 'simsun', 'Times New Roman', Times, serif;
-    } @else {
-      @return 'simhei', 'Helvetica', sans-serif;
-    }
-  } @else if str-slice($lang,1,2) == 'ja' {
-    @if $style == 'serif' {
-      @return '游明朝', 'Times New Roman', Times, serif;
-    } @else {
-      @return '游ゴシック', 'Helvetica', sans-serif;
-    }
+  @if str-slice($lang,1,2) == 'ja' {
+    $lang: 'ja';
+  }
+  $lang-map: map-get($map: $font-family, $key: $style);
+  @if map-has-key($map: $lang-map, $key: $lang) {
+    @return map-get($lang-map, $lang);
   } @else {
-    @if $style == 'serif' {
-      @return 'Times New Roman', Times, serif;
-    } @else {
-      @return 'Helvetica', sans-serif;
-    }
+    @return map-get($lang-map, 'other');
   }
 }
-
 
 @font-face {
   font-family: '游明朝';
@@ -44,14 +48,14 @@ $ja-unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
 }
 
 @font-face {
-  font-family: 'simsun';
-  src: local('simsun'), url(/fonts/SIMSUN.TTC) format('truetype'), url(/fonts/SIMSUNB.TTF) format('truetype');
+  font-family: '简中宋体';
+  src: local('SimSun'), url(/fonts/SIMSUN.TTC) format('truetype'), url(/fonts/SIMSUNB.TTF) format('truetype');
   unicode-range: U+0080-FFFF;
 }
 
 @font-face {
-  font-family: 'simhei';
-  src: local('simhei'), url(/fonts/SIMHEI.TTF) format('truetype');
+  font-family: '简中黑体';
+  src: local('simhei'), local('STHeiti'), url(/fonts/SIMHEI.TTF) format('truetype');
   unicode-range: U+0080-FFFF;
 }
 
@@ -75,7 +79,7 @@ $ja-unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
 
 body {
   @include serif-font;
-  font-size: 120%;
+  font-size: 16px;
   background-color: white;
   color: black;
   width: 600px;
@@ -111,6 +115,10 @@ dfn {
   @include sans-serif-font;
   font-weight: bold;
   font-style: normal;
+}
+
+h1 {
+  font-size: 2em;
 }
 
 h1,h2,h3,h4,h5,h6 {
