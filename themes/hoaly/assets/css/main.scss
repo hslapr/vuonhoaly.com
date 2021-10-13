@@ -7,13 +7,13 @@ $ja-unicode-range: U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
 $font-family: (
   'serif': (
     'zh-Hans': ('简中宋体', Georgia, 'Times New Roman', Times, serif),
-    'ja': ('游明朝', Georgia, 'Times New Roman', Times, serif),
+    'ja': ('明朝', Georgia, 'Times New Roman', Times, serif),
     'vi': ('Times New Roman', Times, serif),
     'other': (Georgia, 'Times New Roman', Times, serif),
   ),
   'sans-serif': (
     'zh-Hans': ('简中黑体', 'Helvetica', sans-serif),
-    'ja': ('游ゴシック', 'Helvetica', sans-serif),
+    'ja': ('ゴシック', 'Helvetica', sans-serif),
     'other': ('Helvetica', Helvetica, sans-serif),
   )
 );
@@ -31,8 +31,8 @@ $font-family: (
 }
 
 @font-face {
-  font-family: '游明朝';
-  src: local('游明朝'), url(/fonts/YUMIN.TTF) format('truetype'), url(/fonts/YUMINDB.TTF) format('truetype'), url(/fonts/YUMINL.TTF) format('truetype');
+  font-family: '明朝';
+  src: local('游明朝'), local('Yu Mincho'), local('YuMincho'), local('ヒラギノ明朝 ProN'), local('HiraMinProN'), url(/fonts/YUMIN.TTF) format('truetype'), url(/fonts/YUMINDB.TTF) format('truetype'), url(/fonts/YUMINL.TTF) format('truetype');
   unicode-range: $ja-unicode-range;
 }
 
@@ -42,8 +42,8 @@ $font-family: (
 }
 
 @font-face {
-  font-family: '游ゴシック';
-  src:local('游ゴシック'), url(/fonts/YUGOTHB.TTC) format('truetype'), url(/fonts/YUGOTHL.TTC) format('truetype'), url(/fonts/YUGOTHM.TTC) format('truetype'), url(/fonts/YUGOTHR.TTC) format('truetype');
+  font-family: 'ゴシック';
+  src:local('游ゴシック'), local('ヒラギノ角ゴ ProN'), local('Hiragino Kaku Gothic ProN'), local('HiraKakuProN'), url(/fonts/YUGOTHB.TTC) format('truetype'), url(/fonts/YUGOTHL.TTC) format('truetype'), url(/fonts/YUGOTHM.TTC) format('truetype'), url(/fonts/YUGOTHR.TTC) format('truetype');
   unicode-range: $ja-unicode-range;
 }
 
@@ -55,7 +55,7 @@ $font-family: (
 
 @font-face {
   font-family: '简中黑体';
-  src: local('simhei'), local('STHeiti'), url(/fonts/SIMHEI.TTF) format('truetype');
+  src: local('simhei'), local('Hiragino Sans GB'), local('Heiti SC'), local('STHeiti'), url(/fonts/SIMHEI.TTF) format('truetype');
   unicode-range: U+0080-FFFF;
 }
 
