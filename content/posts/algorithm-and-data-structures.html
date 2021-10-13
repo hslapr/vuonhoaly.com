@@ -123,16 +123,12 @@ mathJax: true
     <h2>整列 / ソーティング（<span lang=en>Sorting</span>）</h2>
     <p>バブルソート（<span lang=en>bubble sort</span>）</p>
 {{< highlight cpp >}}
-void bubblesort(int data[], int n)
-{
+void bubblesort(int data[], int n) {
   int i, j, t, sw = 1;
-  for (i = 1; sw && i < n; i++)
-  {
+  for (i = 1; sw && i < n; i++) {
     sw = 0;
-    for (j = n - 1; j >= i; j--)
-    {
-      if (data[j - 1] > data[j])
-      {
+    for (j = n - 1; j >= i; j--) {
+      if (data[j - 1] > data[j]) {
         t = data[j - 1];
         data[j - 1] = data[j];
         data[j] = t;
@@ -140,31 +136,24 @@ void bubblesort(int data[], int n)
       }
     }
   }
-  return;
 }
 {{< /highlight >}}
 <p>挿入ソート（<span lang=en>insert sort</span>）</p>
 {{< highlight cpp >}}
-void insertsort(int data[], int n)
-{
+void insertsort(int data[], int n) {
   int i, j, k, t;
-  for (i = 1; i < n; i++)
-  {
-    for (j = i - 1; j >= 0; j--)
-    {
-      if (data[j + 1] < data[j])
-      {
+  for (i = 1; i < n; i++) {
+    for (j = i - 1; j >= 0; j--) {
+      if (data[j + 1] < data[j]) {
         t = data[j + 1];
         data[j + 1] = data[j];
         data[j] = t;
       }
-      else
-      {
+      else {
         break;
       }
     }
   }
-  return;
 }
 {{< /highlight >}}
 <p>クイックソート（<span lang=en>quick sort</span>）</p>
