@@ -87,7 +87,7 @@ $font-family: (
   @include serif-font;
 }
 
-:is(#{$sans-serif-tags}) [lang] {
+:is(#{$sans-serif-tags}) [lang], :is(#{$sans-serif-tags})[lang] {
   @include sans-serif-font;
 }
 
