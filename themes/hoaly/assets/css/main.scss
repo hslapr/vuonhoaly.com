@@ -3,6 +3,7 @@
 
 $languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de';
 $cjk-unicode-range: U+2E80-9FFF, U+FF00-FFFF;//, U+F900–FAFF, U+FE30–FE4F;
+$sans-serif-tags: h1, h2, h3, h4, h5, h6, strong, dfn, header nav;
 
 
 $font-family: (
@@ -81,9 +82,18 @@ $font-family: (
   }
 }
 
-body, main, article, section, aside, header, footer, p, div, address {
+
+:not(:is(#{$sans-serif-tags})) [lang] {
   @include serif-font;
 }
+
+:is(#{$sans-serif-tags}) [lang] {
+  @include sans-serif-font;
+}
+
+// body, main, article, section, aside, header, footer, p, div, address, table, td, tr, :is(p,a,li) span[lang] {
+//   @include serif-font;
+// }
 
 body {
   font-size: 16px;
@@ -128,17 +138,11 @@ h1 {
   font-size: 2em;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  @include sans-serif-font;
-}
-
 header {
   padding: 10px 0px 0px 0px;
   nav {
-    @include sans-serif-font;
     a {
       text-decoration-line: none;
-      @include sans-serif-font;
     }
   }
 }
@@ -151,8 +155,7 @@ var {
   font-family: font-family('en', 'serif');
 }
 
-strong {
-  @include sans-serif-font;
-  font-weight: bold;
-}
 
+#{$sans-serif-tags} {
+  @include sans-serif-font;
+}
