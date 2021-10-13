@@ -2,7 +2,7 @@
 @use "sass:map";
 
 $languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de';
-$cjk-unicode-range: U+2E80-9FFF, U+F900–FAFF, U+FE30–FE4F, U+FF00-FFFF;
+$cjk-unicode-range: U+2E80-9FFF, U+FF00-FFFF;//, U+F900–FAFF, U+FE30–FE4F;
 
 
 $font-family: (
