@@ -63,7 +63,7 @@ $font-family: (
   // &[lang=#{$lang}], & [lang=#{$lang}], [lang=#{$lang}] &:not([lang]) {
   //   font-family: font-family($lang, $style)
   // }
-  &:lang(#{$lang}), & :lang(#{$lang}){
+  &:lang(#{$lang}):not(mjx-container, mjx-container *), & *:lang(#{$lang}):not(mjx-container, mjx-container *){
     font-family: font-family($lang, $style)
   }
 }
@@ -144,4 +144,9 @@ i.fab, a i.fas {
 
 var {
   font-family: font-family('en', 'serif');
+}
+
+
+math, mjx-container {
+  font-family: serif;
 }
