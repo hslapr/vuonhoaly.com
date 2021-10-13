@@ -64,7 +64,7 @@ $font-family: (
   // &[lang=#{$lang}], & [lang=#{$lang}], [lang=#{$lang}] &:not([lang]) {
   //   font-family: font-family($lang, $style)
   // }
-  &:lang(#{$lang}), & [lang]:lang(#{$lang}){
+  &:lang(#{$lang}){
     font-family: font-family($lang, $style)
   }
 }
@@ -81,8 +81,11 @@ $font-family: (
   }
 }
 
-body {
+body, main, article, section, aside {
   @include serif-font;
+}
+
+body {
   font-size: 16px;
   background-color: white;
   color: black;
@@ -130,11 +133,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 header {
-  @include sans-serif-font;
   padding: 10px 0px 0px 0px;
   nav {
+    @include sans-serif-font;
     a {
       text-decoration-line: none;
+      @include sans-serif-font;
     }
   }
 }
