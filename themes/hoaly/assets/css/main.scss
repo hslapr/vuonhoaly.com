@@ -4,6 +4,7 @@
 $languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de';
 $ja-unicode-range: U+0080-FFFF;//U+4e00-9fbf, U+3040-309f, U+30a0-30ff; // Japanese
 
+
 $font-family: (
   'serif': (
     'zh-Hans': ('简中宋体', Georgia, 'Times New Roman', Times, serif),
@@ -63,7 +64,7 @@ $font-family: (
   // &[lang=#{$lang}], & [lang=#{$lang}], [lang=#{$lang}] &:not([lang]) {
   //   font-family: font-family($lang, $style)
   // }
-  &:lang(#{$lang}):not(mjx-container, mjx-container *), & *:lang(#{$lang}):not(mjx-container, mjx-container *){
+  &:lang(#{$lang}):not(mjx-container, mjx-container *, code, code *), & *:lang(#{$lang}):not(mjx-container, mjx-container *, code, code *){
     font-family: font-family($lang, $style)
   }
 }
@@ -147,6 +148,3 @@ var {
 }
 
 
-math, mjx-container {
-  font-family: serif;
-}
