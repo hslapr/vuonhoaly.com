@@ -62,48 +62,18 @@ mathJax: true
     <table>
       <caption>用語</caption>
       <thead>
-        <tr>
-          <th>日本語</th>
-          <th>英語</th>
-        </tr>
+        <tr><th>日本語</th><th>英語</th></tr>
       </thead>
       <tbody>
-        <tr>
-          <td>頂点</td>
-          <td>vertex / vertices</td>
-        </tr>
-        <tr>
-          <td>根</td>
-          <td lang="en">root</td>
-        </tr>
-        <tr>
-          <td>親</td>
-          <td lang="en">parent</td>
-        </tr>
-        <tr>
-          <td>子</td>
-          <td lang="en">child / children</td>
-        </tr>
-        <tr>
-          <td>兄弟</td>
-          <td lang="en">sibling</td>
-        </tr>
-        <tr>
-          <td>先祖</td>
-          <td lang="en">ancestor</td>
-        </tr>
-        <tr>
-          <td>子孫</td>
-          <td lang="en">descendent</td>
-        </tr>
-        <tr>
-          <td>葉</td>
-          <td>leaf</td>
-        </tr>
-        <tr>
-          <td>部分木</td>
-          <td>subtree</td>
-        </tr>
+        <tr><td>頂点</td><td lang="en">vertex / vertices</td></tr>
+        <tr><td>根</td><td lang="en">root</td></tr>
+        <tr><td>親</td><td lang="en">parent</td></tr>
+        <tr><td>子</td><td lang="en">child / children</td></tr>
+        <tr><td>兄弟</td><td lang="en">sibling</td></tr>
+        <tr><td>先祖</td><td lang="en">ancestor</td></tr>
+        <tr><td>子孫</td><td lang="en">descendent</td></tr>
+        <tr><td>葉</td><td lang="en">leaf</td></tr>
+        <tr><td>部分木</td><td lang="en">subtree</td></tr>
       </tbody>
     </table>
     <p>根から頂点 v への単純路の長さを v の<dfn>深さ</dfn>（<span lang="en">depth</span>）といい，v から v の子孫への最長の単純路の長さを v の<dfn>高さ</dfn>（<span lang="en">height</span>）という。</p>
@@ -111,7 +81,7 @@ mathJax: true
     <p>根を持つ木を<dfn>根付き木</dfn>（<span lang="en">rooted tree</span>）といい，子の間に順番を考える場合は<dfn>順序木</dfn>（<span lang="en">ordered tree</span>）と呼ぶ。</p>
     <p>各頂点が高々2個の子しか持たない根付き木を <dfn>2 分木</dfn>（binary tree）という。</p>
     <p>上から順に頂点が詰まっていて，最下段の頂点は左詰めになっている2 分木を<dfn>完全 2 分木</dfn>と呼ぶ。</p>
-    <p>完全 2 分木は配列で表現可能。i の親は &lfloor;(i&minus;1)/2&rfloor; ，左の子は 2i+1 。</p>
+    <p>完全 2 分木は配列で表現可能。 <var>i</var> の親は &lfloor;(<var>i</var>&minus;1)/2&rfloor; ，左の子は 2<var>i</var>+1 。</p>
     <p>頂点を 1 度ずつ訪れることを<dfn>走査</dfn>という。</p>
     <p>2 分木における頂点の走査：先行順（<span lang=en>preorder</span>）（根&rightarrow;左&rightarrow;右），中間順（<span lang=en>inorder</span>）（左&rightarrow;根&rightarrow;右），後行順（<span lang=en>postorder</span>）（左&rightarrow;右&rightarrow;根）。</p>
   </section>
