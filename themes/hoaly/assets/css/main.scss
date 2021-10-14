@@ -3,7 +3,7 @@
 
 $languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de';
 $cjk-unicode-range: U+2E80-9FFF, U+FF00-FFFF;//, U+F900–FAFF, U+FE30–FE4F;
-$sans-serif-tags: h1, h2, h3, h4, h5, h6, strong, dfn, header nav, table caption;
+$sans-serif-tags: h1, h2, h3, h4, h5, h6, strong, dfn, th, header nav, table caption;
 
 
 $font-family: (
@@ -131,12 +131,9 @@ body {
     text-align: center;
   }
 }
-th {
-  @include sans-serif-font;
-}
+
 
 dfn {
-  @include sans-serif-font;
   font-weight: bold;
   font-style: normal;
 }
@@ -173,4 +170,8 @@ sub {
 
 sup {
   font-variant-position: super;
+}
+
+.overline {
+  border-top:black solid 1px;
 }

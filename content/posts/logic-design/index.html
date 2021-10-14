@@ -9,44 +9,100 @@ mathJax: true
 
 <article lang="ja">
 <h1>論理回路設計</h1>
-<p><dfn>位取り記数法</dfn>
-  <var>p</var> 進数 <var>N</var> = (<var>d</var><sub><var>n</var>&minus;1</sub><var>d</var><sub><var>n</var>&minus;2</sub>&hellip;<var>d</var><sub>1</sub><var>d</var><sub>0</sub>.<var>d</var><sub>&minus;1</sub><var>d</var><sub>&minus;2</sub>&hellip;<var>d</var><sub>&minus;<var>m</var></sub>)<mark><sub><var>p</var></sub></mark>
-  = <var>d</var><sub><var>n</var>&minus;1</sub>&middot;<var>p</var><sup><var>n</var>&minus;1</sup> + <var>d</var><sub><var>n</var>&minus;2</sub>&middot;<var>p</var><sup><var>n</var>&minus;2</sup> + &hellip; + <var>d</var><sub>1</sub>&middot;<var>p</var><sup>1</sup> + <var>d</var><sub>0</sub> + <var>d</var><sub>&minus;1</sub>&middot;<var>p</var><sup>&minus;1</sup> + <var>d</var><sub>&minus;2</sub>&middot;<var>p</var><sup>&minus;2</sup> + &hellip; + <var>d</var><sub>&minus;<var>m</var></sub>&middot;<var>p</var><sup>&minus;<var>m</var></sup>
-  （括弧と添字 <var>p</var> は基数 <var>p</var> = 10 のとき省略）</p>
-<p><var>q</var> 進数を <var>p</var> 進数に変換： <var>q</var> 進数を 10 進数に変換し，その 10 進数を <var>p</var> 進数で表す。</p>
-<p>10 進数 &rArr; <var>p</var> 進数：整数部と小数部を分けて変換する。</p>
-<p>整数の場合の例：(58)<sub>10</sub> を 3 進数に変換<br>
-  58 &divide; 3 = 19 &hellip; 1 &xrArr;
-  19 &divide; 3 = 6 &hellip; 1 &xrArr;
-  6 &divide; 3 = 2 &hellip; 0<br>
-  ゆえに， (58)<sub>10</sub> = (2011)<sub>3</sub></p>
-<p>小数の場合の例：(0.8)<sub>10</sub> を 3進数に変換<br>
-  0.8 &times; 3 = 2.4 &xrArr; 0.4 &times; 3 = 1.2 &xrArr; 0.2 &times; 3 = 0.6 &xrArr; 0.6 &times; 3 = 1.8 &xrArr; 0.8 &times; 3 = 2.4 &hellip;
-  ゆえに，(0.8)<sub>10</sub> = (0.2<span style="position:relative;margin-left:-8px;top:-4px;">&dot;</span>101<span style="position:relative;margin-left:-8px;top:-4px;">&dot;</span>)<sub>3</sub> （点は循環小数を表す）
-</p>
-<p>2 進数の 3 桁分および 4 桁分はそれぞれ 8 進数および 16 進数の 1 桁分に相当する。</p>
-<table>
-  <caption>情報の単位</caption>
-  <tbody>
-    <tr><td>ビット</td><td lang="en">bit</td><td>2 進数 1 桁分</td></tr>
-    <tr><td>バイト</td><td lang="en">byte</td><td>8 ビット</td></tr>
-    <tr><td>ワード / 語</td><td lang="en">word</td><td>コンピュータにおける処理の単位</td></tr>
-    <tr><td colspan="2"><abbr lang="en" title="most significant bit">MSB</abbr></td><td>1 ワードの最上位ビット</td></tr>
-    <tr><td colspan="2"><abbr lang="en" title="least significant bit">LSB</abbr></td><td>1 ワードの最下位ビット</td></tr>
-  </tbody>
-</table>
-<p>2 進数を定められたビット数を用いて表す方式の中で，小数点の位置をあらかじめ決めておくものを<dfn>固定小数点表示</dfn>といい，この方式で表された数を<dfn>固定小数点数</dfn>（<span lang="en">fixed point number</span>）という。</p>
-<p>2 進数 <var>N</var> の <dfn>1 の補数</dfn>（<span lang="en">1's complement</span>） <var>N</var><sup>C1</sup> は <var>N</var> の各桁を反転した数で， <dfn>2 の補数</dfn>（<span lang="en">2's complement</span>）<var>N</var><sup>C2</sup> は <var>N</var><sup>C1</sup> の <abbr>LSB</abbr> に 1 を加算した数。</p>
-<p>固定小数点表示において負の数を表す方法：</p>
-<dl>
-  <dt><dfn>符号絶対値表現</dfn>（<span lang="en">sign-magnitude representation）</span></dt>
-  <dd><abbr lang="en">MSB</abbr> を符号ビットとして用い，1 ならば負，0 ならば非負の数を表す。</dd>
-  <dt><dfn>バイアス（ゲタ履き）方式表現</dfn>（<span lang="en">biased number representation</span>）</dt>
-  <dd>一律に同じ値（バイアス）を加える。</dd>
-  <dt><dfn>2 の補数表現</dfn>（<span lang="en">2's complement representation</span>）</dt>
-  <dd>負の数はその絶対値の 2 の補数で表す。 <abbr>MSB</abbr> は符号絶対値表現と同じく符号ビット。</dd>
-</dl>
-<p>固定小数点数の減算：数 <var>N</var> を減算する代わりに， <var>N</var><sup>C2</sup> を加算。
-<var>N</var> &minus; <var>M</var> &rArr; <var>N</var> + <var>M</var><sup>C2</sup> = <var>N</var> &minus; <var>M</var> + 2<sup>n</sup> 。</p>
+<nav>
+  <ul>
+    <li><a href="#情報の表現と演算">情報の表現と演算</a></li>
+    <li><a href="#論理演算と論理関数">論理演算と論理関数</a></li>
+  </ul>
+</nav>
+<section>
+  <h2 id="情報の表現と演算">情報の表現と演算</h2>
+  <p><dfn>位取り記数法</dfn>
+    <var>p</var> 進数 <var>N</var> = (<var>d</var><sub><var>n</var>&minus;1</sub><var>d</var><sub><var>n</var>&minus;2</sub>&hellip;<var>d</var><sub>1</sub><var>d</var><sub>0</sub>.<var>d</var><sub>&minus;1</sub><var>d</var><sub>&minus;2</sub>&hellip;<var>d</var><sub>&minus;<var>m</var></sub>)<mark><sub><var>p</var></sub></mark>
+    = <var>d</var><sub><var>n</var>&minus;1</sub>&middot;<var>p</var><sup><var>n</var>&minus;1</sup> + <var>d</var><sub><var>n</var>&minus;2</sub>&middot;<var>p</var><sup><var>n</var>&minus;2</sup> + &hellip; + <var>d</var><sub>1</sub>&middot;<var>p</var><sup>1</sup> + <var>d</var><sub>0</sub> + <var>d</var><sub>&minus;1</sub>&middot;<var>p</var><sup>&minus;1</sup> + <var>d</var><sub>&minus;2</sub>&middot;<var>p</var><sup>&minus;2</sup> + &hellip; + <var>d</var><sub>&minus;<var>m</var></sub>&middot;<var>p</var><sup>&minus;<var>m</var></sup>
+    （括弧と添字 <var>p</var> は基数 <var>p</var> = 10 のとき省略）</p>
+  <p><var>q</var> 進数を <var>p</var> 進数に変換： <var>q</var> 進数を 10 進数に変換し，その 10 進数を <var>p</var> 進数で表す。</p>
+  <p>10 進数 &rArr; <var>p</var> 進数：整数部と小数部を分けて変換する。</p>
+  <p>整数の場合の例：(58)<sub>10</sub> を 3 進数に変換<br>
+    58 &divide; 3 = 19 &hellip; 1 &xrArr;
+    19 &divide; 3 = 6 &hellip; 1 &xrArr;
+    6 &divide; 3 = 2 &hellip; 0<br>
+    ゆえに， (58)<sub>10</sub> = (2011)<sub>3</sub></p>
+  <p>小数の場合の例：(0.8)<sub>10</sub> を 3進数に変換<br>
+    0.8 &times; 3 = 2.4 &xrArr; 0.4 &times; 3 = 1.2 &xrArr; 0.2 &times; 3 = 0.6 &xrArr; 0.6 &times; 3 = 1.8 &xrArr; 0.8 &times; 3 = 2.4 &hellip;
+    ゆえに，(0.8)<sub>10</sub> = (0.2<span style="position:relative;margin-left:-8px;top:-4px;">&dot;</span>101<span style="position:relative;margin-left:-8px;top:-4px;">&dot;</span>)<sub>3</sub> （点は循環小数を表す）
+  </p>
+  <p>2 進数の 3 桁分および 4 桁分はそれぞれ 8 進数および 16 進数の 1 桁分に相当する。</p>
+  <table>
+    <caption>情報の単位</caption>
+    <tbody>
+      <tr><td>ビット</td><td lang="en">bit</td><td>2 進数 1 桁分</td></tr>
+      <tr><td>バイト</td><td lang="en">byte</td><td>8 ビット</td></tr>
+      <tr><td>ワード / 語</td><td lang="en">word</td><td>コンピュータにおける処理の単位</td></tr>
+      <tr><td colspan="2"><abbr lang="en" title="most significant bit">MSB</abbr></td><td>1 ワードの最上位ビット</td></tr>
+      <tr><td colspan="2"><abbr lang="en" title="least significant bit">LSB</abbr></td><td>1 ワードの最下位ビット</td></tr>
+    </tbody>
+  </table>
+  <p>2 進数を定められたビット数を用いて表す方式の中で，小数点の位置をあらかじめ決めておくものを<dfn>固定小数点表示</dfn>といい，この方式で表された数を<dfn>固定小数点数</dfn>（<span lang="en">fixed point number</span>）という。</p>
+  <p>2 進数 <var>N</var> の <dfn>1 の補数</dfn>（<span lang="en">1's complement</span>） <var>N</var><sup>C1</sup> は <var>N</var> の各桁を反転した数で， <dfn>2 の補数</dfn>（<span lang="en">2's complement</span>）<var>N</var><sup>C2</sup> は <var>N</var><sup>C1</sup> の <abbr>LSB</abbr> に 1 を加算した数。</p>
+  <p>固定小数点表示において負の数を表す方法：</p>
+  <dl>
+    <dt><dfn>符号絶対値表現</dfn>（<span lang="en">sign-magnitude representation）</span></dt>
+    <dd><abbr lang="en">MSB</abbr> を符号ビットとして用い，1 ならば負，0 ならば非負の数を表す。</dd>
+    <dt><dfn>バイアス（ゲタ履き）方式表現</dfn>（<span lang="en">biased number representation</span>）</dt>
+    <dd>一律に同じ値（バイアス）を加える。</dd>
+    <dt><dfn>2 の補数表現</dfn>（<span lang="en">2's complement representation</span>）</dt>
+    <dd>負の数はその絶対値の 2 の補数で表す。 <abbr>MSB</abbr> は符号絶対値表現と同じく符号ビット。</dd>
+  </dl>
+  <p>固定小数点数の減算：数 <var>N</var> を減算する代わりに， <var>N</var><sup>C2</sup> を加算。
+  <var>N</var> &minus; <var>M</var> &rArr; <var>N</var> + <var>M</var><sup>C2</sup> = <var>N</var> &minus; <var>M</var> + 2<sup>n</sup> 。</p>
+</section>
+<section>
+  <h2 id="論理演算と論理関数">論理演算と論理関数</h2>
+  <p><dfn>命題</dfn>（<span lang="en">proposition, statement</span>）とは，内容の真偽が決定できる文（文章）。真（<span lang="en">true</span>, 1）と偽（<span lang="en">false</span>, 0）2 値のいずれかを取る。</p>
+  <p>変数 <var>x</var> を含み， <var>x</var> が定まれば真偽が決定できるような命題を<dfn>命題関数</dfn>といい，変数 <var>x</var> の定義域を命題関数の<dfn>対象領域</dfn>という。</p>
+  <p>対象領域のすべての <var>x</var> に対して真となるような命題は<dfn>恒真命題</dfn>といい，すべての <var>x</var> に対して偽となるような命題は<dfn>恒偽命題</dfn>という。</p>
+  <p>命題を接続詞で結合したり，否定したりすることによって作られる命題を<dfn>複合命題</dfn>という。</p>
+  <p>集合と命題： S<sub>1</sub> = &lbrace;<var>x</var> &in; U &mid; P<sub>1</sub>&lpar;<var>x</var>&rpar; が真&rbrace; ，
+    S<sub>2</sub> = &lbrace;<var>x</var> &in; U &mid; P<sub>2</sub>&lpar;<var>x</var>&rpar; が真&rbrace;
+    とするとき，
+    P<sub>1</sub>&lpar;<var>x</var>&rpar; &and; P<sub>2</sub>&lpar;<var>x</var>&rpar; を真とする集合は S<sub>1</sub> &cap; S<sub>2</sub> ，
+    P<sub>1</sub>&lpar;<var>x</var>&rpar; &or; P<sub>2</sub>&lpar;<var>x</var>&rpar; を真とする集合は S<sub>1</sub> &cup; S<sub>2</sub>
+  </p>
+  <table>
+    <thead>
+      <tr><th>P<sub>1</sub></th><th>P<sub>2</sub></th><th>P<sub>1</sub>&rightarrow;P<sub>2</sub><th>P<sub>1</sub>&CirclePlus;P<sub>2</sub></th></tr>
+    </thead>
+    <tbody>
+      <tr><td>偽</td><td>偽</td><td>真</td><td>偽</td></tr>
+      <tr><td>偽</td><td>真</td><td>真</td><td>真</td></tr>
+      <tr><td>真</td><td>偽</td><td>偽</td><td>真</td></tr>
+      <tr><td>真</td><td>真</td><td>真</td><td>偽</td></tr>
+    </tbody>
+  </table>
+  <p>P<sub>1</sub>&lpar;<var>x</var>&rpar; &rightarrow; P<sub>2</sub>&lpar;<var>x</var>&rpar;
+    を真とする集合は <span class="overline">S<sub>1</sub></span> &cup; &lpar;S<sub>1</sub> &cap; S<sub>2</sub>&rpar; ，
+    P<sub>1</sub>&lpar;<var>x</var>&rpar; &CirclePlus; P<sub>2</sub>&lpar;<var>x</var>&rpar;
+    を真とする集合は &lpar;<span class="overline">S<sub>1</sub></span> &cap; S<sub>2</sub>&rpar; &cup; &lpar;S<sub>1</sub> &cap; <span class="overline">S<sub>2</sub></span>&rpar;
+  </p>
+  <p>ならば（&rightarrow;）：前半が偽であれば後半に関係なく命題は真になる。</p>
+  <p>排他的論理和（<span lang="en">XOR</span> &CirclePlus;）</p>
+  <p>ベン図・ベイチ図・カルノー図</p>
+  <table>
+    <caption>論理演算</caption>
+    <thead><tr><th>命題</th><th>集合</th><th>論理</th></tr></thead>
+    <tbody>
+      <tr><td>否定 &not;</td><td>補集合 &OverBar;</td><td>NOT &OverBar;</td></tr>
+      <tr><td>論理和 &or;</td><td>和集合 &cup;</td><td>OR &plus;</td></tr>
+      <tr><td>論理積 &and;</td><td>積集合 &cap;</td><td>AND &middot;</td></tr>
+    </tbody>
+  </table>
+  <p>論理値 0 あるいは 1 のどちらかの値をとる変数を（2 値の）<dfn>論理変数</dfn>（<span lang="en">logical variable</span>）といい， <var class="overline">x</var> を論理変数 <var>x</var> の否定形， <var>x</var> 自身を <var>x</var> の肯定形という。 <var>x</var>, <var class="overline">x</var> を総称して<dfn>リテラル</dfn>（<span lang="en">literal</span> ，文字）という。</p>
+  <p>論理値（定数）および論理変数に論理演算を任意の順序で任意の回数施して得られる式を<dfn>論理式</dfn>（<span lang="en">logical expression</span>）という。</p>
+  <p>優先度は &middot; &gt; &CirclePlus; = &plus; 。 &middot; は省略可。</p>
+  <p><dfn>論理関数</dfn>は， B<sup>n</sup> から B への写像（B = &lbrace;0, 1&rbrace;）。真理値表によって一意的に定義できる。論理式は，変数と演算の組み合わせによって定義される。一般に，一つの論理関数に対して複数の等価な論理式が存在する。</p>
+  <p>真理値表が同じであれば， 2 つの論理式が<dfn>等価</dfn>という。</p>
+  <p><dfn>ド・モルガンの定理</dfn> <span class="overline"><var>x</var> + <var>y</var></span></p>
 
+</section>
 </article>
