@@ -51,8 +51,11 @@ resources:
   <li>H<sub>1</sub>(<var>x</var>) = 0 &iff; ある<var>i</var> に対し <var>p</var><sub><var>i</var></sub> = 1 ，それ以外は <var>p</var><sub><var>j</var></sub> = 0 ．</li>
   <li><var>p<sub>1</sub></var> = &hellip; = <var>p<sub>M</sub></var> = 1/<var>M</var> のとき H<sub>1</sub>(<var>x</var>) は最大，その値は log<sub>2</sub> <var>M</var></li>
 </ul>
-<p>確率変数 (X, Y) の<dfn>同時エントロピー</dfn>は
-  $$H(X,Y)=-\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}} P_{XY}(x,y)\log_2 P_{XY}(x,y)\ \text{[bit]}$$
+<p>P<sub><var>X, Y</var></sub> (<var>x, y</var>) は<dfn>同時確率（結合確率）</dfn></p>
+<p>$$P_X(x)=\sum_{y\in D(Y)}P_{X,Y}(x,y)$$ は<dfn>周辺確率</dfn>。この操作は<dfn>確率の周辺化</dfn></p>
+<p>P<sub><var>Y</var>&mid;<var>X</var></sub>(<var>y</var>&mid;<var>x</var>) は<dfn>条件付き確率</dfn></p>
+<p>確率変数 (X, Y) の<dfn>同時（結合）エントロピー</dfn>は
+  $$H_1(X,Y)=-\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}} P_{X,Y}(x,y)\log_2 P_{X,Y}(x,y)\ \text{[bit]}$$
 </p>
 <p>X が値 x を取る条件の下での Y の<dfn>条件付きエントロピー</dfn>
   $$H(Y\mid X=x)=-\sum_{y\in\mathcal{Y}}P_{Y\mid X}(y\mid x)\log_2P_{Y\mid X}(y\mid x)\ \text{[bit]}$$
