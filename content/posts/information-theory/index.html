@@ -42,9 +42,15 @@ resources:
 <p>誤りの発生を検出するためには，<dfn>パリティ</dfn>（<span lang="en">parity</span>）と呼ばれる誤り検出のための記号を付加することが有効。パリティとは，伝達すべきビット列に対して何らかの計算を行って得られる記号列。</p>
 <p>確率 P(A)&gt;0 の事象 A の情報量は &minus;log<sub>2</sub> P(A) [bit]</p>
 <p>確率変数 X の（一次）<dfn>エントロピー</dfn>（<span lang="en">entropy</span>）
-  $$H_1(X)=\sum_{v\in D(X)} -P_X(v)\log_2 P_X(v)\ \text{[bit]}$$
+  $$H_1(X)=\sum_{i=1}^{M} -p_i\log_2 p_i\ \text{[bit]}$$
 </p>
 <p>\(-\log_2 p_i\) を値 \(v_i\) の<dfn>自己情報量</dfn>と呼ぶ。エントロピーは自己情報量の平均値（期待値）。</p>
+<p>エントロピーの性質：</p>
+<ul>
+  <li>H<sub>1</sub>(<var>x</var>) &ge; 0</li>
+  <li>H<sub>1</sub>(<var>x</var>) = 0 &iff; ある<var>i</var> に対し <var>p</var><sub><var>i</var></sub> = 1 ，それ以外は <var>p</var><sub><var>j</var></sub> = 0 ．</li>
+  <li><var>p<sub>1</sub></var> = &hellip; = <var>p<sub>M</sub></var> = 1/<var>M</var> のとき H<sub>1</sub>(<var>x</var>) は最大，その値は log<sub>2</sub> <var>M</var></li>
+</ul>
 <p>確率変数 (X, Y) の<dfn>同時エントロピー</dfn>は
   $$H(X,Y)=-\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}} P_{XY}(x,y)\log_2 P_{XY}(x,y)\ \text{[bit]}$$
 </p>
@@ -54,8 +60,14 @@ resources:
 <p><dfn>X の条件の下での Y の条件付きエントロピー</dfn>
   $$H(Y\mid X)=\sum_{x\in\mathcal{X}}P_X(x)H(Y\mid X=x)$$
 </p>
+<p>結合エントロピーの性質： H<sub>1</sub>&lpar;<var>x</var>, <var>y</var>&rpar; &le; H<sub>1</sub>&lpar;<var>x</var>&rpar; + H<sub>1</sub>&lpar;<var>y</var>&rpar;</p>
+<p><dfn>シャノンの補助定理</dfn>（<span lang="en">Shannon's lemma</span>）</p>
 <p><dfn>エントロピーのチェイン則</dfn>（<span lang="en">chain rule of entropy</span>）
   H(X, Y) = H(X) + H(Y|X) = H(Y) + H(X|Y)</p>
+<p>X と Y の<dfn>相互情報量</dfn> I(X; Y) = H<sub>1</sub>(X) &minus; H<sub>1</sub>(X&mid;Y) （Y がもたらす X の情報量）</p>
+<p>H<sub>1</sub>(X&mid;Y) = H<sub>1</sub>(X, Y) &minus; H<sub>1</sub>(Y)</p>
+<p>H<sub>1</sub>(X, Y) = H<sub>1</sub>(Y) + H<sub>1</sub>(X&mid;Y) = H<sub>1</sub>(X) + H<sub>1</sub>(Y&mid;X)</p>
+
 <p>記号列のそれぞれの記号をビット列で表現する規則を<dfn>符号</dfn>と呼び，各記号に割り当てられたビット列をその記号の<dfn>符号語</dfn>と呼ぶ。各記号をその符号語に置き換えることで，記号列をビット列に変換する操作を<dfn>符号化</dfn>と呼ぶ。各記号に割り当てられた符号語の長さを<dfn>符号語長</dfn>という。すべての符号語の長さが等しい符号は<dfn>固定長符号</dfn>と呼ばれ，符号語の長さが記号によって異なる符号は<dfn>可変長符号</dfn>と呼ばれる。</p>
 <p>記号を順次出力する源を<dfn>情報源</dfn>と呼ぶ。出現し得る記号の集合 &Xscr; を<dfn>情報源アルファベット</dfn>と呼ぶ</p>
 

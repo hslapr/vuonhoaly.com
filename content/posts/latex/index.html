@@ -1,0 +1,26 @@
+---
+title: "Latex Notes"
+linkTitle: <span lang="en">Latex Notes</span>
+date: 2021-10-15T14:45:07+09:00
+draft: true
+isCJKLanguage: true
+---
+
+<article lang="zh-Hans">
+<h1><span lang="en">Latex</span> 笔记</h1>
+<p>日语文档：使用 upLaTeX (ptex2pdf) 编译</p>
+<pre><code>\documentclass[uplatex,dvipdfmx]{jsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}</code></pre>
+<p>组合数命令：</p>
+<pre><code>\newcommand{\cmb}[2]{{}_{#1}\mathrm{C}_{#2}}</code></pre>
+<p>让行内分数显示正常大小：<code>\displaystyle</code></p>
+</article>
