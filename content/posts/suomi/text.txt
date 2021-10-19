@@ -1,0 +1,62 @@
+hyvä
+好的
+sää
+天气
+hyvä sää
+好天气
+olla
+是
+tänään
+今天
+Tänään on hyvä sää.
+今天是个好天气。
+
+rikas
+富有
+olla
+有，是
+ei
+表示否定的动词
+minä
+我
+Minä en ole rikas.
+我不富有。
+
+tämä
+这个
+laukku
+包
+painava
+重
+olla
+是
+Tämä laukku on painava.
+这个包很重。
+
+Minulla on kissa.
+我有一只猫。
+
+Minulla ei ole kissaa
+我没有猫。
+
+Minulla on kaksi kissaa.
+我有两只猫。
+
+Kissat ovat söpöjä.
+猫很可爱。
+
+Nämä laukut ovat painavia.
+
+Katso tuolla on minun kaverini
+
+Minä ja minun veljeni olemme hyviä tenniksessä.
+
+Hänen äitinsä on kotona. Hän on koulussa.
+
+Hänen lapsensa ovat koulussa.
+
+Minä olen taksikuski.
+
+Minun siskoni on sairaanhoitaja.
+
+Hän on sairas. 

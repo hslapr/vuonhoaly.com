@@ -1,0 +1,16 @@
+{{ $lang := .Get 0 }}
+{{ $file := .Page.Resources.GetMatch (printf "*%s*" (.Get 1)) }}
+{{ $content := replace $file.Content "\r\n" "\n" }}
+{{ $sentences := split $content "\n\n" }}
+{{ range $sentence := $sentences }}
+<table><tbody>
+{{ range $elem_index, $line := (split $sentence "\n") }}
+{{ if eq (mod $elem_index  2) 0 }}
+<tr><td lang="{{ $lang }}">{{ $line | safeHTML }}</td>
+{{ else }}
+<td lang="zh-Hans">{{ $line | safeHTML }}</td></tr>
+{{ end }}
+{{ end }}
+</tbody></table>
+{{ end }}
+
