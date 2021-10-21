@@ -42,21 +42,100 @@ Minulla ei ole kissaa
 Minulla on kaksi kissaa.
 我有两只猫。
 
+söpö
+可爱
 Kissat ovat söpöjä.
 猫很可爱。
 
+nämä
+这些
+lauku
+包。复数主格 <i lang="fi">laukut</i>
+olla
+是
+painava
+重。复数部分格 <i lang="fi">painavia</i>
 Nämä laukut ovat painavia.
+这些包很重。
 
-Katso tuolla on minun kaverini
+katsoa
+看。第二人称命令形 <i lang="fi">katso</i>
+tuolla
+在那里
+minun
+我的
+kaveri
+朋友
+Katso, tuolla on minun kaverini.
+看！我的朋友在那里。
 
+minä
+我
+ja
+和
+veli
+兄弟
+olla
+是
+hyvä
+好的
+tennis
+网球。内格 <i lang="fi">tenniksessä</i> 表示“网球选手”。
 Minä ja minun veljeni olemme hyviä tenniksessä.
+我和我的（一个）兄弟是优秀的网球选手。
 
-Hänen äitinsä on kotona. Hän on koulussa.
+hän
+他
+äiti
+妈妈
+olla
+是
+kotona
+在家
+Hänen äitinsä on kotona.
+他妈妈在家。
 
+hän
+她
+lapsi
+孩子
+olla
+是
+koulu
+学校
 Hänen lapsensa ovat koulussa.
+她的孩子们在学校。
 
-Minä olen taksikuski.
+äiti
+妈妈
+ostaa
+买
+auto
+车
+Äiti osti auton.
+妈妈（过去）买车。
 
-Minun siskoni on sairaanhoitaja.
+Maija
+人名
+Matti
+人名
+antaa
+给
+lahja
+礼物
+Maija antoi lahjan Matille.
+Maija （过去）给 Matti 礼物。
 
-Hän on sairas. 
+saada
+得到
+Matti sai lahjan Maijalta.
+Matti （过去）从 Maija 那里得到了礼物。
+
+muuttua
+变化
+kasvo
+脸。复数离格 <i lang="fi">kasvoilta</i>
+vihreä
+绿
+Sari muuttui kasvoiltaan vihreäksi.
+Sari 脸绿了。
