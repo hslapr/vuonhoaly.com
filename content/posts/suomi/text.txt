@@ -139,3 +139,32 @@ vihreä
 绿
 Sari muuttui kasvoiltaan vihreäksi.
 Sari 脸绿了。
+
+tulla
+来
+jos
+如果
+voida
+能
+Tulen jos voin.
+如果可以我就来。
+
+sataa
+下雨
+jääda
+待在某处
+koti
+家
+Jos sataa jään kotiin.
+如果下雨我就待在家里。
+
+ottaa
+<span lang="en">take</span>
+laina
+贷款
+jotta
+为了
+päästa
+到
+Hän otti lainan jotta pääsisi Italiaan.
+她贷了款去意大利。
