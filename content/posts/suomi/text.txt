@@ -168,3 +168,125 @@ päästa
 到
 Hän otti lainan jotta pääsisi Italiaan.
 她贷了款去意大利。
+
+koira
+狗
+janoinen
+口渴的
+juoda
+喝
+uima-allas
+游泳池
+uima-altaasta
+游泳池（出格）
+Janoinen koira juo uima-altaasta.
+口渴的狗从游泳池喝水。
+
+kissa
+猫
+loukata
+弄伤
+loukkasi
+弄伤（过去时第三人称）
+häntä
+尾巴
+Kissani loukkasi häntänsä.
+我的猫把尾巴弄伤了。
+
+hamsteri
+仓鼠
+tykätä
+喜欢
+nukkua
+睡觉
+päivällä
+在白天
+Hamsterit tykkäävät nukkua päivällä.
+仓鼠喜欢在白天睡觉。
+
+lämmin
+暖和
+takki
+外衣
+olla
+是
+tämä
+这个
+Onko tämä takki lämmin?
+这件外衣暖和吗？
+
+sade
+雨
+alkaa
+开始
+aamu
+早上
+Sade alkaa aamulla.
+早上开始下雨。
+
+tomaatti
+西红柿
+voida
+能
+tehdä
+做
+monenlainen
+各种各样的
+ruoka
+食物
+Tomaateista voi tehdä monenlaisia ruokia.
+用西红柿可以做各种各样的菜。
+
+mansikka
+草莓
+allerginen
+过敏的
+Olen allerginen mansikoille.
+我对草莓过敏。
+
+kirsikka
+樱桃
+haluta
+想要
+syödä
+吃
+Haluan syödä kirsikoita.
+我想吃樱桃。
+
+lapsi
+小孩
+hyvin
+很
+älykäs
+聪明
+ymmärtää
+理解
+käsite
+概念
+paljo
+很多
+aiempi
+更早（形容词）
+aiemmin
+更早（手段格，作副词）
+muu
+其他
+kuin
+比
+Lapsi oli hyvin älykäs ja ymmärsi käsitteitä paljon aiemmin kuin muut lapset.
+这个小孩很聪明，理解概念比其他小孩早很多。
+
+frendi
+朋友
+kutsua
+邀请
+pari
+几个
+kylä
+指要去的别人的家
+viikonloppu
+周末
+viikonloppuna
+在周末
+Hei kutsutaanko pari frendiä kylään viikonloppuna?
+嘿，周末我们要不要邀请几个朋友来家里？
