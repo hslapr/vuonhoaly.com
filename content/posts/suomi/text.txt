@@ -290,3 +290,15 @@ viikonloppuna
 在周末
 Hei kutsutaanko pari frendiä kylään viikonloppuna?
 嘿，周末我们要不要邀请几个朋友来家里？
+
+aikuinen
+成年的
+aikuisten
+成年的（复数属格）
+lippu
+票
+kiitos
+谢谢
+Yksi aikuisten lippu, kiitos.
+一张成人票，谢谢。
+
