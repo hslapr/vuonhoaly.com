@@ -119,6 +119,13 @@ body {
       padding: 5px 10px 5px 10px;
       vertical-align: auto;
     }
+
+    table.table-no-decoration {
+      th, td, & {
+        border: none!important;
+        // border-style: hidden!important;
+      }
+    }
     
     figure {
       margin: 20px 0px 20px 0px;
@@ -136,6 +143,8 @@ table {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+
 
 dfn {
   font-weight: bold;
@@ -190,4 +199,8 @@ sup {
 
 .overline {
   border-top:black solid 1px;
+}
+
+.text-center {
+  text-align: center;
 }
