@@ -8,7 +8,7 @@ $sans-serif-tags: h1, h2, h3, h4, h5, h6, strong, dfn, th, header nav, table cap
 
 $font-family: (
   'serif': (
-    'zh-Hans': ('简中宋体', Georgia, 'Times New Roman', Times, serif),
+    'zh-Hans': ('简中衬线体', Georgia, 'Times New Roman', Times, serif),
     'ja': ('明朝', Georgia, 'Times New Roman', Times, serif),
     'vi': ('Times New Roman', Times, serif),
     'other': (Georgia, 'Times New Roman', Times, serif),
@@ -52,6 +52,12 @@ $font-family: (
 @font-face {
   font-family: 'ゴシック';
   src:local('游ゴシック'), local('ヒラギノ角ゴ ProN'), local('Hiragino Kaku Gothic ProN'), local('HiraKakuProN'), url(/fonts/YUGOTHB.TTC) format('truetype'), url(/fonts/YUGOTHL.TTC) format('truetype'), url(/fonts/YUGOTHM.TTC) format('truetype'), url(/fonts/YUGOTHR.TTC) format('truetype');
+  unicode-range: $cjk-unicode-range;
+}
+
+@font-face {
+  font-family: '简中衬线体';
+  src: local('Noto Serif SC'), url(/fonts/NotoSerifSC-Regular.otf) format('opentype'), url(/fonts/NotoSerifSC-Black.otf) format('opentype'), url(/fonts/NotoSerifSC-Bold.otf) format('opentype'), url(/fonts/NotoSerifSC-Light.otf) format('opentype'), url(/fonts/NotoSerifSC-ExtraLight.otf) format('opentype'), url(/fonts/NotoSerifSC-SemiBold.otf) format('opentype'), url(/fonts/NotoSerifSC-Medium.otf) format('opentype');
   unicode-range: $cjk-unicode-range;
 }
 
