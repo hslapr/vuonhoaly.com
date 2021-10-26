@@ -14,7 +14,7 @@ $font-family: (
     'other': (Georgia, 'Times New Roman', Times, serif),
   ),
   'sans-serif': (
-    'zh-Hans': ('简中黑体', 'Helvetica', sans-serif),
+    'zh-Hans': ('简中无衬线体', 'Helvetica', sans-serif),
     'ja': ('ゴシック', 'Helvetica', sans-serif),
     'other': ('Helvetica', Helvetica, sans-serif),
   )
@@ -58,6 +58,12 @@ $font-family: (
 @font-face {
   font-family: '简中衬线体';
   src: local('Noto Serif SC'), url(/fonts/NotoSerifSC-Regular.otf) format('opentype'), url(/fonts/NotoSerifSC-Black.otf) format('opentype'), url(/fonts/NotoSerifSC-Bold.otf) format('opentype'), url(/fonts/NotoSerifSC-Light.otf) format('opentype'), url(/fonts/NotoSerifSC-ExtraLight.otf) format('opentype'), url(/fonts/NotoSerifSC-SemiBold.otf) format('opentype'), url(/fonts/NotoSerifSC-Medium.otf) format('opentype');
+  unicode-range: $cjk-unicode-range;
+}
+
+@font-face {
+  font-family: '简中无衬线体';
+  src: local('Noto Sans SC'), url(/fonts/NotoSansSC-Regular.otf) format('opentype'), url(/fonts/NotoSansSC-Black.otf) format('opentype'), url(/fonts/NotoSansSC-Bold.otf) format('opentype'), url(/fonts/NotoSansSC-Light.otf) format('opentype'), url(/fonts/NotoSansSC-Medium.otf) format('opentype'), url(/fonts/NotoSansSC-Thin.otf) format('opentype');
   unicode-range: $cjk-unicode-range;
 }
 
