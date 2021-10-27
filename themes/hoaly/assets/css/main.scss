@@ -1,7 +1,7 @@
 @use "sass:string";
 @use "sass:map";
 
-$languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de', 'fi';
+$languages: 'zh-Hans', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de', 'fi', 'my';
 $cjk-unicode-range: U+2E80-9FFF, U+FF00-FFFF;//, U+F900–FAFF, U+FE30–FE4F;
 $sans-serif-tags: h1, h2, h3, h4, h5, h6, strong, dfn, th, header nav, table caption;
 
