@@ -3,7 +3,8 @@ header {
   height: 50px;
 }
 #container {
-  min-height: 2000px;
+  /* background-color: antiquewhite; */
+  min-height: 500px;
 }
 .red {
   color: red;
@@ -17,7 +18,7 @@ header {
 img {
   width: auto;
   height: auto;
-  max-width: 1200px;
+  max-width: 100%;
   z-index: 0;
 }
 span {

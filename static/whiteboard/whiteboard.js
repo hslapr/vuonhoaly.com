@@ -14,6 +14,8 @@ const fontSizeSelect = document.getElementById('font-size-select');
 const fontFamilySelect = document.getElementById('font-family-select');
 const colorLabels = document.getElementsByClassName('color-label');
 
+container.style.height = window.innerHeight + 'px';
+
 function preventDefaultHandler(e) {
   e.preventDefault();
 }
@@ -321,3 +323,14 @@ boldIcon.ondrop = function(e) {
   span.style.fontWeight = 'unset';
   e.preventDefault();
 };
+
+// Page size control
+const btnExpandPage = document.getElementById('btn-expand-page');
+btnExpandPage.onclick = function(e) {
+  e.preventDefault();
+  if (e.ctrlKey) {
+    container.style.height = parseInt(container.style.height.substr(0, container.style.height.length - 2)) - 100 + 'px';
+  } else {
+    container.style.height = parseInt(container.style.height.substr(0, container.style.height.length - 2)) + 100 + 'px';
+  }
+}
