@@ -14,6 +14,10 @@ const fontSizeSelect = document.getElementById('font-size-select');
 const fontFamilySelect = document.getElementById('font-family-select');
 const colorLabels = document.getElementsByClassName('color-label');
 
+function preventDefaultHandler(e) {
+  e.preventDefault();
+}
+
 
 container.addEventListener('click', function(e) {
   for (let element of document.getElementsByName('i')) {
@@ -77,27 +81,21 @@ container.addEventListener('dragstart', function(e) {
   }
 }, true);
 
-container.ondragenter = function(e) {
-  return false;
-};
+container.ondragenter = preventDefaultHandler;
 
 container.ondragover = function(e) {
   e.preventDefault();
   e.dataTransfer.dropEffect = "move";
 };
 
-trashCan.ondragenter = function(e) {
-  e.preventDefault();
-};
+trashCan.ondragenter = preventDefaultHandler;
 
 trashCan.ondragover = function(e) {
   e.preventDefault();
   e.dataTransfer.dropEffect = "move";
 };
 
-highlightIcon.ondragenter = function(e) {
-  e.preventDefault();
-};
+highlightIcon.ondragenter = preventDefaultHandler;
 
 highlightIcon.ondragover = function(e) {
   e.preventDefault();
@@ -140,8 +138,10 @@ container.ondrop = function(e) {
       });
     } else if (data[1] == 'italic' && target.tagName == 'SPAN') {
       target.style.fontStyle = 'italic';
-    }  else if (data[1] == 'underline' && target.tagName == 'SPAN') {
+    } else if (data[1] == 'underline' && target.tagName == 'SPAN') {
       target.style.textDecoration = 'underline';
+    } else if (data[1] == 'bold' && target.tagName == 'SPAN') {
+      target.style.fontWeight = 'bold';
     } 
   } else {
     const element = document.getElementById(data[0]);
@@ -196,7 +196,7 @@ fileDropZone.ondrop = function(e) {
   }
 };
 
-fileDropZone.ondragover = function(e) { e.preventDefault(); };
+fileDropZone.ondragover = preventDefaultHandler;
 
 function appendImage(file) {
   const image = document.createElement('img');
@@ -230,14 +230,16 @@ mathIcon.ondragstart = function(e) {
   e.dataTransfer.effectAllowed = 'move';
 }
 
-// text decoration
+
+// text style and decoration
 const italicIcon = document.getElementById('italic-icon');
 const underlineIcon = document.getElementById('underline-icon');
+const boldIcon = document.getElementById('bold-icon');
 italicIcon.ondragstart = function (e) {
   e.dataTransfer.setData('text/plain', 'set italic');
 }
-italicIcon.ondragenter = function(e) { e.preventDefault(); };
-italicIcon.ondragover = function(e) { e.preventDefault(); };
+italicIcon.ondragenter = preventDefaultHandler;
+italicIcon.ondragover = preventDefaultHandler;
 italicIcon.ondrop = function(e) {
   const data = e.dataTransfer.getData("text/plain").split(' ');
   const span = document.getElementById(data[0]);
@@ -247,11 +249,22 @@ italicIcon.ondrop = function(e) {
 underlineIcon.ondragstart = function (e) {
   e.dataTransfer.setData('text/plain', 'set underline');
 }
-underlineIcon.ondragenter = function(e) { e.preventDefault(); };
-underlineIcon.ondragover = function(e) { e.preventDefault(); };
+underlineIcon.ondragenter = preventDefaultHandler;
+underlineIcon.ondragover = preventDefaultHandler;
 underlineIcon.ondrop = function(e) {
   const data = e.dataTransfer.getData("text/plain").split(' ');
   const span = document.getElementById(data[0]);
   span.style.textDecoration = 'unset';
+  e.preventDefault();
+};
+boldIcon.ondragstart = function (e) {
+  e.dataTransfer.setData('text/plain', 'set bold');
+}
+boldIcon.ondragenter = preventDefaultHandler;
+boldIcon.ondragover = preventDefaultHandler;
+boldIcon.ondrop = function(e) {
+  const data = e.dataTransfer.getData("text/plain").split(' ');
+  const span = document.getElementById(data[0]);
+  span.style.fontWeight = 'unset';
   e.preventDefault();
 };
