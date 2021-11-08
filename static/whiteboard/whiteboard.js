@@ -173,6 +173,55 @@ function createElementFromHTML(htmlString) {
   return div.firstChild; 
 }
 
+async function loadPDF(file) {
+  var currentPage = 1;
+  var canvasList = [];
+
+  const buffer = await file.arrayBuffer();
+  const task = pdfjsLib.getDocument(buffer);
+  task.promise.then(function(pdf) {
+    getPage();
+    function getPage() {
+      pdf.getPage(currentPage).then(function(page) {
+        const PRINT_UNITS = 300 / 72.0;
+        const viewport = page.getViewport({scale: 1});
+        const canvas = document.createElement('canvas');
+        // canvas.height = viewport.height;
+        // var dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.floor(viewport.width * PRINT_UNITS);
+        canvas.height = Math.floor(viewport.height * PRINT_UNITS);
+        // canvas.width = viewport.width;
+        ctx = canvas.getContext('2d', { alpha: false });
+        ctx.save();
+        ctx.fillStyle = "rgba(255, 255, 255, 1)";
+        ctx.strokeStyle = "rgba(0, 0, 0, 1)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.restore();
+        page.render({ canvasContext: ctx, viewport: viewport, intent: 'print', transform: [PRINT_UNITS, 0, 0, PRINT_UNITS, 0, 0] }).promise.then(function() {
+          canvasList.push(canvas);
+          if (currentPage < pdf.numPages) {
+              currentPage++;
+              getPage();
+          } else {
+            for(let canvas of canvasList) {
+              const base64 = canvas.toDataURL('image/png');
+              const tmp = base64.split(',');
+              const data = atob(tmp[1]);
+              const mime = tmp[0].split(':')[1].split(';')[0];
+              const buf = new Uint8Array(data.length);
+              for (let i = 0; i < data.length; i++) {
+                buf[i] = data.charCodeAt(i);
+              }
+              const blob = new Blob([buf], { type: mime });
+              appendImage(blob);
+            }
+          }
+        });
+      });
+    }
+  });
+}
+
 fileDropZone.ondrop = function(e) {
   e.preventDefault();
   if (e.dataTransfer.items) {
@@ -183,6 +232,8 @@ fileDropZone.ondrop = function(e) {
         let file = e.dataTransfer.items[i].getAsFile();
         if (file.type.includes('image')) {
           appendImage(file);
+        } else if (file.type.includes('application/pdf')) {
+          loadPDF(file);
         }
       }
     }
@@ -191,6 +242,8 @@ fileDropZone.ondrop = function(e) {
     for (var i = 0; i < e.dataTransfer.files.length; i++) {
       if (e.dataTransfer.files[i].type.includes('image')) {
         appendImage(e.dataTransfer.files[i]);
+      } else if (e.dataTransfer.files[i].type.includes('application/pdf')) {
+        loadPDF(e.dataTransfer.files[i]);
       }
     }
   }
