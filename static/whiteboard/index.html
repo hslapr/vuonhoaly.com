@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Whiteboard</title>
+    <link href="whiteboard.css" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+  </head>
+  <body>
+    <div id="toolbar">
+      <span lang="zh-Hant" class="icon" id="file-drop-zone">檔</span>
+      <span id="trash-can" lang="zh-Hant" class="icon">刪</span>
+      <label for="font-size-select" id="font-size-icon" lang="zh-Hant" class="icon" draggable="true">號</label>
+      <select name="font-size" id="font-size-select">
+        <option value="10.5pt">10.5</option>
+        <option value="12pt" selected>12</option>
+        <option value="14pt">14</option>
+        <option value="18pt">18</option>
+      </select>
+      <label for="font-family-select" id="font-family-icon" lang="zh-Hant" class="icon" draggable="true">體</label>
+      <select name="font-family" id="font-family-select">
+        <option value="serif" selected>serif</option>
+        <option value="sans-serif">sans-serif</option>
+      </select>
+      <span id="math-icon" lang="zh-Hant" class="icon" draggable="true">數</span>
+      <span id="highlight-icon" lang="zh-Hant" class="icon" style="background-color: yellow;" draggable="true">亮</span>
+      <form id="settings-form" style="display: inline-block;">
+        <input type="radio" value="black" id="color-black" name="color" checked>
+        <label for="color-black" class="color-label" draggable="true" style="color: black;">&block;</label>
+        <input type="radio" value="red" id="color-red" name="color">
+        <label for="color-red" class="color-label" draggable="true" style="color: red;">&block;</label>
+        <input type="radio" value="blue" id="color-blue" name="color">
+        <label for="color-blue" class="color-label" draggable="true" style="color: blue;">&block;</label>
+        <input type="radio" value="green" id="color-green" name="color">
+        <label for="color-green" class="color-label" draggable="true" style="color: green;">&block;</label>
+      </form>
+      <label for="image-width" id="image-width-label" lang="zh-Hant" class="icon" draggable="true">寬</label>
+      <input type="number" name="image-width" id="image-width" width="5px" style="width: 50px;" max="2000" min="100" step="10" value="1000">
+      
+    </div>
+
+    <div id="container">
+    </div>
+    
+    
+
+    <script src="whiteboard.js"></script>
+  </body>
+</html>

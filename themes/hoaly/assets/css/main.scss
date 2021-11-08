@@ -33,12 +33,6 @@ $font-family: (
 }
 
 @font-face {
-  font-family: 'Digit';
-  src: local('Times New Roman');
-  unicode-range: U+0030-0039;
-}
-
-@font-face {
   font-family: '明朝';
   src: local('游明朝'), local('Yu Mincho'), local('YuMincho'), local('ヒラギノ明朝 ProN'), local('HiraMinProN'), url(/fonts/YUMIN.TTF) format('truetype'), url(/fonts/YUMINDB.TTF) format('truetype'), url(/fonts/YUMINL.TTF) format('truetype');
   unicode-range: $cjk-unicode-range;
