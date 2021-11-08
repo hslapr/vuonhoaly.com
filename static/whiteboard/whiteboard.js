@@ -138,7 +138,11 @@ container.ondrop = function(e) {
       typeset(() => {
         return [target];
       });
-    }
+    } else if (data[1] == 'italic' && target.tagName == 'SPAN') {
+      target.style.fontStyle = 'italic';
+    }  else if (data[1] == 'underline' && target.tagName == 'SPAN') {
+      target.style.textDecoration = 'underline';
+    } 
   } else {
     const element = document.getElementById(data[0]);
     element.style.top = e.pageY - parseInt(data[2]) + 'px';
@@ -225,3 +229,29 @@ mathIcon.ondragstart = function(e) {
   e.dataTransfer.setData('text/plain', 'set math');
   e.dataTransfer.effectAllowed = 'move';
 }
+
+// text decoration
+const italicIcon = document.getElementById('italic-icon');
+const underlineIcon = document.getElementById('underline-icon');
+italicIcon.ondragstart = function (e) {
+  e.dataTransfer.setData('text/plain', 'set italic');
+}
+italicIcon.ondragenter = function(e) { e.preventDefault(); };
+italicIcon.ondragover = function(e) { e.preventDefault(); };
+italicIcon.ondrop = function(e) {
+  const data = e.dataTransfer.getData("text/plain").split(' ');
+  const span = document.getElementById(data[0]);
+  span.style.fontStyle = 'unset';
+  e.preventDefault();
+};
+underlineIcon.ondragstart = function (e) {
+  e.dataTransfer.setData('text/plain', 'set underline');
+}
+underlineIcon.ondragenter = function(e) { e.preventDefault(); };
+underlineIcon.ondragover = function(e) { e.preventDefault(); };
+underlineIcon.ondrop = function(e) {
+  const data = e.dataTransfer.getData("text/plain").split(' ');
+  const span = document.getElementById(data[0]);
+  span.style.textDecoration = 'unset';
+  e.preventDefault();
+};
