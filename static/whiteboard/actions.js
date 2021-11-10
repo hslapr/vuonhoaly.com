@@ -11,6 +11,10 @@ globalThis.whiteboard.actions = {
   },
   typesetMath: function (data) {
     let element = getElement(data);
+    let text = element.innerText;
+    if (text.startsWith("$") && !text.startsWith("$$") && text.endsWith("$")) {
+      element.innerText = "\\(" + text.substr(1, text.length - 2) + "\\)";
+    }
     typeset(() => {
       return [element];
     });
