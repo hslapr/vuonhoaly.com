@@ -1,0 +1,292 @@
+{
+  "container": {
+    "id": "container"
+  },
+  "spanStartIndex": 0,
+  "imgStartIndex": 0,
+  "toolbar": {
+    "id": "toolbar",
+    "colorToolId": "color-tool",
+    "fontSizeToolId": "font-size-tool",
+    "fontFamilyToolId": "font-family-tool",
+    "tools": [
+      {
+        "name": "file",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "檔",
+        "class": ["icon"],
+        "draggable": false,
+        "droppable": true,
+        "dropAction": ["loadFile"],
+        "enabled": true
+      },
+      {
+        "name": "remove",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "刪",
+        "class": ["icon"],
+        "draggable": false,
+        "droppable": true,
+        "dropAction": ["remove"],
+        "enabled": true
+      },
+      {
+        "name": "font-size",
+        "type": "select",
+        "labelDraggable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [
+          {
+            "font-size": "$(this.value)"
+          }
+        ],
+        "label": {
+          "text": "號",
+          "lang": "zh-Hant",
+          "class": ["icon"],
+          "style": {
+            "marginRight": "2px"
+          }
+        },
+        "options": [
+          {
+            "text": "12",
+            "value": "12pt"
+          },
+          {
+            "text": "18",
+            "value": "18pt"
+          }
+        ],
+        "enabled": true
+      },
+      {
+        "name": "font-family",
+        "type": "select",
+        "labelDraggable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [
+          {
+            "font-family": "$(this.value)"
+          }
+        ],
+        "label": {
+          "text": "體",
+          "lang": "zh-Hant",
+          "class": ["icon"],
+          "style": {
+            "marginRight": "2px"
+          }
+        },
+        "options": [
+          {
+            "text": "serif",
+            "value": "serif"
+          },
+          {
+            "text": "sans-serif",
+            "value": "sans-serif"
+          }
+        ],
+        "enabled": true
+      },
+      {
+        "name": "color",
+        "type": "radio",
+        "labelDraggable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [{
+          "color": "$(this.for.value)"
+        }],
+        "options": [
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "black"
+              }
+            },
+            "value": "black"
+          },
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "red"
+              }
+            },
+            "value": "red"
+          },
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "blue"
+              }
+            },
+            "value": "blue"
+          },
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "green"
+              }
+            },
+            "value": "green"
+          },
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "green"
+              }
+            },
+            "value": "green"
+          }
+        ],
+        "enabled": true
+      },
+      {
+        "name": "font-weight",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "粗",
+        "class": ["icon"],
+        "style": {
+          "fontWeight": "bold"
+        },
+        "draggable": true,
+        "droppable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [{
+          "fontWeight": "bold"
+        }],
+        "dropAction": ["setStyle"],
+        "dropArgs": [{
+          "fontWeight": "unset"
+        }],
+        "enabled": true
+      },
+      {
+        "name": "italic",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "斜",
+        "class": ["icon"],
+        "style": {
+          "fontStyle": "italic"
+        },
+        "draggable": true,
+        "droppable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [{
+          "fontStyle": "italic"
+        }],
+        "dropAction": ["setStyle"],
+        "dropArgs": [{
+          "fontStyle": "unset"
+        }],
+        "enabled": true
+      },
+      {
+        "name": "underline",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "線",
+        "class": ["icon"],
+        "style": {
+          "textDecoration": "underline"
+        },
+        "draggable": true,
+        "droppable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [{
+          "textDecoration": "underline"
+        }],
+        "dropAction": ["setStyle"],
+        "dropArgs": [{
+          "textDecoration": "unset"
+        }],
+        "enabled": true
+      },
+      {
+        "name": "highlight",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "亮",
+        "class": ["icon"],
+        "style": {
+          "backgroundColor": "yellow"
+        },
+        "draggable": true,
+        "droppable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [{
+          "backgroundColor": "yellow"
+        }],
+        "dropAction": ["setStyle"],
+        "dropArgs": [{
+          "backgroundColor": "unset"
+        }],
+        "enabled": true
+      },
+      {
+        "name": "math",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "數",
+        "class": ["icon"],
+        "draggable": true,
+        "droppable": true,
+        "dragAction": ["typesetMath"],
+        "enabled": true
+      },
+      {
+        "name": "image-width",
+        "type": "input",
+        "label": {
+          "text": "寬",
+          "lang": "zh-Hant",
+          "class": ["icon"],
+          "style": {
+            "marginRight": "2px"
+          }
+        },
+        "labelDraggable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [{
+          "width": "$(this.value)px"
+        }],
+        "inputType": "number",
+        "max": 3000,
+        "min": 10,
+        "step": 5,
+        "value": 1000,
+        "enabled": true
+      },
+      {
+        "name": "help-link",
+        "type": "link",
+        "text": "？",
+        "lang": "zh-Hant",
+        "href": "help.html",
+        "class": ["icon"],
+        "style": {
+          "textDecoration": "none",
+          "color": "blank"
+        },
+        "enabled": true
+      },
+      {
+        "name": "expand-page",
+        "type": "button",
+        "text": "+",
+        "action": "expandPage",
+        "enabled": true
+      }
+    ]
+  }
+}

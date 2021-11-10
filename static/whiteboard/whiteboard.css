@@ -34,10 +34,25 @@ span {
   /* right: 0px; */
 }
 
+#toolbar-1 {
+  padding: 3px 1px 3px 1px;
+  position: sticky;
+  top: 100px;
+  background-color:antiquewhite;
+  /* left: 98%; */
+  /* left: 100%; */
+  /* right: 0px; */
+}
+
 .icon {
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   padding: 1px;
   border: black solid 2px;
   font-size: 12pt;
+}
+
+.tool {
+  margin-left: 2px;
+  margin-right: 2px;
 }

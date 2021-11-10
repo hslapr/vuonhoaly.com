@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Whiteboard</title>
+    <link href="whiteboard.css" rel="stylesheet">
+    <script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script type="text/javascript" src="/pdf.js/build/pdf.js"></script>
+  </head>
+  <body>
+    <div id="toolbar">
+      <span lang="zh-Hant" class="icon" id="file-drop-zone">檔</span>
+      <span id="trash-can" lang="zh-Hant" class="icon">刪</span>
+      <label for="font-size-select" id="font-size-icon" lang="zh-Hant" class="icon" draggable="true">號</label>
+      <select name="font-size" id="font-size-select">
+        <option value="10.5pt">10.5</option>
+        <option value="12pt" selected>12</option>
+        <option value="14pt">14</option>
+        <option value="16pt">16</option>
+        <option value="18pt">18</option>
+        <option value="20pt">20</option>
+        <option value="24pt">24</option>
+        <option value="36pt">36</option>
+        <option value="48pt">48</option>
+        <option value="72pt">72</option>
+      </select>
+      <label for="font-family-select" id="font-family-icon" lang="zh-Hant" class="icon" draggable="true">體</label>
+      <select name="font-family" id="font-family-select">
+        <option value="serif" selected>serif</option>
+        <option value="sans-serif">sans-serif</option>
+      </select>
+      <span id="bold-icon" lang="zh-Hant" class="icon" draggable="true" style="font-weight: bold;">粗</span>
+      <span id="italic-icon" lang="zh-Hant" class="icon" draggable="true" style="font-style: italic;">斜</span>
+      <span id="underline-icon" lang="zh-Hant" class="icon" draggable="true" style="text-decoration: underline;">線</span>
+      <span id="math-icon" lang="zh-Hant" class="icon" draggable="true">數</span>
+      <span id="highlight-icon" lang="zh-Hant" class="icon" style="background-color: yellow;" draggable="true">亮</span>
+      <form id="settings-form" style="display: inline-block;">
+        <input type="radio" value="black" id="color-black" name="color" checked>
+        <label for="color-black" class="color-label" draggable="true" style="color: black;">&block;</label>
+        <input type="radio" value="red" id="color-red" name="color">
+        <label for="color-red" class="color-label" draggable="true" style="color: red;">&block;</label>
+        <input type="radio" value="blue" id="color-blue" name="color">
+        <label for="color-blue" class="color-label" draggable="true" style="color: blue;">&block;</label>
+        <input type="radio" value="green" id="color-green" name="color">
+        <label for="color-green" class="color-label" draggable="true" style="color: green;">&block;</label>
+        <input type="radio" value="purple" id="color-purple" name="color">
+        <label for="color-purple" class="color-label" draggable="true" style="color: purple;">&block;</label>
+        <input type="radio" value="white" id="color-white" name="color">
+        <label for="color-white" class="color-label" draggable="true" style="color: white;">&block;</label>
+      </form>
+      <label for="image-width" id="image-width-label" lang="zh-Hant" class="icon" draggable="true">寬</label>
+      <input type="number" name="image-width" id="image-width" width="5px" style="width: 50px;" max="2000" min="100" step="10" value="1000">
+      <a id="help-link" lang="zh-Hant" class="icon" href="help.html" target="_blank" style="text-decoration: none; color: black;">？</a>
+      <button type="button" id="btn-expand-page">+</button>
+      <!-- <span id="test-icon" lang="zh-Hant" class="icon" draggable="true">测</span> -->
+    </div>
+
+    <div id="toolbar-1"></div>
+
+    <div id="container" class="droppable">
+    </div>
+    
+    
+
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <script type="text/javascript" src="whiteboard.js"></script>
+    <script type="text/javascript" src="actions.js"></script>
+    <!-- <script type="text/javascript" src="whiteboard-pdf.js"></script> -->
+    <!-- <script type="text/javascript" src="main.js"></script> -->
+  </body>
+</html>
