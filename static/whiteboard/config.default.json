@@ -51,14 +51,17 @@
           }
         },
         "options": [
-          {
-            "text": "12",
-            "value": "12pt"
-          },
-          {
-            "text": "18",
-            "value": "18pt"
-          }
+          { "text": "10.5", "value": "10.5pt" },
+          { "text": "12", "value": "12pt" },
+          { "text": "14", "value": "14pt" },
+          { "text": "16", "value": "16pt" },
+          { "text": "18", "value": "18pt" },
+          { "text": "20", "value": "20pt" },
+          { "text": "22", "value": "22pt" },
+          { "text": "24", "value": "24pt" },
+          { "text": "36", "value": "36pt" },
+          { "text": "48", "value": "48pt" },
+          { "text": "72", "value": "72pt" }
         ],
         "enabled": true
       },
@@ -118,6 +121,51 @@
               }
             },
             "value": "red"
+          },
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "blue"
+              }
+            },
+            "value": "blue"
+          },
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "green"
+              }
+            },
+            "value": "green"
+          },
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "purple"
+              }
+            },
+            "value": "purple"
+          },
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "white"
+              }
+            },
+            "value": "white"
+          },
+          {
+            "label": {
+              "text": "\u2588",
+              "style": {
+                "color": "orange"
+              }
+            },
+            "value": "orange"
           }
         ],
         "enabled": true
@@ -129,13 +177,13 @@
         "text": "粗",
         "class": ["icon"],
         "style": {
-          "fontWeight": "bold"
+          "fontWeight": "bolder"
         },
         "draggable": true,
         "droppable": true,
         "dragAction": ["setStyle"],
         "dragArgs": [{
-          "fontWeight": "bold"
+          "fontWeight": "bolder"
         }],
         "dropAction": ["setStyle"],
         "dropArgs": [{
@@ -182,6 +230,25 @@
         "dropAction": ["setStyle"],
         "dropArgs": [{
           "textDecoration": "unset"
+        }],
+        "enabled": true
+      },
+      {
+        "name": "border",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "框",
+        "class": ["icon"],
+        "draggable": true,
+        "droppable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [{
+          "border": "black solid 1px",
+          "padding": "1px"
+        }],
+        "dropAction": ["setStyle"],
+        "dropArgs": [{
+          "border": "unset"
         }],
         "enabled": true
       },
