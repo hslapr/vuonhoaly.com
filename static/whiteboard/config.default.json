@@ -19,7 +19,7 @@
         "draggable": false,
         "droppable": true,
         "dropAction": ["loadFile"],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "remove",
@@ -30,7 +30,7 @@
         "draggable": false,
         "droppable": true,
         "dropAction": ["remove"],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "font-size",
@@ -63,7 +63,7 @@
           { "text": "48", "value": "48pt" },
           { "text": "72", "value": "72pt" }
         ],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "font-family",
@@ -93,7 +93,7 @@
             "value": "sans-serif"
           }
         ],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "color",
@@ -168,7 +168,7 @@
             "value": "orange"
           }
         ],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "font-weight",
@@ -189,7 +189,7 @@
         "dropArgs": [{
           "fontWeight": "unset"
         }],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "italic",
@@ -210,7 +210,7 @@
         "dropArgs": [{
           "fontStyle": "unset"
         }],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "underline",
@@ -231,7 +231,7 @@
         "dropArgs": [{
           "textDecoration": "unset"
         }],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "border",
@@ -250,7 +250,7 @@
         "dropArgs": [{
           "border": "unset"
         }],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "highlight",
@@ -271,7 +271,7 @@
         "dropArgs": [{
           "backgroundColor": "unset"
         }],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "math",
@@ -282,7 +282,7 @@
         "draggable": true,
         "droppable": true,
         "dragAction": ["typesetMath"],
-        "enabled": true
+        "enable": true
       },
       {
         "name": "image-width",
@@ -305,7 +305,7 @@
         "min": 10,
         "step": 5,
         "value": 1000,
-        "enabled": true
+        "enable": true
       },
       {
         "name": "help-link",
@@ -318,14 +318,14 @@
           "textDecoration": "none",
           "color": "blank"
         },
-        "enabled": true
+        "enable": true
       },
       {
         "name": "expand-page",
         "type": "button",
         "text": "+",
         "action": "expandPage",
-        "enabled": true
+        "enable": true
       }
     ]
   }

@@ -102,7 +102,7 @@ globalThis.whiteboard.loadToolbar = function () {
   //   child.remove();
   // }
   for (const tool of globalThis.whiteboard.config.toolbar.tools) {
-    if (tool.enabled) {
+    if (tool.enable) {
       globalThis.whiteboard.loadTool(tool);
     }
   }
