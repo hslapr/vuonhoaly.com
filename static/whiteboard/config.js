@@ -214,7 +214,7 @@ globalThis.whiteboard.loadTool = function(tool) {
       inputForm.classList.add("tool");
       inputForm.name = tool.name;
       inputForm.id = tool.name + "-form";
-      inputForm.style.display = "inline-block"
+      inputForm.style.display = "inline-block";
       let inputLabel = document.createElement("label");
       inputLabel.id = tool.name + "-label";
       inputLabel.innerText = tool.label.text;
@@ -243,10 +243,11 @@ globalThis.whiteboard.loadTool = function(tool) {
       let input = document.createElement("input");
       input.id = tool.name + "-tool";
       input.type = tool.inputType;
-      input.value = tool.value;
-      input.max = tool.max;
-      input.min = tool.min;
-      input.step = tool.step;
+      if (tool.value) { input.value = tool.value; }
+      if (tool.max) { input.max = tool.max; }
+      if (tool.min) { input.min = tool.min; }
+      if (tool.step) { input.step = tool.step; }
+      if (tool.style) { setStyle(input, tool.style); }
       inputForm.appendChild(inputLabel);
       inputForm.appendChild(input);
       globalThis.whiteboard.toolbar.appendChild(inputForm);

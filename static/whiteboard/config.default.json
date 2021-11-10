@@ -301,6 +301,9 @@
           "width": "$(this.value)px"
         }],
         "inputType": "number",
+        "style": {
+          "width": "50px"
+        },
         "max": 3000,
         "min": 10,
         "step": 5,
