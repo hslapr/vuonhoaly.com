@@ -46,13 +46,18 @@ globalThis.whiteboard.actions = {
     globalThis.whiteboard.container.appendChild(element);
   },
   expandPage: function(e) {
-    console.log("expandPage");
     e.preventDefault();
     if (e.ctrlKey) {
       globalThis.whiteboard.container.style.height = parseInt(globalThis.whiteboard.container.style.height.substr(0, globalThis.whiteboard.container.style.height.length - 2)) - 100 + 'px';
     } else {
       globalThis.whiteboard.container.style.height = parseInt(globalThis.whiteboard.container.style.height.substr(0, globalThis.whiteboard.container.style.height.length - 2)) + 100 + 'px';
     }
+  },
+  setValue: function(data, args) {
+    console.log(args);
+    console.log("setValue");
+    let element = getElement(data);
+    let target = document.getElementById(args.targetId);
+    target.value = eval(args.value);
   }
-
 }

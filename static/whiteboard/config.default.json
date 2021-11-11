@@ -1,6 +1,11 @@
 {
   "container": {
-    "id": "container"
+    "id": "container",
+    "input": {
+      "size": 10,
+      "autoExpand": false,
+      "expandStep": 1
+    }
   },
   "spanStartIndex": 0,
   "imgStartIndex": 0,
@@ -308,6 +313,53 @@
         "min": 10,
         "step": 5,
         "value": 1000,
+        "enable": true
+      },
+      {
+        "name": "copy-style",
+        "type": "select-input",
+        "droppable": true,
+        "dropAction": ["setValue"],
+        "dropArgs": [{
+          "targetId": "$(this.input.id)",
+          "value": "element.style['$(this.select.value)']"
+        }],
+        "labelDraggable": true,
+        "dragAction": ["setStyle"],
+        "dragArgs": [
+          {
+            "$(this.select.value)": "$(this.input.value)"
+          }
+        ],
+        "label": {
+          "text": "樣",
+          "lang": "zh-Hant",
+          "class": ["icon"],
+          "style": {
+            "marginRight": "2px"
+          }
+        },
+        "options": [
+          {
+            "text": "left",
+            "value": "left"
+          },
+          {
+            "text": "top",
+            "value": "top"
+          },
+          {
+            "text": "right",
+            "value": "right"
+          },
+          {
+            "text": "color",
+            "value": "color"
+          }
+        ],
+        "input": {
+          "type": "hidden"
+        },
         "enable": true
       },
       {

@@ -31,6 +31,7 @@ function prepareArgs(argsList, map) {
       let v = args[k];
       for (let mapK in map) {
         v = v.replace(mapK, map[mapK]);
+        k = k.replace(mapK, map[mapK]);
       }
       argsCopy[k] = v;
     }
@@ -40,7 +41,6 @@ function prepareArgs(argsList, map) {
 }
 
 function setStyle(element, style) {
-  console.log("in setStyle");
   for (let k in style) {
     element.style[k] = style[k];
   }

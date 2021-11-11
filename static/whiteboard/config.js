@@ -55,7 +55,15 @@ globalThis.whiteboard = {
       input.style.position = 'absolute';
       input.style.top = e.pageY  + 'px';
       input.style.left = e.pageX + 'px';
-      input.size = 20;
+      input.size = globalThis.whiteboard.config.container.input.size;
+      if (globalThis.whiteboard.config.container.input.autoExpand) {
+        input.onkeyup = function(e) {
+          if (input.value.length > input.size) {
+            input.size = input.value.length;
+            input.size += globalThis.whiteboard.config.container.input.expandStep;
+          }
+        }
+      }
       input.name = 'i';
       globalThis.whiteboard.container.appendChild(input);
       input.focus();
@@ -136,7 +144,7 @@ globalThis.whiteboard.loadTool = function(tool) {
         tag.ondragenter = preventDefaultHandler;
         tag.ondragover = preventDefaultHandler;
         tag.ondrop = function(e) {
-          data = {};
+          let data = {};
           const jsonString = e.dataTransfer.getData("application/json");
           if (jsonString) {
             data = JSON.parse(e.dataTransfer.getData("application/json"));
@@ -198,7 +206,6 @@ globalThis.whiteboard.loadTool = function(tool) {
               data.args = prepareArgs(tool.dragArgs,
                 { "$(this.for.value)": document.getElementById(input.id).value.toString() });
             }
-            console.log(data);
             e.dataTransfer.setData("application/json", JSON.stringify(data));
           }
         }
@@ -248,6 +255,7 @@ globalThis.whiteboard.loadTool = function(tool) {
       if (tool.min) { input.min = tool.min; }
       if (tool.step) { input.step = tool.step; }
       if (tool.style) { setStyle(input, tool.style); }
+      inputForm.onsubmit = preventDefaultHandler;
       inputForm.appendChild(inputLabel);
       inputForm.appendChild(input);
       globalThis.whiteboard.toolbar.appendChild(inputForm);
@@ -255,6 +263,7 @@ globalThis.whiteboard.loadTool = function(tool) {
     
     case "select":
       let selectForm = document.createElement("form");
+      selectForm.onsubmit = preventDefaultHandler;
       selectForm.style.display = "inline-block";
       selectForm.classList.add("tool");
       selectForm.id = tool.name + "-form";
@@ -295,6 +304,87 @@ globalThis.whiteboard.loadTool = function(tool) {
       selectForm.appendChild(label);
       selectForm.appendChild(select);
       globalThis.whiteboard.toolbar.appendChild(selectForm);
+      break;
+
+    case "select-input":
+      let selectInputForm = document.createElement("form");
+      selectInputForm.onsubmit = preventDefaultHandler;
+      selectInputForm.style.display = "inline-block";
+      selectInputForm.classList.add("tool");
+      selectInputForm.id = tool.name + "-tool";
+      let selectInputLabel = document.createElement("label");
+      selectInputLabel.innerText = tool.label.text;
+      selectInputLabel.id = tool.name + "-label";
+      if (tool.label.class) {
+        selectInputLabel.classList.add(...tool.label.class);
+      }
+      if (tool.label.lang) {
+        selectInputLabel.lang = tool.label.lang;
+      }
+      if (tool.label.style) {
+        setStyle(selectInputLabel, tool.label.style);
+      }
+      if (tool.labelDraggable) {
+        selectInputLabel.draggable = true;
+        selectInputLabel.ondragstart = function (e) {
+          let data = generateDragDropData(e);
+          data.id = e.target.id;
+          if (tool.dragAction) { data.action = tool.dragAction; }
+          if (tool.dragArgs) {
+            data.args = prepareArgs(tool.dragArgs,
+              { "$(this.select.value)": document.getElementById(tool.name + "-select").value.toString(),
+              "$(this.input.value)": document.getElementById(tool.name + "-input").value.toString() });
+          }
+          e.dataTransfer.setData("application/json", JSON.stringify(data));
+        }
+      }
+      let selectInputSelect = document.createElement("select");
+      selectInputSelect.id = tool.name + "-select";
+      for (let i = 0; i < tool.options.length; ++i) {
+        let option = document.createElement("option");
+        if (i == 0) { option.selected = true; }
+        option.value = tool.options[i].value;
+        option.innerText = tool.options[i].text;
+        selectInputSelect.appendChild(option);
+      }
+      let selectInputInput = document.createElement("input");
+      selectInputInput.id = tool.name + "-input";
+      selectInputInput.type = tool.input.type;
+      if (tool.input.value) { selectInputInput.value = tool.input.value; }
+      if (tool.input.max) { selectInputInput.max = tool.input.max; }
+      if (tool.input.min) { selectInputInput.min = tool.input.min; }
+      if (tool.input.step) { selectInputInput.step = tool.input.step; }
+      if (tool.input.style) { setStyle(selectInputInput, tool.input.style); }
+      if (tool.droppable) {
+        selectInputForm.ondragenter = preventDefaultHandler;
+        selectInputForm.ondragover = preventDefaultHandler;
+        selectInputForm.ondrop = function(e) {
+          let data = {};
+          const jsonString = e.dataTransfer.getData("application/json");
+          if (jsonString) {
+            data = JSON.parse(e.dataTransfer.getData("application/json"));
+          }
+          let args;
+          if (tool.dropArgs) {
+            args = prepareArgs(tool.dropArgs, {
+              "$(this.input.id)": tool.name + "-input",
+              "$(this.select.value)": selectInputSelect.value
+            });
+          }
+          for (let i = 0; i < tool.dropAction.length; i++) {
+            if (tool.dropArgs && args.length > i) {
+              globalThis.whiteboard.actions[tool.dropAction[i]](data, args[i]);
+            } else {
+              globalThis.whiteboard.actions[tool.dropAction[i]](data);
+            }
+          }
+          e.preventDefault();
+        };
+      }
+      selectInputForm.appendChild(selectInputLabel);
+      selectInputForm.appendChild(selectInputSelect);
+      selectInputForm.appendChild(selectInputInput);
+      globalThis.whiteboard.toolbar.appendChild(selectInputForm);
       break;
 
     case "link":
