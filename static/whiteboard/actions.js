@@ -60,10 +60,71 @@ globalThis.whiteboard.actions = {
     }
   },
   setValue: function(data, args) {
-    console.log(args);
-    console.log("setValue");
     let element = getElement(data);
     let target = document.getElementById(args.targetId);
     target.value = eval(args.value);
+  },
+  drawRect: function(data, args) {
+    let tool = getElement(data.from);
+    let leftTop = document.getElementById("rect-left-top");
+    if (leftTop) {
+      let rect = document.createElement("div");
+      rect.id = "shape-" + globalThis.whiteboard.shapeIndex.toString(36);
+      globalThis.whiteboard.shapeIndex++;
+      rect.style.left = leftTop.style.left;
+      rect.style.top = leftTop.style.top;
+      rect.style.width = data.pageX - parseInt(leftTop.style.left.substr(0, leftTop.style.left.length - 2)) + "px";
+      rect.style.height = data.pageY - parseInt(leftTop.style.top.substr(0, leftTop.style.top.length - 2)) + "px";
+      rect.style.border = args.border;
+      rect.style.position = "absolute";
+      leftTop.remove();
+      rect.draggable = true;
+      rect.classList.add("shape");
+      globalThis.whiteboard.container.appendChild(rect);
+      tool.innerText = "\u231c";
+    } else {
+      leftTop = document.createElement("span");
+      leftTop.innerText = "\u231c";
+      leftTop.classList.add("droppable");
+      leftTop.id = "rect-left-top";
+      leftTop.style.left = data.pageX + "px";
+      leftTop.style.top = data.pageY + "px";
+      leftTop.style.position = "absolute";
+      globalThis.whiteboard.container.appendChild(leftTop);
+      tool.innerText = "\u231f";
+    }
+  },
+  drawCircle: function(data, args) {
+    let center = document.getElementById("circle-center");
+    if (center) {
+      let centerX = parseInt(center.style.left.substr(0, center.style.left.length - 2));
+      let centerY = parseInt(center.style.top.substr(0, center.style.top.length - 2));
+      let dx = data.pageX - centerX;
+      let dy = data.pageY - centerY;
+      let r = Math.sqrt(dx * dx + dy * dy);
+      let circle = document.createElement("div");
+      circle.id = "shape-" + globalThis.whiteboard.shapeIndex.toString(36);
+      globalThis.whiteboard.shapeIndex++;
+      circle.style.left = Math.floor(centerX - r) + "px";
+      circle.style.top = Math.floor(centerY - r) + "px";
+      circle.style.width = Math.floor(r * 2) + "px";
+      circle.style.height = circle.style.width;
+      circle.style.border = args.border;
+      circle.style.borderRadius = "50%";
+      circle.style.position = "absolute";
+      circle.classList.add("shape");
+      circle.draggable = true;
+      center.remove();
+      globalThis.whiteboard.container.appendChild(circle);
+    } else {
+      center = document.createElement("span");
+      center.innerText = "\u00b7";
+      center.classList.add("droppable");
+      center.id = "circle-center";
+      center.style.left = data.pageX + "px";
+      center.style.top = data.pageY + "px";
+      center.style.position = "absolute";
+      globalThis.whiteboard.container.appendChild(center);
+    }
   }
 }

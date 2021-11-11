@@ -9,6 +9,7 @@
   },
   "spanStartIndex": 0,
   "imgStartIndex": 0,
+  "shapeStartIndex": 0,
   "toolbar": {
     "id": "toolbar",
     "colorToolId": "color-tool",
@@ -313,6 +314,32 @@
         "min": 10,
         "step": 5,
         "value": 1000,
+        "enable": true
+      },
+      {
+        "name": "rect",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "\u231c",
+        "class": ["icon"],
+        "draggable": true,
+        "dragAction": ["drawRect"],
+        "dragArgs": [{
+          "border":"black solid 1px"
+        }],
+        "enable": true
+      },
+      {
+        "name": "circle",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "\u25ef",
+        "class": ["icon"],
+        "draggable": true,
+        "dragAction": ["drawCircle"],
+        "dragArgs": [{
+          "border":"black solid 1px"
+        }],
         "enable": true
       },
       {

@@ -6,6 +6,7 @@ globalThis.whiteboard = {
     globalThis.whiteboard.container.ondragover = preventDefaultHandler;
     globalThis.whiteboard.spanIndex = globalThis.whiteboard.config.spanStartIndex;
     globalThis.whiteboard.imgIndex = globalThis.whiteboard.config.imgStartIndex;
+    globalThis.whiteboard.shapeIndex = globalThis.whiteboard.config.shapeStartIndex;
     globalThis.whiteboard.loadToolbar();
     if (globalThis.whiteboard.config.toolbar.fontSizeToolId) {
       globalThis.whiteboard.fontSizeTool = document.getElementById(globalThis.whiteboard.config.toolbar.fontSizeToolId);
@@ -175,7 +176,7 @@ globalThis.whiteboard.loadTool = function(tool) {
       }
       globalThis.whiteboard.toolbar.appendChild(tag);
       break;
-      
+
     case "radio":
       let form = document.createElement("form");
       form.classList.add("tool");
