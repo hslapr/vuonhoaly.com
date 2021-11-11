@@ -9,6 +9,12 @@ globalThis.whiteboard.actions = {
       element.style[k] = style[k];
     }
   },
+  setAttribute: function (data, attribute) {
+    let element = getElement(data);
+    for (let k in attribute) {
+      element.setAttribute(k, attribute[k]);
+    }
+  },
   typesetMath: function (data) {
     let element = getElement(data);
     let text = element.innerText;

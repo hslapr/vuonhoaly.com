@@ -363,6 +363,44 @@
         "enable": true
       },
       {
+        "name": "language",
+        "type": "select",
+        "labelDraggable": true,
+        "dragAction": ["setAttribute"],
+        "dragArgs": [
+          {
+            "lang": "$(this.value)"
+          }
+        ],
+        "label": {
+          "text": "語",
+          "lang": "zh-Hant",
+          "class": ["icon"],
+          "style": {
+            "marginRight": "2px"
+          }
+        },
+        "options": [
+          {
+            "text": "简体中文",
+            "value": "zh-Hans"
+          },
+          {
+            "text": "正體中文",
+            "value": "zh-Hant"
+          },
+          {
+            "text": "English",
+            "value": "en"
+          },
+          {
+            "text": "日本語",
+            "value": "ja"
+          }
+        ],
+        "enable": true
+      },
+      {
         "name": "help-link",
         "type": "link",
         "text": "？",

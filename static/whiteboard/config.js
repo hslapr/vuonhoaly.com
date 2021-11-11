@@ -175,6 +175,7 @@ globalThis.whiteboard.loadTool = function(tool) {
       }
       globalThis.whiteboard.toolbar.appendChild(tag);
       break;
+      
     case "radio":
       let form = document.createElement("form");
       form.classList.add("tool");
@@ -308,6 +309,7 @@ globalThis.whiteboard.loadTool = function(tool) {
 
     case "select-input":
       let selectInputForm = document.createElement("form");
+      selectInputForm.classList.add("tool");
       selectInputForm.onsubmit = preventDefaultHandler;
       selectInputForm.style.display = "inline-block";
       selectInputForm.classList.add("tool");
