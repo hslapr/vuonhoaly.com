@@ -42,7 +42,9 @@ function prepareArgs(argsList, map) {
 
 function setStyle(element, style) {
   for (let k in style) {
-    element.style[k] = style[k];
+    if (k in element.style) {
+      element.style[k] = style[k];
+    }
   }
 }
 

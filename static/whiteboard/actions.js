@@ -64,6 +64,41 @@ globalThis.whiteboard.actions = {
     let target = document.getElementById(args.targetId);
     target.value = eval(args.value);
   },
+  drawLine: function(data, args) {
+    let point = document.getElementById("line-point-1");
+    if (point) {
+      let line = document.createElement("div");
+      line.id = "shape-" + globalThis.whiteboard.shapeIndex.toString(36);
+      globalThis.whiteboard.shapeIndex++;
+      let left = parseInt(point.style.left.substr(0, point.style.left.length - 2));
+      let top = parseInt(point.style.top.substr(0, point.style.top.length - 2))
+      let centerX = (left + data.pageX) / 2;
+      let centerY = (top + data.pageY) / 2;
+      let dx = data.pageX - left;
+      let dy = data.pageY - top;
+      let length = Math.floor(Math.sqrt(dx * dx + dy * dy));
+      line.style.left = Math.floor(centerX - length / 2) + "px";
+      line.style.top = Math.floor(centerY) + "px";
+      line.style.width = length + "px";
+      line.style.transform = "rotate(" + Math.atan(dy / dx) + "rad)";
+      setStyle(line, args);
+      line.style.position = "absolute";
+      point.remove();
+      line.draggable = true;
+      line.classList.add("shape");
+      line.classList.add("droppable");
+      globalThis.whiteboard.container.appendChild(line);
+    } else {
+      point = document.createElement("span");
+      point.innerText = "\u00b7";
+      point.classList.add("droppable");
+      point.id = "line-point-1";
+      point.style.left = data.pageX + "px";
+      point.style.top = data.pageY + "px";
+      point.style.position = "absolute";
+      globalThis.whiteboard.container.appendChild(point);
+    }
+  },
   drawRect: function(data, args) {
     let tool = getElement(data.from);
     let leftTop = document.getElementById("rect-left-top");
@@ -75,9 +110,7 @@ globalThis.whiteboard.actions = {
       rect.style.top = leftTop.style.top;
       rect.style.width = data.pageX - parseInt(leftTop.style.left.substr(0, leftTop.style.left.length - 2)) + "px";
       rect.style.height = data.pageY - parseInt(leftTop.style.top.substr(0, leftTop.style.top.length - 2)) + "px";
-      rect.style.borderColor = args.borderColor;
-      rect.style.borderStyle = args.borderStyle;
-      rect.style.borderWidth = args.borderWidth;
+      setStyle(rect, args);
       rect.style.position = "absolute";
       leftTop.remove();
       rect.draggable = true;
@@ -112,10 +145,7 @@ globalThis.whiteboard.actions = {
       circle.style.top = Math.floor(centerY - r) + "px";
       circle.style.width = Math.floor(r * 2) + "px";
       circle.style.height = circle.style.width;
-      circle.style.borderWidth = args.borderWidth;
-      circle.style.borderColor = args.borderColor;
-      circle.style.borderStyle = args.borderStyle;
-      circle.style.borderRadius = "50%";
+      setStyle(circle, args);
       circle.style.position = "absolute";
       circle.classList.add("shape");
       circle.classList.add("droppable");
@@ -131,6 +161,17 @@ globalThis.whiteboard.actions = {
       center.style.top = data.pageY + "px";
       center.style.position = "absolute";
       globalThis.whiteboard.container.appendChild(center);
+    }
+  },
+  drawShape: function(data, args) {
+    switch (args.shape) {
+      case "rect":
+        
+        break;
+      case "circle":
+        break;
+      default:
+        break;
     }
   }
 }

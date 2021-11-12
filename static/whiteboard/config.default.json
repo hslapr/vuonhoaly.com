@@ -320,6 +320,20 @@
         "enable": true
       },
       {
+        "name": "line",
+        "type": "span",
+        "lang": "zh-Hant",
+        "text": "－",
+        "class": ["icon"],
+        "draggable": true,
+        "dragAction": ["drawLine"],
+        "dragArgs": [{
+          "background-color": "black",
+          "height": "1px"
+        }],
+        "enable": true
+      },
+      {
         "name": "rect",
         "type": "span",
         "lang": "zh-Hant",
@@ -345,7 +359,8 @@
         "dragArgs": [{
           "borderColor":"black",
           "borderWidth": "1px",
-          "borderStyle": "solid"
+          "borderStyle": "solid",
+          "borderRadius": "50%"
         }],
         "enable": true
       },
