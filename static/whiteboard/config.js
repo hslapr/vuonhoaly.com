@@ -85,6 +85,7 @@ globalThis.whiteboard = {
             span.style.position = this.style.position;
             span.style.top = this.style.top;
             span.style.left = this.style.left;
+            span.style.borderWidth = "0px";
             span.classList.add("droppable");
             globalThis.whiteboard.container.appendChild(span);
           }

@@ -107,7 +107,8 @@
         "labelDraggable": true,
         "dragAction": ["setStyle"],
         "dragArgs": [{
-          "color": "$(this.for.value)"
+          "color": "$(this.for.value)",
+          "borderColor": "$(this.for.value)"
         }],
         "options": [
           {
@@ -249,7 +250,9 @@
         "droppable": true,
         "dragAction": ["setStyle"],
         "dragArgs": [{
-          "border": "black solid 1px",
+          "borderColor":"black",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
           "padding": "1px"
         }],
         "dropAction": ["setStyle"],
@@ -325,7 +328,9 @@
         "draggable": true,
         "dragAction": ["drawRect"],
         "dragArgs": [{
-          "border":"black solid 1px"
+          "borderColor":"black",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
         }],
         "enable": true
       },
@@ -338,7 +343,9 @@
         "draggable": true,
         "dragAction": ["drawCircle"],
         "dragArgs": [{
-          "border":"black solid 1px"
+          "borderColor":"black",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
         }],
         "enable": true
       },
@@ -428,7 +435,7 @@
         "enable": true
       },
       {
-        "name": "help-link",
+        "name": "help",
         "type": "link",
         "text": "？",
         "lang": "zh-Hant",

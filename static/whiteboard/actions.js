@@ -75,11 +75,14 @@ globalThis.whiteboard.actions = {
       rect.style.top = leftTop.style.top;
       rect.style.width = data.pageX - parseInt(leftTop.style.left.substr(0, leftTop.style.left.length - 2)) + "px";
       rect.style.height = data.pageY - parseInt(leftTop.style.top.substr(0, leftTop.style.top.length - 2)) + "px";
-      rect.style.border = args.border;
+      rect.style.borderColor = args.borderColor;
+      rect.style.borderStyle = args.borderStyle;
+      rect.style.borderWidth = args.borderWidth;
       rect.style.position = "absolute";
       leftTop.remove();
       rect.draggable = true;
       rect.classList.add("shape");
+      rect.classList.add("droppable");
       globalThis.whiteboard.container.appendChild(rect);
       tool.innerText = "\u231c";
     } else {
@@ -109,10 +112,13 @@ globalThis.whiteboard.actions = {
       circle.style.top = Math.floor(centerY - r) + "px";
       circle.style.width = Math.floor(r * 2) + "px";
       circle.style.height = circle.style.width;
-      circle.style.border = args.border;
+      circle.style.borderWidth = args.borderWidth;
+      circle.style.borderColor = args.borderColor;
+      circle.style.borderStyle = args.borderStyle;
       circle.style.borderRadius = "50%";
       circle.style.position = "absolute";
       circle.classList.add("shape");
+      circle.classList.add("droppable");
       circle.draggable = true;
       center.remove();
       globalThis.whiteboard.container.appendChild(circle);
