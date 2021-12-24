@@ -8,11 +8,36 @@ isCJKLanguage: true
 
 <article lang="zh-Hans">
 <h1><span lang="en">Latex</span> 笔记</h1>
+
+<h2>框架</h2>
+<pre><code>
+\title{xxx}
+\author{xxx}
+\date{\today}
+\begin{document}
+\maketitle
+\end{document}
+</code></pre>
+
+<table>
+  <caption>常用命令</caption>
+  <tbody>
+    <tr><td>取消缩进</td><td><code>\noindent</code></td></tr>
+  </tbody>
+</table>
+
+<p><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols" lang="en">Math symbols</a></p>
+
+<h2>列表</h2>
+<p>有序列表 <code>enumerate</code> 环境。</p>
+<p>修改 <code>enumerate</code> 编号样式方法：<code>\renewcommand{\labelenumi}{（\arabic{enumi}）}</code></p>
+
 <p>日语文档：使用 upLaTeX (ptex2pdf) 编译</p>
 <pre><code>\documentclass[uplatex,dvipdfmx]{jsarticle}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{bm}
 \usepackage{listings}
@@ -25,4 +50,12 @@ isCJKLanguage: true
 <p>让行内分数显示正常大小：<code>\displaystyle</code></p>
 <p>表格多列结合：<code>\multicolumn{2}{c}{Multi-column}</code></p>
 <p><code>\begin{aligned}&hellip;\end{aligned}</code>用于<code>align</code>环境内部</p>
+
+<h3 lang="zh-Hans">数学字体</h3>
+<p>需要 <code>amsmath</code> 和 <code>amssymb</code> 两个包。</p>
+<pre><code>
+\mathcal{RQSZ}
+\mathfrak{RQSZ}
+\mathbb{RQSZ}
+</code></pre>
 </article>
