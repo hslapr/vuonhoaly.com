@@ -3,7 +3,11 @@
   <h1 lang="en">{{ .Title }}</h1>
   <ul>
     {{ range .Pages }}
+    {{ if .Param "titleLanguage" }}
+    <li><a href="{{ .RelPermalink }}" lang={{ .Param "titleLanguage" }}>{{ .LinkTitle | safeHTML }}</a></li>
+    {{ else }}
     <li><a href="{{ .RelPermalink }}">{{ .LinkTitle | safeHTML }}</a></li>
+    {{ end }}
     {{ end }}
   </ul>
 </main>

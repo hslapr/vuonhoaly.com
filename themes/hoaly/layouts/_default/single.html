@@ -2,7 +2,7 @@
 <main>
   <div id="content">
     {{ if .Param "encode" }}
-    <p style="color: red;">This article is encoded due to copyright reasons. <button lang="en" id="btn-decode" type="button" onclick="let d = document.getElementById('content');d.innerHTML = decodeURIComponent(escape(atob(document.getElementById('content-encoded').innerText)))">Decode</button></p>
+    <p lang="en" style="color: red;">This article is encoded due to copyright reasons. <button lang="en" id="btn-decode" type="button" onclick="let d = document.getElementById('content');d.innerHTML = decodeURIComponent(escape(atob(document.getElementById('content-encoded').innerText)))">Decode</button></p>
     {{/*  {{ $text := base64Encode .Content }}
     {{ $cnt := strings.RuneCount $text }}
     {{ $max := div $cnt 50 }}
@@ -14,7 +14,7 @@
     <p>{{ substr $text $start 50 }}</p]>
     {{ $start = add $start 50 }}
     {{ end }}  */}}
-    <p style="word-wrap:break-word" id="content-encoded">
+    <p lang="en" style="word-wrap:break-word" id="content-encoded">
     {{- .Content | base64Encode -}}
     </p>
     {{ else }}
