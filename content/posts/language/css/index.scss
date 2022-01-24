@@ -1,0 +1,11 @@
+div.group {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  padding: 5px 5px 5px 5px;
+
+  p::before {
+    content: "[" attr(lang) "] ";
+  }
+}
+

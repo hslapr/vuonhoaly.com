@@ -105,4 +105,68 @@ mathJax: true
   <p><dfn>ド・モルガンの定理</dfn> <span class="overline"><var>x</var> + <var>y</var></span></p>
 
 </section>
+
+<section>
+<dl>
+  <dt>完全定義順序回路</dt>
+  <dd>どの状態においても，全ての入力記号に対して，次状態が決められている</dd>
+  <dt>不完全定義順序回路</dt>
+  <dd>ある入力記号に対して，次状態が定義されていないような状態が存在する</dd>
+  <dt>状態の等価</dt>
+  <dd>どの入力系列に対しても同じ系列が出力される二つの状態は等価（識別入力系列が存在しない）</dd>
+  <dt>識別入力系列</dt>
+  <dd>異なる状態を示す（出力系列が異なる）入力系列</dd>
+  <dt>識別可能</dt>
+  <dd>識別入力系列が存在する</dd>
+  <dt><span lang="en">k&ndash;</span>識別可能</dt>
+  <dd>長さ<span lang="en">k</span>の識別入力系列が存在する</dd>
+  <dt><span lang="en">k&ndash;</span>等価</dt>
+  <dd>長さ<span lang="en">k</span>の識別入力系列が存在しない</dd>
+  <dt>印加可能な入力</dt>
+  <dd>仕様中にある入力</dd>
+  <dt>状態の両立性</dt>
+  <dd>入力できるあらゆる入力系列に対して，存在する（ドントケアではない）出力系列がすべて等しい（一方の出力がドントケアの場合には出力が等しいとみなす）</dd>
+  <dt>両立集合</dt>
+  <dd>集合内のすべての状態対が両立する</dd>
+  <dt>極大両立集合</dt>
+  <dd>それを含む両立集合が存在しない両立集合</dd>
+  <dt>不完全定義状態機械の最小化</dt>
+  <dd>全ての状態を被覆し，かつ閉じている極大両立集合の集合で，要素数が最小の部分グラフを求める</dd>
+  <dt>ミーリ型順序回路</dt>
+  <dd>出力が入力と状態の関数</dd>
+  <dt>ムーア型順序回路</dt>
+  <dd>出力が状態のみの関数</dd>
+  <dt>（0/1）縮退故障</dt>
+  <dd>出力値が0または1に固定する故障</dd>
+  <dt>単一故障</dt>
+  <dt>多重故障</dt>
+  <dt>故障検出</dt>
+  <dd>入力値を与え，出力値を観測することにより故障の有無を調べること</dd>
+  <dt>故障診断</dt>
+  <dd>故障が存在するときに，故障の内容について調べること</dd>
+  <dt>故障検査 / テスト</dt>
+  <dd>故障検出と故障診断の総称</dd>
+  <dt>故障関数</dt>
+  <dd>故障により変わった出力関数</dd>
+  <dt>故障差関数</dt>
+  <dd>正常な論理関数と故障関数の排他的論理和</dd>
+  <dt>故障表</dt>
+  <dd>各入力パターンに対する，仮定された各故障についての故障差関数の値を表にしたもの</dd>
+  <dt>テストパターン</dt>
+  <dd>故障差関数を1にする入力値の組み合わせ（故障があるのとないのとで出力値が異なるような入力値）</dd>
+  <dt>冗長故障</dt>
+  <dd>故障関数と正常な出力関数の出力値が，あらゆる入力に対して等しい（故障差関数は常に0）</dd>
+  <dt>等価故障</dt>
+  <dd>同じ故障関数になる故障</dd>
+</dl>
+</section>
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Half_adder_using_xor.png" alt="half adder" srcset="">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Full_adder.png" alt="full adder" srcset="">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Adder6.png" alt="" srcset="">
+  <figcaption>半加算器，全加算器，桁上げ伝搬加算器</figcaption>
+</figure>
+<picture>
+
+</picture>
 </article>

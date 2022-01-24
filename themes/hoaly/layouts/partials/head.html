@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="/fontawesome/css/brands.min.css">
     <link rel="stylesheet" href="/fontawesome/css/solid.min.css">
+    {{ with $.Resources.GetMatch "**.scss*" }}
+    {{ $style := . | toCSS | minify | fingerprint }}
+    <link type="text/css" rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ end }}
     {{- with .Params.mathJax -}}
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
