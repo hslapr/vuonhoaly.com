@@ -19,6 +19,7 @@ var btnPrev = document.getElementById("btn-prev");
 var btnAgain = document.getElementById("btn-again");
 var btnCheck = document.getElementById("btn-check");
 var inputBlankCnt = document.getElementById("input-blank-cnt");
+var inputSuccessive = document.getElementById("input-successive");
 
 
 body.ondrop = function(e) {
@@ -172,12 +173,20 @@ function showSentence() {
     blankCnt = spanCnt;
     inputBlankCnt.value = spanCnt;
   }
-  shuffle(spanIndexArray);
-  spanIndexArrayIndex = 0;
-  for (let i = spanIndexArrayIndex; i < spanIndexArrayIndex + blankCnt; i++) {
-    createBlank(spanIndexArray[i]);
+  if (inputSuccessive.checked) {
+    spanIndexArrayIndex = spanCnt;
+    let firstSpanIndex = Math.floor(Math.random() * (spanCnt - blankCnt + 1));
+    for (let i = firstSpanIndex; i < firstSpanIndex + blankCnt; i++) {
+      createBlank(i);
+    }
+  } else {
+    shuffle(spanIndexArray);
+    spanIndexArrayIndex = 0;
+    for (let i = spanIndexArrayIndex; i < spanIndexArrayIndex + blankCnt; i++) {
+      createBlank(spanIndexArray[i]);
+    }
+    spanIndexArrayIndex += blankCnt;
   }
-  spanIndexArrayIndex += blankCnt;
 }
 
 function showSentenceAgain(){
@@ -189,14 +198,21 @@ function showSentenceAgain(){
     blank.remove();
   }
   let blankCnt = parseInt(inputBlankCnt.value);
-  if (spanIndexArrayIndex + blankCnt >= spanCnt) {
-    shuffle(spanIndexArray);
-    spanIndexArrayIndex = 0;
+  if (inputSuccessive.checked) {
+    let firstSpanIndex = Math.floor(Math.random() * (spanCnt - blankCnt + 1));
+    for (let i = firstSpanIndex; i < firstSpanIndex + blankCnt; i++) {
+      createBlank(i);
+    }
+  } else {
+    if (spanIndexArrayIndex + blankCnt >= spanCnt) {
+      shuffle(spanIndexArray);
+      spanIndexArrayIndex = 0;
+    }
+    for (let i = spanIndexArrayIndex; i < spanIndexArrayIndex + blankCnt; i++) {
+      createBlank(spanIndexArray[i]);
+    }
+    spanIndexArrayIndex += blankCnt;
   }
-  for (let i = spanIndexArrayIndex; i < spanIndexArrayIndex + blankCnt; i++) {
-    createBlank(spanIndexArray[i]);
-  }
-  spanIndexArrayIndex += blankCnt;
 }
 
 function getBlankIndex(blank) {
