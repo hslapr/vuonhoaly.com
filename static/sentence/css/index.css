@@ -31,16 +31,19 @@ input.wrong {
   font-weight: bold;
 }
 
-#div-sentence {
+#div-sentence-container {
+  width: 700px;
   height: 300px;
   background-color: aliceblue;
   text-align: center;
-  margin: 20px;
+  margin: 30px 50px 30px 50px;
   position: relative;
 }
 
-#sentence {
-  font-size: large;
+#div-sentence {
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 700px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -48,6 +51,10 @@ input.wrong {
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   margin: auto;
+}
+
+#sentence {
+  font-size: large;
 }
 
 #div-control {
