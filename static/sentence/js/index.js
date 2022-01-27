@@ -9,6 +9,7 @@ var spanCnt;
 var spans = [];
 var spanIndexArray = [];
 var spanIndexArrayIndex = 0;
+var notes = [];
 
 var body = document.getElementsByTagName("body")[0];
 var pSentence = document.getElementById("sentence");
@@ -20,11 +21,12 @@ var btnAgain = document.getElementById("btn-again");
 var btnCheck = document.getElementById("btn-check");
 var inputBlankCnt = document.getElementById("input-blank-cnt");
 var inputSuccessive = document.getElementById("input-successive");
+var inputShowNote = document.getElementById("input-show-note");
+var pNote = document.getElementById("p-note");
 
 
 body.ondrop = function(e) {
   e.preventDefault();
-  console.log(e);
   if (e.dataTransfer.items) {
     for (let i = 0; i < e.dataTransfer.items.length; i++) {
       if (e.dataTransfer.items[i].kind === 'file') {
@@ -53,39 +55,40 @@ function loadFile(file) {
       let multiline = false;
       let isSentence = true;
       for (let line of lines) {
+        line = line.trim();
         if (isSentence) {
-          if (multiline) {
-            if (line.endsWith("\\")) {
-              line = line.substr(0, line.length - 1);
-              sentence += line + "\n";
-            } else {
-              sentence += line;
-              multiline = false;
-              isSentence = false;
-              sentences.push(sentence);
-            }
-          } else {
-            if (line.endsWith("\\")) {
-              line = line.substr(0, line.length - 1);
+          if (line.endsWith("\\")) {
+            line = line.substr(0, line.length - 1);
+            if (multiline) { sentence += line + "\n"; }
+            else {
               sentence = line + "\n";
               multiline = true;
+            }
+          } else {
+            if (multiline) {
+              sentence += line;
+              multiline = false;
             } else {
               sentence = line;
-              isSentence = false;
-              sentences.push(sentence);
             }
+            isSentence = false;
+            sentences.push(sentence);
+            notes.push("");
           }
         } else if (line.length < 1) {
           isSentence = true;
+        } else {
+          notes[notes.length - 1] += line + "\n";
         }
       }
       spanSentenceCnt.innerText = sentences.length;
       currentSentenceIndex = 0;
       if (sentences.length > 1) {
         btnNext.removeAttribute("disabled");
+        btnPrev.removeAttribute("disabled");
+        btnAgain.removeAttribute("disabled");
+        btnCheck.removeAttribute("disabled");
       }
-      btnAgain.removeAttribute("disabled");
-      btnCheck.removeAttribute("disabled");
       spanCurrentSentenceIndex.innerText = currentSentenceIndex + 1;
       showSentence();
     }
@@ -95,13 +98,15 @@ function loadFile(file) {
 
 function changeSentence(d) {
   currentSentenceIndex += d;
-  if (currentSentenceIndex >= sentences.length - 1) {
-    btnNext.disabled = "disabled";
+  if (currentSentenceIndex > sentences.length - 1) {
+    currentSentenceIndex = 0;
+    // btnNext.disabled = "disabled";
   } else {
     btnNext.removeAttribute("disabled");
   }
-  if (currentSentenceIndex <= 0) {
-    btnPrev.disabled = "disabled";
+  if (currentSentenceIndex < 0) {
+    currentSentenceIndex = sentences.length - 1;
+    // btnPrev.disabled = "disabled";
   }
   else {
     btnPrev.removeAttribute("disabled");
@@ -187,6 +192,27 @@ function showSentence() {
     }
     spanIndexArrayIndex += blankCnt;
   }
+  if (inputShowNote.checked) {
+    showNote();
+  } else {
+    hideNote();
+  }
+}
+
+function showNote() {
+  pNote.innerText = notes[currentSentenceIndex];
+}
+
+function hideNote() {
+  pNote.innerText = "";
+}
+
+inputShowNote.onchange = function(e) {
+  if (this.checked) {
+    showNote();
+  } else {
+    hideNote();
+  }
 }
 
 function showSentenceAgain(){
@@ -251,7 +277,6 @@ function appendText(t, element) {
 }
 
 function createBlank(spanIndex) {
-  console.log("createBlank: "+ spanIndex);
   if (spanIndex >= spanCnt) return;
   let span = spans[spanIndex];
   let input = document.createElement("input");
