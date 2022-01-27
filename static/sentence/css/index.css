@@ -29,6 +29,7 @@ input.wrong {
   font-size: larger;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 #div-sentence-container {
