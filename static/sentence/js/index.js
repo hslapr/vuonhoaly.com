@@ -25,7 +25,7 @@ var inputShowNote = document.getElementById("input-show-note");
 var pNote = document.getElementById("p-note");
 
 
-body.ondrop = function(e) {
+body.ondrop = function (e) {
   e.preventDefault();
   if (e.dataTransfer.items) {
     for (let i = 0; i < e.dataTransfer.items.length; i++) {
@@ -42,14 +42,36 @@ body.ondrop = function(e) {
   }
 };
 
-body.ondragover = function(e) {
+body.ondragover = function (e) {
   e.preventDefault();
 };
+
+body.onkeyup = function (e) {
+  if (e.key == 'ArrowRight') {
+    btnNext.click();
+  } else if (e.key == 'ArrowLeft') {
+    btnPrev.click();
+  } else if (e.key == 'ArrowDown') {
+    if (inputBlankCnt.value > 0) {
+      inputBlankCnt.value--;
+    }
+    btnAgain.click();
+  } else if (e.key == 'ArrowUp') {
+    if (inputBlankCnt.value < spanCnt) {
+      inputBlankCnt.value++;
+    }
+    btnAgain.click();
+  } else if (e.key == 'Enter') {
+    btnAgain.click();
+  }
+}
+
+inputBlankCnt.onkeyup = blankKeyupHandler;
 
 function loadFile(file) {
   if (file.type.includes('text')) {
     let reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
       let lines = reader.result.replace(/[\r]/g, "").split("\n");
       let sentence = "";
       let multiline = false;
@@ -57,6 +79,9 @@ function loadFile(file) {
       for (let line of lines) {
         line = line.trim();
         if (isSentence) {
+          if (line.length < 1) {
+            continue;
+          }
           if (line.endsWith("\\")) {
             line = line.substr(0, line.length - 1);
             if (multiline) { sentence += line + "\n"; }
@@ -115,22 +140,22 @@ function changeSentence(d) {
   showSentence();
 }
 
-btnNext.onclick = function(e) {
+btnNext.onclick = function (e) {
   e.preventDefault();
   changeSentence(1);
 }
 
-btnPrev.onclick = function(e) {
+btnPrev.onclick = function (e) {
   e.preventDefault();
   changeSentence(-1);
 }
 
-btnAgain.onclick = function(e) {
+btnAgain.onclick = function (e) {
   e.preventDefault();
   showSentenceAgain();
 }
 
-btnCheck.onclick = function(e) {
+btnCheck.onclick = function (e) {
   e.preventDefault();
   check();
 }
@@ -207,7 +232,7 @@ function hideNote() {
   pNote.innerText = "";
 }
 
-inputShowNote.onchange = function(e) {
+inputShowNote.onchange = function (e) {
   if (this.checked) {
     showNote();
   } else {
@@ -215,7 +240,7 @@ inputShowNote.onchange = function(e) {
   }
 }
 
-function showSentenceAgain(){
+function showSentenceAgain() {
   let blanks = document.querySelectorAll("input.blank");
   for (const blank of blanks) {
     let blankIndex = getBlankIndex(blank);
@@ -249,6 +274,11 @@ function blankKeydownHandler(e) {
   if (e.ctrlKey && e.keyCode == 13) {
     check();
   }
+}
+
+function blankKeyupHandler(e) {
+  e.preventDefault();
+  e.stopPropagation();
 }
 
 function initSpanIndexArray() {
@@ -285,13 +315,14 @@ function createBlank(spanIndex) {
   input.classList.add("blank");
   input.id = "blank-" + spanIndex;
   input.onkeydown = blankKeydownHandler;
+  input.onkeyup = blankKeyupHandler;
   pSentence.insertBefore(input, span);
   pSentence.removeChild(span);
 }
 
 
 
-document.onload = function() {
+document.onload = function () {
 
 
 

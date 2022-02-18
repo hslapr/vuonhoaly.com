@@ -9,5 +9,8 @@
         {{- block "main" . }}{{- end }}
 
         {{- partial "footer.html" . -}}
+        {{ range .Params.js }}
+        <script type="text/javascript" src="{{ . }}.js"></script>
+        {{ end }}
     </body>
 </html>
