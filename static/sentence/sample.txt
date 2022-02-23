@@ -1,56 +1,310 @@
-Ab morgen muss ich arbeiten.
+Die Fahrt kostet ab Hamburg 200 Euro.
 
-Ich bin oft im Büro, aber nur für wenige Stunden.
+Ab nächster Woche bleibt unser Geschäft samstags geschlossen. 
+Geschäft = shop
 
-Wir fahren um zwölf Uhr ab.
+Mein Bruder besucht uns ab und zu. 
+besuchen = visit
 
-Vor der Abfahrt rufe ich an.
+An der nächsten Kreuzung müssen Sie links abbiegen.
+abbiegen = turn
 
-Ich muss meine Schlüssel abgeben.
+Auf der Abbildung sehen Sie, wie man das Gerät einschaltet. 
+Gerät = device, einschalten = turn on, Abbildung = picture
 
-Wann kann ich den Schrank bei dir abholen?
+Unser Urlaub war ein tolles Abenteuer. 
+toll = great, Abenteuer=adventure, Urlaub = vacation
 
-Wir müssen noch meinen Bruder abholen. 
+Die Kinder lieben Abenteuergeschichten.
+ 
+Heute kann ich nicht, aber morgen ganz bestimmt.
 
-Da ist ein Brief für dich ohne Absender.
+Es lag sehr viel Schnee, aber er ist trotzdem mit dem Motorrad gefahren.
+lag < liegen
 
-Achtung! Das dürfen Sie nicht tun.
+Wir haben nur eine kleine Wohnung, sind aber damit zufrieden.
+zufrieden = satisfied
 
-Können Sie mir seine Adresse sagen?
+Es war sehr schön. Jetzt muss ich aber gehen.
 
-Er kommt allein. 
+Ich würde gerne kommen, aber es geht leider nicht.
 
-Er hat Zeit, also muss er uns helfen.
+Darf ich dich zu einem Kaffee einladen? - Aber ja, sehr gern.
+
+Du spielst aber gut Klavier.
+
+Unser Zug ist pünktlich abgefahren. 
+
+Es bleiben uns noch zwanzig Minuten bis zur Abfahrt. 
+
+Werfen Sie den Bioabfall bitte nicht zum normalen Müll. 
+werfen = throw, der Abfall = waste, Müll = trash
+
+Wirf das bitte in den Abfalleimer. 
+Eimer = bucket
+
+Abgase aus Industrie und Haushalten verschmutzen die Luft.
+Abgase=ab+Gas=emission, verschmutzen=pollute
+
+Ich soll dieses Päckchen bei Herrn Müller abgeben.
+
+Vielleicht bleiben wir ein paar Tage länger, das hängt vom Wetter ab.
+abhängen=depend
+
+Er ist finanziell von seinen Eltern abhängig.
+abhängig=dependent
+
+Für die Reise habe ich 500 Euro von meinem Konto abgehoben. 
+Konto=account, abheben=withdraw
+
+Meine Freundin hat mich vom Bahnhof abgeholt. 
+abholen=pick up
+
+Er hat die Hausaufgaben von mir abgeschrieben. 
+abschreiben=transcribe
+
+Meine Tochter hat gerade Abitur gemacht.
+Abitur=final exams taken by pupils at the end of their secondary education in Germany and Finland
+
+Er hat mein Angebot, ihm zu helfen, abgelehnt.
+Angebot=offer, ablehnen=refuse
+
+Wir hatten doch abgemacht, dass du die Getränke besorgst.
+abmachen=agree on, Getränk=drink, besorgen=get, obtain
+
+Morgen können wir den Verband abnehmen.
+der Verband=(medical) bandage, abnehmen=take off
+
+Ich habe zehn Kilo abgenommen.
+
+Diese Zeitschrift würde ich gerne abonnieren.
+Zeitschrift=magazine, abonnieren=subscribe
+
+Ich habe das Abonnement gekündigt.
+Abonnement=subscription, kündigen=cancel
+
+Ich muss unser Treffen leider absagen, weil ich krank geworden bin.
+absagen=cancel
+
+Ein guter Schulabschluss ist sehr wichtig.
+Schulabschluss=school graduation, wichtig=important
+
+Lesen Sie bitte den zweiten Abschnitt.
+Abschnitt=section
+
+Schicken Sie das Paket an den Absender zurück.
+Pakét, zurückschicken=send back
+
+Entschuldigen Sie bitte. Meine Tochter hat das nicht mit Absicht gemacht.
+Absicht=intention
+
+Hast du die Absicht zu studieren?
+
+Was Sie da sagen, ist absolut falsch.
+
+Ich habe absolutes Vertrauen zu dir.
+vertrauen=trust
+
+Lasst uns über diesen Punkt abstimmen.
+abstimmen=coordinate
+
+Meine Freundin arbeitet in der Abteilung von Frau Kaufmann.
+Abteilung=department
+
+Der Abwart hat mir geholfen, den Schrank in die Wohnung zu tragen.
+Abwart=caretaker, Schrank=cabinet, tragen=carry
+
+Von dort führt der Weg abwärts ins Tal.
+abwärts=downward, Tal=valley
+
+Ich muss noch das Geschirr abwaschen. 
+Geschirr=dishware, abwaschen=wash up
+
+Herr Huber ist bis zum 25. April abwesend.
+abwesend=absent
+
+Achten Sie bitte darauf, dass Sie abschließen, wenn Sie gehen.
+achten=pay attention to, abschließen=lock
+
+Achtung, hier endet die Straße!
+
+Hast du schon meine neue Adresse?
+
+Emilia ist in einer ganz ähnlichen Situation wie ich.
+ähnlich=similar
+
+Er sieht seinem Bruder sehr ähnlich.
+
+Ich hatte keine Ahnung, dass du heute Geburtstag hast.
+
+Die Stadt sollte eine Aktion für Familien planen.
+
+Ich bin sehr aktiv und mache viel Sport.
+
+In den Ferien bietet die Stadt für Kinder verschiedene Freizeitaktivitäten. 
+Ferien=holiday, bieten=offer, verschieden=various
+
+Umweltschutz ist ein aktuelles Thema.
+aktuéll=current
+
+Ich kann diese Bedingungen nicht akzeptieren. 
+Bedingung=requirement, condition
+
+Bei Feueralarm dürfen Sie die Aufzüge nicht benutzen.
+Feuer=fire, Aufzug=elevator
+
+Du musst die Wunde mit Alkohol reinigen.
+reinigen=clean
+
+Ich gehe nicht gern allein spazieren.
+
+Soll ich Ihnen helfen? - Danke, ich schaffe es schon allein.
+schaffen=搞定
+
+Es war sehr teuer. Allein das Essen hat schon über 50 Euro gekostet. 
+
+Am allerbesten ist es, wenn du dich ins Bett legst und lange schläfst. Dann wirst du schnell wieder gesund.
+
+Das ist das Allerschönste, was ich je gesehen habe. 
+je=ever
+
+Wir können uns morgen treffen, allerdings habe ich erst ab Mittag Zeit.
+allerdings=however, erst=only
+
+Wir haben nur über allgemeine Probleme gesprochen.
+allgemein=general
+
+Es ist allgemein bekannt, dass man hier gut essen kann.
+bekannt=known
+
+Im Allgemeinen bin ich mit meiner Arbeit sehr zufrieden.
+
+Das ist mein Alltag: putzen, waschen, kochen.
+putzen=clean（擦）
+
+Das alltägliche Leben ist manchmal langweilig.
+langweilig=boring
+
+Der Roman erzählt eine ganz alltägliche Geschichte.
+erzählen=tell
+
+Wie viele Buchstaben hat das Alphabet in Ihrer Sprache?
+Buchstabe=letter
+
+Als mein Mann kam, war die Party schon zu Ende.
+
+Sie können sich sowohl persönlich als auch im Internet anmelden.
+sowohl=both
+
+Meine Schwester ist älter als ich.
+
+Es ist später, als ich dachte.
+
+Er tut so, als ob wir nie darüber gesprochen hätten.
+
+Irina hat Urlaub. Sie kann uns also helfen.
+
+Also wirklich, jetzt reicht es.
+wirklich=real
 
 Wie alt sind Sie?
 
-Sie sehen aber nicht so alt aus. 
+Maria ist eine alte Freundin von mir.
 
-Mein Auto ist schon sehr alt.
+Wir sind etwa im gleichen Alter.
+etwa=approximately, Alter=age, gleich=same
 
-Wir wohnen in einem sehr alten Haus.
+Die Großeltern unserer Nachbarn sind im Altenheim.
+Nachbar=neighbour, Heim=home
 
-Köln ist eine alte Stadt.
+Wir brauchen alternative Energien.
 
-Fahren Sie an der nächsten Straße nach rechts.
- 
-Wir treffen uns am Bahnhof.
+Auf dieser Strecke ist der Zug eine gute Alternative zum Flugzeug.
+Strecke=route, Flugzeug=aeroplane
 
-Am nächsten Montag geht es leider nicht.
+Dort an der Ampel kannst du über die Straße gehen.
+Ampel=traffic light
 
-Was darf ich dir anbieten?
+Das Arbeitsamt befindet sich neben dem Busbahnhof.
+Arbeitsamt=unemployment office, befinden=to be located
 
-Heute sind Sportschuhe im Angebot.
+Bei dem Fest haben wir uns sehr gut amüsiert.
 
-Willst du diese Jacke?\
-- Nein, ich möchte die andere.
+Am Anfang war alles sehr schwierig.
 
-Hier fängt die Bahnhofstraße an. 
+Dann sehen wir uns also am Dienstag.
 
-Der Unterricht fängt gleich an.
+Ich warte am Bahnhof auf dich.
 
-Sie wohnt am Anfang der Straße.
+Am besten, du gehst zur Information und fragst da.
 
-Wir machen Anfang Juli Urlaub. 
+Das Licht war die ganze Nacht an.
 
-Da musst du dieses Wort anklicken.
+Die Politiker analysieren die Situation auf dem Arbeitsmarkt.
+
+Darf ich Ihnen etwas zu trinken anbieten?
+
+Ist das ein privater Telefonanbieter?
+Telefonanbieter=电话服务商
+
+Ich habe in der Zeitung ein paar günstige Wohnungsangebote gelesen.
+günstig=便宜的
+
+Der Käse ist heute im Angebot.
+im Angebot=特价
+
+Die anderen sind schon nach Hause gegangen.
+nach Hause gehen=go home
+
+Bitte nicht alle auf einmal! Einer nach dem anderen.
+
+Ich hätte gern ein anderes Auto.
+
+Er möchte zwar studieren, aber andererseits möchte er auch gleich Geld verdienen.
+zwar...aber...=虽然...但是... andererseits=on the other hand, verdienen=earn
+
+Das Wetter hat sich geändert.
+ändern=change
+
+Ich habe meine Meinung inzwischen geändert.
+Meinung=opinion, inzwischen=in the meantime
+
+Es gibt eine Programmänderung.
+Änderung=change
+
+Anders geht das leider nicht.
+
+Er ist anders als seine Freunde.
+anders=different
+
+Ich würde das anders machen.
+
+Meine Ausbildung wird hier nicht anerkannt.
+Ausbildung=education, anerkennen=acknowledge
+
+Wann fängst du mit der Arbeit an?
+
+Hier fängt die Bahnhofstraße an.
+
+Wie war der Film?\
+- Ich habe nur den Anfang gesehen.
+
+Am Anfang habe ich bei der Arbeit viele Fragen gestellt.
+Frage stellen=提问题
+
+Mein Chef ist Anfang fünfzig.
+
+Meine Mutter war von Anfang an dagegen, dass ich nach Berlin ziehe.
+von Anfang an=from the beginning, ziehen=move
+
+Wir machen Anfang Juli Ferien.
+
+Meine Freundin wohnt am Anfang der Straße.
+
+Anfangs ging alles gut.
+
+Bitte geben Sie Ihre genaue Adresse an.
+genau=exact, angeben=provide (information)
+
+Wir brauchen von Ihnen folgende Angaben: Name, Adresse, Geburtsdatum.
+folgen=follow, Angabe=information
