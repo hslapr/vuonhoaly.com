@@ -15,7 +15,8 @@ var en2ja = {
   "estrofem": "エストロフェム",
   "dermestril septem": "ダーメストリルセプテム",
   "siterone": "シテロン",
-  "androcur": "アンドロクール"
+  "androcur": "アンドロクール（アンドロキュア）",
+  "cyproterone acetate": "酢酸シプロテロン",
 }
 
 var i18nElements = document.querySelectorAll(".i18n");
