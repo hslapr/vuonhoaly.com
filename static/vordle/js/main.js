@@ -34,7 +34,7 @@ function newTry() {
 }
 
 function check() {
-  let ans = iAnswer.value;
+  let ans = iAnswer.value.toLowerCase();
   divTiles = document.createElement("div");
   board.append(divTiles);
   record.push([]);
