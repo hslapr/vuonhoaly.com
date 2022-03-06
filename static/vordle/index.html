@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="canonical" href="/vordle/">
+  <title>Document</title>
+</head>
+<body>
+  
+<div id="div-question">
+<p id="question"></p>
+<details lang="en" id="hint">
+  <summary>Hint</summary>
+</details>
+</div>
+
+<div id="board"></div>
+
+<div id="div-answer">
+  <label for="answer" lang="en">Your answer:</label>
+  <input type="text" id="answer">
+  <button id="submit" lang="en">Submit</button>
+</div>
+<p id="result" hidden></p>
+<div id="div-share" hidden>
+  <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet" id="share" target="_blank">Share</a>
+</div>
+
+  <script src="js/constant.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

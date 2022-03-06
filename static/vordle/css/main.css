@@ -1,0 +1,48 @@
+.tile-text {
+  width: 100%;
+  
+  
+}
+
+.tile {
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  user-select: none;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+.absent {
+  background-color: #787c7e;
+}
+
+.present {
+  background-color: #c9b458;
+}
+
+.correct {
+  background-color: #6aaa64;
+}
+
+/* .tile::before {
+  content: '';
+  display: inline-block;
+  padding-bottom: 100%;
+} */
+
+div#board {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
