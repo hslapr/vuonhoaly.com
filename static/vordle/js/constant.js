@@ -10,7 +10,7 @@ questions = [
     "answer": "disingenuous"
   }
 ];
-const maxTry = 6;
+const maxTry = 5;
 
 const eQuestion = document.getElementById("question");
 const eHint = document.getElementById("hint");
