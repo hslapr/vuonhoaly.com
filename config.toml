@@ -1,6 +1,6 @@
 baseURL = 'https://www.vuonhoaly.com/'
 title = 'Vườn Hoa Ly'
-copyright = '2021 Vuonhoaly.com. All rights reserved.'
+copyright = '2022 Vuonhoaly.com. All rights reserved.'
 theme = 'hoaly'
 defaultContentLanguage = 'zh-hans'
 enableEmoji = true
