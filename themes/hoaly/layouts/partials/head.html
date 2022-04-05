@@ -3,7 +3,7 @@
     {{ if ne .Kind "home" }}
     <title>{{ .Title }} - Vườn Hoa Ly</title>
     {{ else }}
-    <title>Vườn Hoa Ly</title>
+    <title lang="vi">Vườn Hoa Ly</title>
     {{ end }}
 
     {{ $style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
