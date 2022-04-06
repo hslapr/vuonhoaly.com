@@ -1,7 +1,7 @@
 @use "sass:string";
 @use "sass:map";
 
-$languages: 'zh-Hans', 'zh-Hant', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de', 'fi', 'my';
+$languages: 'zh-Hans', 'zh-Hant', 'en', 'ja', 'ja-jp', 'vi', 'it', 'de', 'fi', 'my', 'ko';
 $cjk-unicode-range: U+2E80-9FFF, U+FF00-FFFF;//, U+F900–FAFF, U+FE30–FE4F;
 $sans-serif-tags: h1, h2, h3, h4, h5, h6, strong, dfn, th, header nav, table caption;
 
@@ -12,12 +12,14 @@ $font-family: (
     'zh-Hant': ('繁中衬线体', Georgia, 'Times New Roman', Times, serif),
     'ja': ('明朝', Georgia, 'Times New Roman', Times, serif),
     'vi': ('Times New Roman', Times, serif),
+    'ko': ('ko-serif', Georgia, 'Times New Roman', Times, serif),
     'other': (Georgia, 'Times New Roman', Times, serif),
   ),
   'sans-serif': (
     'zh-Hans': ('简中无衬线体', 'Helvetica', sans-serif),
     'zh-Hant': ('繁中无衬线体', 'Helvetica', sans-serif),
     'ja': ('ゴシック', 'Helvetica', sans-serif),
+    'ko': ('ko-sans', 'Helvetica', sans-serif),
     'other': ('Helvetica', Helvetica, sans-serif),
   )
 );
@@ -25,6 +27,9 @@ $font-family: (
 @function font-family($lang, $style) {
   @if str-slice($lang,1,2) == 'ja' {
     $lang: 'ja';
+  }
+  @if str-slice($lang,1,2) == 'ko' {
+    $lang: 'ko';
   }
   $lang-map: map-get($map: $font-family, $key: $style);
   @if map-has-key($map: $lang-map, $key: $lang) {
@@ -48,6 +53,18 @@ $font-family: (
 @font-face {
   font-family: 'ゴシック';
   src:local('游ゴシック'), local('ヒラギノ角ゴ ProN'), local('Hiragino Kaku Gothic ProN'), local('HiraKakuProN'), url(/fonts/YUGOTHB.TTC) format('truetype'), url(/fonts/YUGOTHL.TTC) format('truetype'), url(/fonts/YUGOTHM.TTC) format('truetype'), url(/fonts/YUGOTHR.TTC) format('truetype');
+  unicode-range: $cjk-unicode-range;
+}
+
+@font-face {
+  font-family: 'ko-serif';
+  src: local('Noto Serif KR'), url(/fonts/NotoSerifKR-Regular.otf) format('opentype'), url(/fonts/NotoSerifKR-Black.otf) format('opentype'), url(/fonts/NotoSerifKR-Bold.otf) format('opentype'), url(/fonts/NotoSerifKR-Light.otf) format('opentype'), url(/fonts/NotoSerifKR-ExtraLight.otf) format('opentype'), url(/fonts/NotoSerifKR-SemiBold.otf) format('opentype'), url(/fonts/NotoSerifKR-Medium.otf) format('opentype');
+  // unicode-range: $cjk-unicode-range;
+}
+
+@font-face {
+  font-family: 'ko-sans';
+  src: local('Noto Sans KR'), url(/fonts/NotoSansKR-Regular.otf) format('opentype'), url(/fonts/NotoSansKR-Black.otf) format('opentype'), url(/fonts/NotoSansKR-Bold.otf) format('opentype'), url(/fonts/NotoSansKR-Light.otf) format('opentype'), url(/fonts/NotoSansKR-Medium.otf) format('opentype'), url(/fonts/NotoSansKR-Thin.otf) format('opentype');
   unicode-range: $cjk-unicode-range;
 }
 
