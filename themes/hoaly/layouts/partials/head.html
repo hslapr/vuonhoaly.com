@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="/fontawesome/css/brands.min.css">
     <link rel="stylesheet" href="/fontawesome/css/solid.min.css">
-    {{ with $.Resources.GetMatch "**.scss*" }}
+    {{ with .Resources.Match "**.*css" }}
+    {{ range . }}
     {{ $style := . | toCSS | minify | fingerprint }}
     <link type="text/css" rel="stylesheet" href="{{ $style.Permalink }}">
+    {{ end }}
     {{ end }}
     {{- with .Params.mathJax -}}
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

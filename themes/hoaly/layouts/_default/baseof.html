@@ -9,10 +9,14 @@
         {{- block "main" . }}{{- end }}
 
         {{- partial "footer.html" . -}}
-        {{ range .Params.js }}
-        <script type="text/javascript" src="{{ . }}.js"></script>
-        {{ if eq . "i18n"}}
+        
+
+        {{ with .Resources.Match "**.js" }}
+        {{ range . }}
+        <script src="{{ .Permalink }}"></script>
+        {{ if eq .Name "i18n.js" }}
         <script src="/js/i18n.js"></script>
+        {{ end }}
         {{ end }}
         {{ end }}
         
