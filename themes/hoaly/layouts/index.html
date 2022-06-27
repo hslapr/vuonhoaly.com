@@ -1,5 +1,6 @@
 {{ define "main" }}
 <header>
+<!-- Banner -->
   <div>
     {{- $image := resources.Get "images/banner.png" -}}
     {{ $image = $image.Resize "600x" }}
@@ -9,16 +10,18 @@
 
 <main>
 
+<!-- Slogans -->
 <div id="slogan-my-body-my-choice" class="slogan slogan-red">MY BODY, MY CHOICE</div>
 <div id="slogan-abortion-is-a-human-right" class="slogan slogan-blue">Abortion is a Human Right</div>
 
+<!-- Profile -->
 <article>
 <h2 lang="en">Profile</h2>
 <p lang="zh-Hans"><del>我是猫，还没有名字，也不知道自己从哪来。</del></p>
-<ul lang="en">
+<ul id="ul-profile" lang="en">
   <li lang="zh-Hans"><span lang="en">Name:</span> 璃香（<span lang="en">lí xiāng</span> / <span lang="ja">りか</span> / <span lang="ko">리향</span> / <span lang="vi">Ly Hương</span>）<small lang="en">*don't use this name in real life if you know any alternatives</small></li>
   <li lang="en">Gender: F(eline)</li>
-  <li lang="en">Pronoun: she/her <span lang="zh-Hans">她/（<a href="/posts/q+a/#q2">他</a>）</span></li>
+  <li lang="en" id="li-pronoun">Pronoun: she/her <span lang="zh-Hans">她/（<a href="/posts/q+a/#q2">他</a>）</span></li>
   <li lang="en">Sexuality: Asexual, but I love lesbian art</li>
   <li lang="en">I'm a pre-op trans girl taking hormone replacement therapy.</li>
   <li lang="en">24 y/o, student</li>
@@ -79,7 +82,7 @@
   </tbody></table>
   </details>
 </article>
-
+<!-- Profile end -->
 
 <!-- About this site -->
 <article>
@@ -91,7 +94,7 @@
   
   
 </article>
-
+<!-- Posts -->
   <nav>
     <h2 lang="en">Posts</h1>
     <ul>
@@ -105,11 +108,12 @@
     </ul>
   </nav>
 
-  
+
+<!-- Apps -->
   <nav>
     <h2 lang="en">Apps</h1>
     <ul>
-      <li><a href="/whiteboard/" lang="en">Whiteboard</a></li>
+      <!-- <li><a href="/whiteboard/" lang="en">Whiteboard</a></li> -->
       <li><a href="/sentence/" lang="en">Learn Languages through Sentences</a></li>
       <!-- <li><a href="/vordle/" lang="en">Vordle</a></li> -->
       <li><a href="/wordle-answer.html" target="_blank" rel="noopener noreferrer" lang="en">Wordle's answer</a></li>
@@ -117,7 +121,7 @@
   </nav>
 
   
-
+<!-- Friends -->
   <h2 lang="en">Friends</h2>
   <ul>
     <li><a lang="zh-Hans" href="https://imbushuo.net/blog" target="_blank">饼干的 <span lang="en">Blog</span></a></li>
@@ -126,6 +130,8 @@
     <li><a lang="zh-Hant" href="https://observatoryx.github.io/" target="_blank"><span lang="en">ObservatoryX</span> 天文觀測站</a></li>
   </ul>
 
+
+<!-- Contact -->
 <article>
 <h2 lang="en" id="contact">Contact</h1>
     
@@ -133,6 +139,7 @@
   <li lang="en"><a href="https://github.com/lyhng-rika" target="_blank"><i class="fab fa-github fa-lg"></i></a> Github @lyhng-rika</li>
   <li><a href="https://t.me/lyhng" target="_blank"><i class="fab fa-telegram fa-lg"></i></a> Telegram @lyhng (I prefer this)</li>
   <li><a href="https://twitter.com/lyhng_rika" target="_blank"><i class="fab fa-twitter fa-lg"></i></a> Twitter @lyhng_rika</li>
+  <li><a href="https://discord.gg/FYzbBW2T" target="_blank"><i class="fab fa-discord fa-lg"></i></a> Discord Server <span lang="zh-Hans">大家都很可爱的服务器</span></li>
   <li><a href="mailto:rika@vuonhoaly.com" target="_blank"><i class="fas fa-envelope-open fa-lg"></i></a> E-mail: <a href="mailto:rika@vuonhoaly.com">rika@vuonhoaly.com</a></li>
 </ul>
     

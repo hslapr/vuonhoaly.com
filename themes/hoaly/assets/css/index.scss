@@ -21,3 +21,17 @@
     font-size: 30pt;
     padding: 5px 0px 5px 0px;
 }
+
+#ul-profile {
+    li:not(:last-child) {
+        margin-bottom: 5px;
+    }
+    
+    li#li-pronoun {
+        background-color: lightpink;
+    }
+}
+
+ul.v-space-5 li:not(:last-child), ol.v-space-5 li:not(:last-child){
+    margin-bottom: 5px;
+}
