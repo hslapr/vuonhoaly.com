@@ -14,13 +14,13 @@
 
         {{ with .Resources.Match "**.js" }}
         {{ range . }}
-        {{ $script := . | minify | fingerprint }}
+        {{ $script := . | fingerprint }}
         <script src="{{ $script.Permalink }}"></script>
         {{ end }}
         {{ end }}
 
         {{ if isset .Params "languages" }}
-        {{ $i18n := resources.Get "js/i18n.js" | minify | fingerprint }}
+        {{ $i18n := resources.Get "js/i18n.js" | fingerprint }}
         <script src="{{ $i18n.Permalink }}"></script>
         {{ end }}
         
