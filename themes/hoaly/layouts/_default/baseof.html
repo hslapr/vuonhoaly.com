@@ -20,6 +20,11 @@
         {{ end }}
 
         {{ if isset .Params "languages" }}
+        {{ with .Resources.GetMatch "**i18n.json" }}
+        <script>
+            var i18n = {{ .Content | safeJS }};
+        </script>
+        {{ end }}
         {{ $i18n := resources.Get "js/i18n.js" | fingerprint }}
         <script src="{{ $i18n.Permalink }}"></script>
         {{ end }}
