@@ -2,8 +2,16 @@
     <nav>
         <a href={{ .Site.Home.RelPermalink }} lang="en">Home</a>
         {{ range .Site.Sections }}
-        &nbsp;
         <a href={{ .RelPermalink }} lang="en">{{ .Title }}</a>
+        {{ end }}
+        {{if isset .Params "languages" }}
+        <form id="form-languages">
+            <select name="language">
+                {{ range .Params.languages }}
+                <option value="{{ index . 0 }}">{{ index . 1 }}</option>
+                {{ end }}
+            </select>
+        </form>
         {{ end }}
     </nav>
     <hr>

@@ -208,8 +208,16 @@ h4, h5, h6 {
 header {
   padding: 10px 0px 0px 0px;
   nav {
+    display: flex;
+    align-items: center;
     a {
       text-decoration-line: none;
+      color:blueviolet;
+      margin-right: 10px;
+    }
+    form#form-languages {
+      display: inline-block;
+      margin-left: auto;
     }
   }
 }

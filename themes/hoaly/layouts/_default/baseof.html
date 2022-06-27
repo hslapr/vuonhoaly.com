@@ -10,14 +10,18 @@
 
         {{- partial "footer.html" . -}}
         
+        
 
         {{ with .Resources.Match "**.js" }}
         {{ range . }}
-        <script src="{{ .Permalink }}"></script>
-        {{ if eq .Name "i18n.js" }}
-        <script src="/js/i18n.js"></script>
+        {{ $script := . | minify | fingerprint }}
+        <script src="{{ $script.Permalink }}"></script>
         {{ end }}
         {{ end }}
+
+        {{ if isset .Params "languages" }}
+        {{ $i18n := resources.Get "js/i18n.js" | minify | fingerprint }}
+        <script src="{{ $i18n.Permalink }}"></script>
         {{ end }}
         
     </body>
