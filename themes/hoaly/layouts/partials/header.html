@@ -4,7 +4,7 @@
         {{ range .Site.Sections }}
         <a href={{ .RelPermalink }} lang="en">{{ .Title }}</a>
         {{ end }}
-        {{if isset .Params "languages" }}
+        {{ if isset .Params "languages" }}
         <form id="form-languages">
             <select name="language">
                 {{ range .Params.languages }}
