@@ -1,56 +1,74 @@
-var en2ja = {
-  "estradiol": "エストラジオール",
-  "conjugated estrogen": "結合型エストロゲン",
-  "estradiol valerate": "エストラジオール吉草酸エステル",
-  "medroxyprogesterone acetate": "メドロキシプロゲステロン酢酸エステル",
-  "provera": "プロベラ",
-  "climara": "クリマラ",
-  "oestrogel": "オエストロジェル",
-  "premon": "プレモン",
-  "premarin": "プレマリン",
-  "progynova": "プロギノバ",
-  "malefe mtf": "マレフェMTF",
-  "meprate": "プロベラジェネリック",
-  "oestrodose": "オエストロドースジェル",
-  "estrofem": "エストロフェム",
-  "dermestril septem": "ダーメストリルセプテム",
-  "siterone": "シテロン",
-  "androcur": "アンドロクール（アンドロキュア）",
-  "cyproterone acetate": "酢酸シプロテロン",
-}
-
-var i18nElements = document.querySelectorAll(".i18n");
-for (let element of i18nElements) {
-  element.title = element.textContent;
-}
-
-var language = "en";
-var languageForm = document.querySelector("#language-form");
-var radios = document.querySelectorAll("#language-form input[type=radio]");
-for (let radio of radios) {
-  radio.addEventListener('change', function (e) {
-    language = this.value;
-    i18n();
-  });
-}
-
-
-function i18n() {
-  let dict = null;
-  if (language == "ja") {
-    dict = en2ja;
-  } else if (language == "en") {
-    for (const e of i18nElements) {
-      e.textContent = e.title;
-      e.lang = 'en';
-    }
-    return;
-  }
-  for (const e of i18nElements) {
-    let t = e.textContent.toLowerCase();
-    if (t in en2ja) {
-      e.textContent = dict[t];
-      e.lang = 'ja';
-    }
-  }
+var i18n = {
+  'bQmHEBpy': {
+    'en': 'Premarin',
+    'ja': 'プレマリン'
+  },
+  'gJ8YvVPu': {
+    'en': 'Premon',
+    'ja': 'プレモン'
+  },
+  'e0CFVk5R': {
+    'en': 'Estradiol',
+    'ja': 'エストラジオール'
+  },
+  'gRFEKwrl': {
+    'en': 'OestroGel',
+    'ja': 'オエストロジェル'
+  },
+  'zs7gaWhG': {
+    'en': 'Oestrodose',
+    'ja': 'オエストロドースジェル'
+  },
+  'Ha1o1oh6': {
+    'en': 'Climara',
+    'ja': 'クリマラ'
+  },
+  'hrSKCu34': {
+    'en': 'Estrofem',
+    'ja': 'エストロフェム'
+  },
+  'Y3mn9Bdn': {
+    'en': 'Dermestril Septem',
+    'ja': 'ダーメストリルセプテム'
+  },
+  'wkOI2Ikt': {
+    'en': 'Estradiol valerate',
+    'ja': 'エストラジオール吉草酸エステル'
+  },
+  'OeGridWr': {
+    'en': 'Progynova',
+    'ja': 'プロギノバ'
+  },
+  'zSs0jwaJ': {
+    'en': 'Medroxyprogesterone acetate',
+    'ja': 'メドロキシプロゲステロン酢酸エステル'
+  },
+  'JkzsLWxj': {
+    'en': 'Provera',
+    'ja': 'プロベラ'
+  },
+  'ybC9zuUJ': {
+    'en': 'Malefe MTF',
+    'ja': 'マレフェMTF'
+  },
+  'd9NuEc2s': {
+    'en': 'Meprate',
+    'ja': 'プロベラジェネリック'
+  },
+  'pZBgXLzo': {
+    'en': 'Cyproterone acetate',
+    'ja': '酢酸シプロテロン'
+  },
+  'yvPialrz': {
+    'en': 'Siterone',
+    'ja': 'シテロン'
+  },
+  'UKO0SN9j': {
+    'en': 'Androcur',
+    'ja': 'アンドロクール（アンドロキュア）'
+  },
+  'vC6R4sD7': {
+    'en': 'Conjugated estrogen',
+    'ja': '結合型エストロゲン'
+  },
 }

@@ -1,0 +1,14 @@
+{{ $languages := .Get "languages" }}
+{{ $languages = split $languages " " }}
+{{ $lang := "" }}
+<form id="form-i18n">
+    {{ range $i, $v := $languages }}
+    {{ $mod := mod $i 2 }}
+    {{ if eq $mod 0 }}
+    {{ $lang := $v }}
+    <input type="radio" name="i18n-language" id="i18n-language-{{ $lang }}" value="{{ $lang }}" {{ if eq $i 0 }}{{ print "checked" }}{{ end }}>
+    {{ else }}
+    <label for="i18n-language-{{ $lang }}" lang="{{ $lang }}">{{ $v }}</label>
+    {{ end }}
+    {{ end }}
+</form>
