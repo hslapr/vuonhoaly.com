@@ -97,7 +97,7 @@
 <!-- Posts -->
   <nav>
     <h2 lang="en">Posts</h1>
-    <ul>
+    <ul id="ul-posts">
       {{ range .Site.RegularPages }}
       {{ if .Param "titleLanguage" }}
       <li><a href="{{ .RelPermalink }}" lang={{ .Param "titleLanguage" }}>{{ .LinkTitle | safeHTML }}</a></li>
@@ -134,8 +134,7 @@
 <!-- Contact -->
 <article>
 <h2 lang="en" id="contact">Contact</h1>
-    
-<ul class="v-space-5" lang="en">
+<ul id="ul-contact" class="v-space-5" lang="en">
   <li lang="en"><a href="https://github.com/lyhng-rika" target="_blank"><i class="fab fa-github fa-lg"></i></a> Github @lyhng-rika</li>
   <li><a href="https://t.me/lyhng" target="_blank"><i class="fab fa-telegram fa-lg"></i></a> Telegram @lyhng (I prefer this)</li>
   <li><a href="https://twitter.com/lyhng_rika" target="_blank"><i class="fab fa-twitter fa-lg"></i></a> Twitter @lyhng_rika</li>

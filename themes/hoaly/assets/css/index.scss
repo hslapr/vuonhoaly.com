@@ -35,3 +35,15 @@
 ul.v-space-5 li:not(:last-child), ol.v-space-5 li:not(:last-child){
     margin-bottom: 5px;
 }
+
+#ul-contact {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+#ul-posts {
+    padding-left: 20px;
+    li:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
